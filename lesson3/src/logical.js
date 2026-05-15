@@ -1,7 +1,6 @@
-let age = 25;
-let userName = "John";
-let isLogged = true;
-let level = 1;
+const age = 25;
+const userName = 'John';
+const isLogged = true;
 
 console.log(age > 18);
 console.log(age === '25');

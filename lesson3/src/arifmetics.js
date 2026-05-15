@@ -1,9 +1,9 @@
-let num1 = 10;
-let num2 = 5;
-let str1 = "10";
-let str2 = "some string";
-let bul1 = true;
-let num3 = null;
+const num1 = 10;
+const num2 = 5;
+const str1 = '10';
+const str2 = 'some string';
+const bul1 = true;
+const num3 = null;
 
 console.log(num1 + num2);
 console.log(num1 * num2);

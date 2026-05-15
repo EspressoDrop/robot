@@ -1,0 +1,31 @@
+{
+  "name": "robot",
+  "version": "1.0.0",
+  "description": "robot_dreams_learning",
+  "keywords": [
+    "robot"
+  ],
+  "homepage": "https://github.com/EspressoDrop/robot#readme",
+  "bugs": {
+    "url": "https://github.com/EspressoDrop/robot/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EspressoDrop/robot.git"
+  },
+  "license": "ISC",
+  "author": "Andrii Yefimchuk",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "eslint": "^10.3.0",
+    "eslint-plugin-unicorn": "^64.0.0",
+    "globals": "^17.6.0",
+    "prettier": "^3.8.3"
+  }
+}
