@@ -25,15 +25,23 @@ const licenseManager = {
         return this.calendarModule.isLegacy ? 'Legacy module' : 'Active module';
     },
 
-    set updateSalesPrice(newPrice) {
+    get salesPrice() {
+        return this.salesModule.basePrice;
+    },
+
+    set salesPrice(newPrice) {
         if (typeof newPrice === 'number' && newPrice > 0) {
             this.salesModule.basePrice = newPrice;
         }
     },
 
-    set toggleCalendarStatus(status) {
-        if (typeof status === 'boolean') {
-            this.calendarModule.isLegacy = status;
+    get calendarPrice() {
+        return this.calendarModule.basePrice;
+    },
+
+    set calendarPrice(newPrice) {
+        if (typeof newPrice === 'number' && newPrice > 0) {
+            this.calendarModule.basePrice = newPrice;
         }
     },
 
