@@ -12,4 +12,4 @@ async function fetchTodos() {
     }
 }
 
-fetchTodos();
+await fetchTodos();
