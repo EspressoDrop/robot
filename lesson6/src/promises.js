@@ -3,7 +3,7 @@ function processTodos(data) {
 }
 
 function fetchTodos() {
-    fetch('https://dummyjson.com/todos')
+    return fetch('https://dummyjson.com/todos')
         .then(response => response.json())
         .then(json => {
             processTodos(json);
@@ -13,4 +13,4 @@ function fetchTodos() {
         });
 }
 
-fetchTodos();
+fetchTodos().then();
