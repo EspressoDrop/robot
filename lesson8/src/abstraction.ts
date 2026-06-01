@@ -1,11 +1,11 @@
-export interface Tasks  {
+export interface ITasks  {
     id: number;
     task: string;
     completed: boolean;
     priority: number;
 }
 
-export class PersonalTasks implements Tasks {
+export class PersonalTasks implements ITasks {
     public id: number;
     public task: string;
     public completed: boolean;
@@ -38,7 +38,7 @@ export class PersonalTasks implements Tasks {
     }
 }
 
-export class WorkTasks implements Tasks {
+export class WorkTasks implements ITasks {
     public id: number;
     public task: string;
     public completed: boolean;
