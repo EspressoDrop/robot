@@ -6,7 +6,8 @@ export function printDrinkDetails(drink: IDrink): string {
 }
 
 const mojito = new RumBased('Mojito', 10, true, 15, false);
-const colaCherry = new ColaBased('Coca-Cola Cherry', 5, false, true, 'Cherry');
+const colaCherry = new ColaBased('Coca-Cola Cherry', 5, false, true, 'Cherry', false);
 
 console.log(printDrinkDetails(mojito));
 console.log(printDrinkDetails(colaCherry));
+console.log(colaCherry.getDiabetesInfo());

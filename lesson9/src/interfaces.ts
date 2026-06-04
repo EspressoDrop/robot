@@ -16,3 +16,9 @@ export interface INonAlcoholicDrink extends IDrink {
     flavor: string;
 }
 
+export interface ISugarFreeDrink extends INonAlcoholicDrink {
+    isSugarFree: boolean;
+
+    getDiabetesInfo(): string;
+}
+
