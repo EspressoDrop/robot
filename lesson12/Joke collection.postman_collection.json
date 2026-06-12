@@ -1,0 +1,417 @@
+{
+  "info": {
+    "_postman_id": "223f255a-6e03-428d-a3d6-f1c0f8bfabad",
+    "name": "Joke collection",
+    "description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "55598296",
+    "_collection_link": "https://go.postman.co/collection/55598296-223f255a-6e03-428d-a3d6-f1c0f8bfabad?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Random joke",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"Response has 4 correct fields\", function () {",
+              "    const response = pm.response.json();",
+              "    pm.expect(JSON.stringify(response)).contains('type', 'setup', 'punchline', 'id');",
+              "})"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base-url}}jokes/random",
+          "host": [
+            "{{base-url}}jokes"
+          ],
+          "path": [
+            "random"
+          ]
+        },
+        "description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+      },
+      "response": []
+    },
+    {
+      "name": "Random joke v2",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Validate fields types\", function () {\r",
+              "    const responseJson = pm.response.json();\r",
+              "    \r",
+              "    pm.expect(responseJson.type).to.be.a('string');\r",
+              "    pm.expect(responseJson.setup).to.be.a('string');\r",
+              "    pm.expect(responseJson.punchline).to.be.a('string');\r",
+              "    pm.expect(responseJson.id).to.be.a('number');\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base-url}}random_joke",
+          "host": [
+            "{{base-url}}random_joke"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Types",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Number of types is 4\", function () {\r",
+              "    const response = pm.response.json();\r",
+              "    pm.expect(response.length).to.eql(4);\r",
+              "})\r",
+              "\r",
+              "pm.test(\"No stupid jokes type exists\", function () {\r",
+              "    const response = pm.response.json();\r",
+              "    pm.expect(response).to.not.include(\"stupid jokes\");\r",
+              "})\r",
+              "\r",
+              "pm.test(\"Order of fields is correct\", function () {\r",
+              "    const response = pm.response.json();\r",
+              "    const expectedOrder = [\"general\", \"knock-knock\", \"programming\", \"dad\"]\r",
+              "    pm.expect(response).to.eql(expectedOrder);\r",
+              "})"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base-url}}types",
+          "host": [
+            "{{base-url}}types"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "10 jokes",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Number of jokes is 10\", function () {\r",
+              "    const response = pm.response.json();\r",
+              "    pm.expect(response.length).to.eql(10);\r",
+              "})"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base-url}}random_ten",
+          "host": [
+            "{{base-url}}random_ten"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "10 jokes v2",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Number of jokes is 10\", function () {\r",
+              "    const response = pm.response.json();\r",
+              "    pm.expect(response.length).to.eql(10);\r",
+              "})\r",
+              "\r",
+              "pm.test(\"All IDs are positive numbers\", function () {\r",
+              "    const response = pm.response.json();\r",
+              "    response.forEach(joke => {\r",
+              "        pm.expect(joke.id).to.be.a('number').and.to.be.above(0)});\r",
+              "})"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base-url}}jokes/ten",
+          "host": [
+            "{{base-url}}jokes"
+          ],
+          "path": [
+            "ten"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Random amount of jokes",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Number of jokes is correct\", function () {\r",
+              "    const response = pm.response.json();\r",
+              "    const expectedValue = Number(pm.collectionVariables.get(\"number-of-jokes\"));\r",
+              "    pm.expect(response.length).to.eql(expectedValue);\r",
+              "})\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base-url}}jokes/random/{{number-of-jokes}}",
+          "host": [
+            "{{base-url}}jokes"
+          ],
+          "path": [
+            "random",
+            "{{number-of-jokes}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Jokes by type",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Type of joke is correct\", function () {\r",
+              "    const response = pm.response.json();\r",
+              "    const typeOfJoke = response[0].type;\r",
+              "    const expectedType = pm.collectionVariables.get(\"type1\");\r",
+              "    pm.expect(typeOfJoke).to.eql(expectedType);\r",
+              "})\r",
+              "\r",
+              "\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base-url}}jokes/{{type1}}/random",
+          "host": [
+            "{{base-url}}jokes"
+          ],
+          "path": [
+            "{{type1}}",
+            "random"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "10 jokes by type",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Type of joke is correct and number is 10\", function () {\r",
+              "    const response = pm.response.json();\r",
+              "    const typeOfJoke = response[0].type;\r",
+              "    const expectedType = pm.collectionVariables.get(\"type1\");\r",
+              "    pm.expect(typeOfJoke).to.eql(expectedType);\r",
+              "    pm.expect(response.length).to.eql(10);\r",
+              "})\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base-url}}jokes/{{type1}}/ten",
+          "host": [
+            "{{base-url}}jokes"
+          ],
+          "path": [
+            "{{type1}}",
+            "ten"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Jokes by ID",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Correct joke received\", function () {\r",
+              "    const response = pm.response.json();\r",
+              "    const iDReceived = response.id;\r",
+              "    const expectedId = Number(pm.collectionVariables.get(\"id\"));\r",
+              "    pm.expect(iDReceived).to.eql(expectedId);\r",
+              "})\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base-url}}jokes/{{id}}",
+          "host": [
+            "{{base-url}}jokes"
+          ],
+          "path": [
+            "{{id}}"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base-url",
+      "value": ""
+    },
+    {
+      "key": "number-of-jokes",
+      "value": ""
+    },
+    {
+      "key": "type1",
+      "value": ""
+    },
+    {
+      "key": "id",
+      "value": ""
+    }
+  ]
+}
