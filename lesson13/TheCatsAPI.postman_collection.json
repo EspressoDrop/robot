@@ -1,0 +1,385 @@
+{
+  "info": {
+    "_postman_id": "ffae8443-4728-4ee8-b6b8-9081cd55041a",
+    "name": "TheCatsAPI",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "55598296",
+    "_collection_link": "https://go.postman.co/collection/55598296-ffae8443-4728-4ee8-b6b8-9081cd55041a?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "random-image",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "    pm.collectionVariables.set(\"imageId\", pm.response.json()[0].id);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base-url}}images/search",
+          "host": [
+            "{{base-url}}images"
+          ],
+          "path": [
+            "search"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "upload-image",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 201\", function () {\r",
+              "    pm.response.to.have.status(201);\r",
+              "    pm.collectionVariables.set(\"imageIdPersonal\", pm.response.json().id);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "id",
+              "value": "343def47",
+              "type": "text",
+              "uuid": "e27ba40e-7415-4ac5-b3aa-12ea1a1f1725"
+            },
+            {
+              "key": "file",
+              "type": "file",
+              "uuid": "5f5f55f3-c555-4902-bcee-aa96e8f9f15a",
+              "src": "postman-cloud:///1f169c69-a6a3-49d0-935a-60e267238bbc"
+            },
+            {
+              "key": "sub_id",
+              "value": "{{user-id}}",
+              "type": "text",
+              "uuid": "60a4f2e0-24df-404d-afce-8b15277d554d"
+            },
+            {
+              "key": "width",
+              "value": "600",
+              "type": "text",
+              "uuid": "ef629bcd-5d2b-46ff-b95d-7f0ea2aa5f03"
+            },
+            {
+              "key": "height",
+              "value": "1000",
+              "type": "text",
+              "uuid": "0bdf4b24-5379-47c7-b15f-d031bef4bfbc"
+            },
+            {
+              "key": "original_filename",
+              "value": "untitled.jpg",
+              "type": "text",
+              "uuid": "ac0bad66-c48d-4e4c-9fe0-05bd41351456"
+            },
+            {
+              "key": "pending",
+              "value": "0",
+              "type": "text",
+              "uuid": "59411876-cc04-4c9a-8ee1-13687d37998d"
+            },
+            {
+              "key": "approved",
+              "value": "1",
+              "type": "text",
+              "uuid": "fd8459f1-ae6b-484d-ac59-beec56fdb924"
+            },
+            {
+              "key": "breed",
+              "value": "abys",
+              "type": "text",
+              "uuid": "fd652598-97f2-4064-9047-575945bb485a"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{base-url}}images/upload",
+          "host": [
+            "{{base-url}}images"
+          ],
+          "path": [
+            "upload"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "check-breeds",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base-url}}breeds",
+          "host": [
+            "{{base-url}}breeds"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "set-breed",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"breed_id\": \"abys\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base-url}}images/{{imageIdPersonal}}/breeds",
+          "host": [
+            "{{base-url}}images"
+          ],
+          "path": [
+            "{{imageIdPersonal}}",
+            "breeds"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "image-by-id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base-url}}images/{{imageIdPersonal}}",
+          "host": [
+            "{{base-url}}images"
+          ],
+          "path": [
+            "{{imageIdPersonal}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "create-vote",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 201\", function () {\r",
+              "    pm.response.to.have.status(201);\r",
+              "    pm.collectionVariables.set(\"voteId\", pm.response.json().id);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"image_id\":\"{{imageIdPersonal}}\",\r\n    \"sub_id\":\"{{user-id}}\",\r\n    \"value\": 1\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base-url}}votes",
+          "host": [
+            "{{base-url}}votes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "add-favourite",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"image_id\":\"{{imageIdPersonal\",\r\n    \"sub_id\":\"{{user-id}}\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base-url}}favourites",
+          "host": [
+            "{{base-url}}favourites"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "check-favourites",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "    pm.collectionVariables.set(\"favouriteId1\", pm.response.json()[0].id);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base-url}}favourites",
+          "host": [
+            "{{base-url}}favourites"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "favourite-by-id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base-url}}favourites/{{favouriteId1}}",
+          "host": [
+            "{{base-url}}favourites"
+          ],
+          "path": [
+            "{{favouriteId1}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "vote-by-id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base-url}}votes/{{voteId}}",
+          "host": [
+            "{{base-url}}votes"
+          ],
+          "path": [
+            "{{voteId}}"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "value",
+        "value": "live_7DvJjsUgs4VPe4MdMiQPz1HxmuOXZMjTbG3g3uRKlwjuRvKD5p4tvSYdKWU8CWbQ",
+        "type": "string"
+      },
+      {
+        "key": "key",
+        "value": "x-api-key",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base-url",
+      "value": ""
+    },
+    {
+      "key": "user-id",
+      "value": ""
+    },
+    {
+      "key": "imageId",
+      "value": ""
+    },
+    {
+      "key": "imageIdPersonal",
+      "value": ""
+    },
+    {
+      "key": "favouriteId1",
+      "value": ""
+    },
+    {
+      "key": "voteId",
+      "value": ""
+    }
+  ]
+}
