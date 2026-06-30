@@ -1,0 +1,35 @@
+1. Open index page
+https://rozetka.com.ua/
+
+2. Wait for Rozetla logo to be visible
+//img[@alt='Rozetka Logo']
+
+3. Click on Search box
+//*[@data-testid='search-suggest-input']
+
+Expect Популярні запити section to be visible
+//div[normalize-space()='Популярні запити']
+
+5. Input "ecoflow" and click button "Знайти"
+//*[@data-testid='search-suggest-submit']
+
+Expect all items with selector
+//*[contains(@class,'tile-title') and contains(@class,'black-link')]
+to contain an attribute title with a text "ecoflow"
+
+6. Click element
+//select[@id='sort']
+
+7. Click option "Від дешевих до дорогих"
+//option[@value='cheap']
+
+8. Extract prices of all elements
+//div[contains(@class,'price') and contains(@class,'text-2xl')]
+compare that the next item is bigger then predecessor
+
+9. Click option "Від дорогих до дешевих"
+//option[@value='expensive']
+
+10. 8. Extract prices of all elements
+//div[contains(@class,'price') and contains(@class,'text-2xl')]
+compare that the next item is smaller then predecessor
