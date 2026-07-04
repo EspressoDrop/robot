@@ -1,0 +1,29 @@
+1. Open index page
+https://rozetka.com.ua/
+
+2. Wait for tob banner/slider to be visible
+rz-top-slider
+
+Expect button to slide left is visible
+button[class="left-btn button"]
+
+Expect button to slide right is visible
+button[class="right-btn button"]
+
+3. Locate an element img[class="slide-image"] to be visible
+
+4. Get alt attribute of element img[class="slide-image"]
+
+5. Click slide left
+button[class="left-btn button"]
+
+6. Get alt attribute of the same element img[class="slide-image"]
+
+Expect alt attributes in step 4 and 6 to be different
+
+7. Click slide right
+button[class="right-btn button"]
+
+8. Get alt attribute of element img[class="slide-image"]
+
+Expect alt attributes in step 4 and 8 to be equal
