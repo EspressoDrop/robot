@@ -1,0 +1,1 @@
+export * from './rozetka-main-page';
