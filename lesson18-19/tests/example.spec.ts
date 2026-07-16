@@ -1,24 +1,17 @@
-import { test, expect } from '@playwright/test';
-import { RozetkaMainPage } from '../src/pages/rozetka-main-page';
+import { test, expect } from './fixtures';
 
 test.describe('Rozetka main page', () => {
-   let rozetkaMainPage: RozetkaMainPage;
 
-   test.beforeEach(async ({ page }) => {
-      rozetkaMainPage = new RozetkaMainPage(page);
-      await rozetkaMainPage.open();
-   });
-
-   test('should display the logo', async () => {
+   test('should display the logo', async ({ rozetkaMainPage }) => {
       await expect(rozetkaMainPage.rozetkaLogo).toBeVisible();
    });
 
-   test('should open search field and check popular queries exist', async () => {
+   test('should open search field and check popular queries exist', async ({ rozetkaMainPage }) => {
       await rozetkaMainPage.openSearch();
       await expect(rozetkaMainPage.popularQueriesHeader).toBeVisible();
    });
 
-   test('should search for a product and check result names includ search query', async () => {
+   test('should search for a product and check result names includ search query', async ({ rozetkaMainPage }) => {
       const searchQuery = 'ecoflow';
       await rozetkaMainPage.openSearch();
       await rozetkaMainPage.searchForProduct(searchQuery);
@@ -28,7 +21,7 @@ test.describe('Rozetka main page', () => {
       }
    });
 
-   test('should sort search results by lowest price and check prices are in ascending order', async () => {
+   test('should sort search results by lowest price and check prices are in ascending order', async ({ rozetkaMainPage }) => {
       const searchQuery = 'ecoflow';
       await rozetkaMainPage.openSearch();
       await rozetkaMainPage.searchForProduct(searchQuery);
@@ -39,7 +32,7 @@ test.describe('Rozetka main page', () => {
       }
    });
 
-   test('should sort search results by highest price and check prices are in descending order', async () => {
+   test('should sort search results by highest price and check prices are in descending order', async ({ rozetkaMainPage }) => {
       const searchQuery = 'ecoflow';
       await rozetkaMainPage.openSearch();
       await rozetkaMainPage.searchForProduct(searchQuery);
