@@ -1,4 +1,4 @@
-import { Before, After, Status } from '@cucumber/cucumber';
+import { Before, After, AfterAll, Status } from '@cucumber/cucumber';
 import { CustomWorld } from './world';
 
 Before(async function (this: CustomWorld) {
@@ -11,4 +11,10 @@ After(async function (this: CustomWorld, scenario) {
         this.attach(screenshot, 'image/png');
     }
     await this.cleanup();
+});
+
+AfterAll(async function () {
+    if (CustomWorld.browser) {
+        await CustomWorld.browser.close();
+    }
 });
