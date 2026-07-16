@@ -1,0 +1,15 @@
+
+# Playwright
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
+cucumber-report.html
+cucumber-report.json
+reports/
+playwright-report/
+test-results/
+screenshots/
+videos/

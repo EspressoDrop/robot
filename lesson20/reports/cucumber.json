@@ -1,0 +1,395 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "rozetka-site;logo-should-be-visible-on-main-page",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Logo should be visible on main page",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 722414800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "I open Rozetka main page",
+            "match": {
+              "location": "src\\rozetka.steps.ts:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1821359599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 5,
+            "name": "the logo should be visible",
+            "match": {
+              "location": "src\\rozetka.steps.ts:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 12754899
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 44384699
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "rozetka-site;search-field-should-show-popular-queries",
+        "keyword": "Scenario",
+        "line": 7,
+        "name": "Search field should show popular queries",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 162797099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "I open Rozetka main page",
+            "match": {
+              "location": "src\\rozetka.steps.ts:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1257954900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "I open the search field",
+            "match": {
+              "location": "src\\rozetka.steps.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4047601200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "popular queries header should be visible",
+            "match": {
+              "location": "src\\rozetka.steps.ts:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5463499
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 61777799
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "rozetka-site;search-results-should-contain-search-query-in-titles",
+        "keyword": "Scenario",
+        "line": 12,
+        "name": "Search results should contain search query in titles",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 190147399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 13,
+            "name": "I open Rozetka main page",
+            "match": {
+              "location": "src\\rozetka.steps.ts:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1360434900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 14,
+            "name": "I open the search field",
+            "match": {
+              "location": "src\\rozetka.steps.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1676882599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "I search for \"ecoflow\"",
+            "match": {
+              "location": "src\\rozetka.steps.ts:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2059425300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 16,
+            "name": "all product titles should contain \"ecoflow\"",
+            "match": {
+              "location": "src\\rozetka.steps.ts:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 208417900
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 32886399
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "rozetka-site;products-should-be-sorted-by-lowest-price-in-ascending-order",
+        "keyword": "Scenario",
+        "line": 18,
+        "name": "Products should be sorted by lowest price in ascending order",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 178040699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 19,
+            "name": "I open Rozetka main page",
+            "match": {
+              "location": "src\\rozetka.steps.ts:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1277743399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 20,
+            "name": "I open the search field",
+            "match": {
+              "location": "src\\rozetka.steps.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2042727999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "I search for \"ecoflow\"",
+            "match": {
+              "location": "src\\rozetka.steps.ts:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2270826600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 22,
+            "name": "I sort by lowest price",
+            "match": {
+              "location": "src\\rozetka.steps.ts:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2062187700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 23,
+            "name": "product prices should be in ascending order",
+            "match": {
+              "location": "src\\rozetka.steps.ts:40"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 25306400
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 48735400
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "rozetka-site;products-should-be-sorted-by-highest-price-in-descending-order",
+        "keyword": "Scenario",
+        "line": 25,
+        "name": "Products should be sorted by highest price in descending order",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 183477200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 26,
+            "name": "I open Rozetka main page",
+            "match": {
+              "location": "src\\rozetka.steps.ts:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1259270599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 27,
+            "name": "I open the search field",
+            "match": {
+              "location": "src\\rozetka.steps.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2022350999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 28,
+            "name": "I search for \"ecoflow\"",
+            "match": {
+              "location": "src\\rozetka.steps.ts:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2358507100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 29,
+            "name": "I sort by highest price",
+            "match": {
+              "location": "src\\rozetka.steps.ts:21"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2145204900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 30,
+            "name": "product prices should be in descending order",
+            "match": {
+              "location": "src\\rozetka.steps.ts:47"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 25967899
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 49482400
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "rozetka-site",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Rozetka site",
+    "tags": [],
+    "uri": "src\\features\\rozetka.feature"
+  }
+]
