@@ -22,7 +22,6 @@
     "@playwright/test": "^1.61.1",
     "@stylistic/eslint-plugin": "^5.10.0",
     "@stylistic/eslint-plugin-ts": "^4.4.1",
-    "@types/mochawesome": "^6.2.5",
     "@types/node": "^26.1.0",
     "allure-commandline": "^2.43.0",
     "allure-playwright": "^3.10.2",
