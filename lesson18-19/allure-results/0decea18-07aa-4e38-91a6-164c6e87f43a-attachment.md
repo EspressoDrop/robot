@@ -1,0 +1,606 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: example.spec.ts >> Rozetka main page >> should sort search results by lowest price and check prices are in ascending order
+- Location: tests\example.spec.ts:24:8
+
+# Error details
+
+```
+TimeoutError: locator.waitFor: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator('[class="tile-title black-link text-base"]').first() to be visible
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - link "Великий літній розпродаж до −55%" [ref=e6] [cursor=pointer]:
+      - /url: https://rozetka.com.ua/ua/promo/bigsummersale/
+      - img "Великий літній розпродаж до −55%" [ref=e7]
+    - generic [ref=e8]:
+      - banner [ref=e10]:
+        - generic [ref=e12]:
+          - button "Відкрити меню" [ref=e13] [cursor=pointer]:
+            - img [ref=e14]
+          - link "Rozetka Logo" [ref=e16] [cursor=pointer]:
+            - /url: https://rozetka.com.ua/
+            - img "Rozetka Logo" [ref=e17]
+          - button "Каталог" [ref=e18] [cursor=pointer]:
+            - img [ref=e19]
+            - text: Каталог
+          - generic [ref=e24]:
+            - generic [ref=e27]:
+              - img
+              - textbox "Я шукаю..." [ref=e28]
+            - button "Знайти" [ref=e29] [cursor=pointer]
+          - list [ref=e30]:
+            - listitem [ref=e31]:
+              - button [ref=e32] [cursor=pointer]:
+                - img [ref=e33]
+            - listitem [ref=e35]:
+              - button "Списки порівнянь" [ref=e36] [cursor=pointer]:
+                - img [ref=e37]
+            - listitem [ref=e39]:
+              - button "Відкрити корзину" [ref=e40] [cursor=pointer]:
+                - img [ref=e41]
+      - generic [ref=e44]:
+        - main [ref=e45]:
+          - generic [ref=e47]:
+            - generic [ref=e48]:
+              - button [ref=e49] [cursor=pointer]:
+                - img [ref=e50]
+              - generic [ref=e52]:
+                - link "Товари для спорту зі знижками до 60%!" [ref=e54] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/promo/goods_sport
+                  - img "Товари для спорту зі знижками до 60%!" [ref=e55]
+                - link "Великий літній розпродаж до −55%" [ref=e57] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/promo/bigsummersale/
+                  - img "Великий літній розпродаж до −55%" [ref=e58]
+                - link "Оплата частинами від 10 платежів на акційні товари продавця Rozetka" [ref=e60] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/promo/credit_choice/
+                  - img "Оплата частинами від 10 платежів на акційні товари продавця Rozetka" [ref=e61]
+                - link "Картка Rozetka" [ref=e63] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/rozetka-card/
+                  - img "Картка Rozetka" [ref=e64]
+                - link "Акція! Вигода до 6400 ₴ на смартфони Samsung Galaxy S26Ultra, додаткова вигода 5% при оплаті карткою ROZETKA." [ref=e66] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/news-articles-promotions/promotions/326672_sale_galaxyas26/
+                  - img "Акція! Вигода до 6400 ₴ на смартфони Samsung Galaxy S26Ultra, додаткова вигода 5% при оплаті карткою ROZETKA." [ref=e67]
+                - link "Акція! Смартфони iPhone 17 Pro в оплату частинами до 15 платежів!" [ref=e69] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/news-articles-promotions/promotions/325890_credit_iphone17pro/
+                  - img "Акція! Смартфони iPhone 17 Pro в оплату частинами до 15 платежів!" [ref=e70]
+                - link "Ноутбуки в оплату частинами до 20 платежів!" [ref=e72] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/notebooks/c80004/seller=rozetka_only/
+                  - img "Ноутбуки в оплату частинами до 20 платежів!" [ref=e73]
+                - link "Збираймося до школи! Шкільний гардероб і приладдя" [ref=e75] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/promo/school/
+                  - img "Збираймося до школи! Шкільний гардероб і приладдя" [ref=e76]
+                - link "Акція! Знижки до 57% на техніку Philips!" [ref=e78] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/news-articles-promotions/promotions/326243_sale_philips/
+                  - img "Акція! Знижки до 57% на техніку Philips!" [ref=e79]
+                - link "Топи продажів" [ref=e81] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/promo/top_sale/
+                  - img "Топи продажів" [ref=e82]
+                - link "Акція! До -16% на холодильники Samsung!" [ref=e84] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/news-articles-promotions/promotions/327361_sale_samsung/
+                  - img "Акція! До -16% на холодильники Samsung!" [ref=e85]
+                - link "Знижки до 40% на джин Tanqueray!" [ref=e87] [cursor=pointer]:
+                  - /url: "https://rozetka.com.ua/ua/news-articles-promotions/promotions/326945_sale_tanqueray/ "
+                  - img "Знижки до 40% на джин Tanqueray!" [ref=e88]
+                - link "Товари для спорту зі знижками до 60%!" [ref=e90] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/promo/goods_sport
+                  - img "Товари для спорту зі знижками до 60%!" [ref=e91]
+                - link "Великий літній розпродаж до −55%" [ref=e93] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/promo/bigsummersale/
+                  - img "Великий літній розпродаж до −55%" [ref=e94]
+              - button [ref=e113] [cursor=pointer]:
+                - img [ref=e114]
+            - button "Всі акції →" [ref=e117] [cursor=pointer]
+        - navigation [ref=e119]:
+          - generic [ref=e120]:
+            - generic [ref=e121]:
+              - link "Картка Rozetka Персональні знижки та бонуси" [ref=e123] [cursor=pointer]:
+                - /url: https://rozetka.com.ua/ua/rozetka-card/
+                - generic [ref=e124]:
+                  - img [ref=e125]
+                  - generic [ref=e126]:
+                    - generic [ref=e127]: Картка Rozetka
+                    - generic [ref=e128]: Персональні знижки та бонуси
+              - link "Smart підписка Безкоштовна доставка лише 50 ₴/міс." [ref=e130] [cursor=pointer]:
+                - /url: https://rozetka.com.ua/ua/smart/
+                - img [ref=e131]
+                - generic [ref=e132]:
+                  - generic [ref=e133]: Smart підписка
+                  - generic [ref=e134]: Безкоштовна доставка лише 50 ₴/міс.
+            - list [ref=e136]:
+              - listitem [ref=e137]:
+                - link "2416 2416 Ноутбуки та комп’ютери" [ref=e138] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/computers-notebooks/c80253/
+                  - img "2416" [ref=e139]
+                  - img "2416" [ref=e140]
+                  - text: Ноутбуки та комп’ютери
+              - listitem [ref=e141]:
+                - link "3361 3361 Смартфони, ТВ і електроніка" [ref=e142] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/telefony-tv-i-ehlektronika/c4627949/
+                  - img "3361" [ref=e143]
+                  - img "3361" [ref=e144]
+                  - text: Смартфони, ТВ і електроніка
+              - listitem [ref=e145]:
+                - link "18421 18421 Товари для геймерів" [ref=e146] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/game-zone/c80261/
+                  - img "18421" [ref=e147]
+                  - img "18421" [ref=e148]
+                  - text: Товари для геймерів
+              - listitem [ref=e149]:
+                - link "4306 4306 Побутова техніка" [ref=e150] [cursor=pointer]:
+                  - /url: https://bt.rozetka.com.ua/ua/
+                  - img "4306" [ref=e151]
+                  - img "4306" [ref=e152]
+                  - text: Побутова техніка
+              - listitem [ref=e153]:
+                - link "5300 5300 Товари для дому" [ref=e154] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/tovary-dlya-doma/c2394287/
+                  - img "5300" [ref=e155]
+                  - img "5300" [ref=e156]
+                  - text: Товари для дому
+              - listitem [ref=e157]:
+                - link "6700 6700 Авто і мото" [ref=e158] [cursor=pointer]:
+                  - /url: https://auto.rozetka.com.ua/ua/
+                  - img "6700" [ref=e159]
+                  - img "6700" [ref=e160]
+                  - text: Авто і мото
+              - listitem [ref=e161]:
+                - link "23505 23505 Інструменти та обладнання" [ref=e162] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/2577232/c2577232/
+                  - img "23505" [ref=e163]
+                  - img "23505" [ref=e164]
+                  - text: Інструменти та обладнання
+              - listitem [ref=e165]:
+                - link "7806 7806 Сантехніка та ремонт" [ref=e166] [cursor=pointer]:
+                  - /url: https://build.rozetka.com.ua/ua/
+                  - img "7806" [ref=e167]
+                  - img "7806" [ref=e168]
+                  - text: Сантехніка та ремонт
+              - listitem [ref=e169]:
+                - link "8261 8261 Дача, сад і город" [ref=e170] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/dacha-sad-ogorod/c2394297/
+                  - img "8261" [ref=e171]
+                  - img "8261" [ref=e172]
+                  - text: Дача, сад і город
+              - listitem [ref=e173]:
+                - link "9017 9017 Спорт і захоплення" [ref=e174] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/sport-i-uvlecheniya/c4627893/
+                  - img "9017" [ref=e175]
+                  - img "9017" [ref=e176]
+                  - text: Спорт і захоплення
+              - listitem [ref=e177]:
+                - link "10515 10515 Одяг, взуття та прикраси" [ref=e178] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/shoes_clothes/c1162030/
+                  - img "10515" [ref=e179]
+                  - img "10515" [ref=e180]
+                  - text: Одяг, взуття та прикраси
+              - listitem [ref=e181]:
+                - link "12258 12258 Краса та здоров’я" [ref=e182] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/krasota-i-zdorovje/c4629305/
+                  - img "12258" [ref=e183]
+                  - img "12258" [ref=e184]
+                  - text: Краса та здоров’я
+              - listitem [ref=e185]:
+                - link "13224 13224 Дитячі товари" [ref=e186] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/kids/c88468/
+                  - img "13224" [ref=e187]
+                  - img "13224" [ref=e188]
+                  - text: Дитячі товари
+              - listitem [ref=e189]:
+                - link "15954 15954 Зоотовари" [ref=e190] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/zootovary/c3520929/
+                  - img "15954" [ref=e191]
+                  - img "15954" [ref=e192]
+                  - text: Зоотовари
+              - listitem [ref=e193]:
+                - link "14127 14127 Офіс, школа, книги" [ref=e194] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/office-school-books/c4625734/
+                  - img "14127" [ref=e195]
+                  - img "14127" [ref=e196]
+                  - text: Офіс, школа, книги
+              - listitem [ref=e197]:
+                - link "14939 14939 Алкогольні напої та продукти" [ref=e198] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/alkoholnie-napitki-i-produkty/c4626923/
+                  - img "14939" [ref=e199]
+                  - img "14939" [ref=e200]
+                  - text: Алкогольні напої та продукти
+              - listitem [ref=e201]:
+                - link "20310 20310 Побутова хімія" [ref=e202] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/bytovaya-himiya/c4429255/
+                  - img "20310" [ref=e203]
+                  - img "20310" [ref=e204]
+                  - text: Побутова хімія
+              - listitem [ref=e205]:
+                - link "23064 23064 Енергонезалежність" [ref=e206] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/energonezalezhnist/c241576/
+                  - img "23064" [ref=e207]
+                  - img "23064" [ref=e208]
+                  - text: Енергонезалежність
+              - listitem [ref=e209]:
+                - link "23799 23799 Подарунки та сувеніри" [ref=e210] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/podarki-i-tovary-dlya-prazdnikov/c80260/
+                  - img "23799" [ref=e211]
+                  - img "23799" [ref=e212]
+                  - text: Подарунки та сувеніри
+              - listitem [ref=e213]:
+                - link "16332 16332 Літній марафон" [ref=e214] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/promo/bigsummersale/
+                  - img "16332" [ref=e215]
+                  - img "16332" [ref=e216]
+                  - text: Літній марафон
+              - listitem [ref=e217]:
+                - link "17191 17191 Топи продажів" [ref=e218] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/promo/top_sale/
+                  - img "17191" [ref=e219]
+                  - img "17191" [ref=e220]
+                  - text: Топи продажів
+              - listitem [ref=e221]:
+                - link "23469 23469 Всі акції" [ref=e222] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/news-articles-promotions/promotions/
+                  - img "23469" [ref=e223]
+                  - img "23469" [ref=e224]
+                  - text: Всі акції
+            - link "Довідковий центр" [ref=e227] [cursor=pointer]:
+              - /url: https://help.rozetka.com.ua/
+              - img [ref=e228]
+              - text: Довідковий центр
+            - link "Чат з ROZETKA" [ref=e231] [cursor=pointer]:
+              - /url: https://t.me/Rozetka_helpBot?start=src=hc
+              - img [ref=e232]
+              - text: Чат з ROZETKA
+            - link "Магазини Rozetka" [ref=e235] [cursor=pointer]:
+              - /url: https://rozetka.com.ua/ua/retail/kyiv/
+              - img [ref=e236]
+              - text: Магазини Rozetka
+            - button "Київ Київ обл., Київ р-н." [ref=e239] [cursor=pointer]:
+              - img [ref=e240]
+              - generic [ref=e242]:
+                - generic [ref=e243]: Київ
+                - generic [ref=e244]: Київ обл., Київ р-н.
+            - button "Відстежити посилку" [ref=e246] [cursor=pointer]:
+              - img [ref=e247]
+              - text: Відстежити посилку
+            - link "Продавати на Розетці" [ref=e249] [cursor=pointer]:
+              - /url: https://seller.rozetka.com.ua/newseller
+              - img [ref=e250]
+              - generic [ref=e252]: Продавати на Розетці
+            - complementary [ref=e254]:
+              - generic [ref=e256]:
+                - paragraph [ref=e257]: Увійдіть, щоб отримувати рекомендації, персональні бонуси і знижки.
+                - button "Увійдіть в особистий кабінет" [ref=e258] [cursor=pointer]
+            - generic [ref=e260]:
+              - generic [ref=e261]: Встановлюйте наші застосунки
+              - link "AppStore" [ref=e262] [cursor=pointer]:
+                - /url: https://rozetka.onelink.me/LWXa/futtersite
+                - img "AppStore" [ref=e263]
+              - link "Google Play" [ref=e264] [cursor=pointer]:
+                - /url: https://rozetka.onelink.me/LWXa/futtersite
+                - img "Google Play" [ref=e265]
+            - generic [ref=e267]:
+              - generic [ref=e268]: Ми в соціальних мережах
+              - generic [ref=e270]:
+                - list [ref=e271]:
+                  - listitem [ref=e272]:
+                    - link "TikTok" [ref=e273] [cursor=pointer]:
+                      - /url: https://www.tiktok.com/@rozetkaua
+                      - img [ref=e274]
+                  - listitem [ref=e276]:
+                    - link "Telegram" [ref=e277] [cursor=pointer]:
+                      - /url: https://t.me/rrozetka
+                      - img [ref=e278]
+                  - listitem [ref=e280]:
+                    - link "Facebook" [ref=e281] [cursor=pointer]:
+                      - /url: https://www.facebook.com/rozetka.ua
+                      - img [ref=e282]
+                  - listitem [ref=e284]:
+                    - link "YouTube" [ref=e285] [cursor=pointer]:
+                      - /url: https://bit.ly/RZTK_UA
+                      - img [ref=e286]
+                - list [ref=e288]:
+                  - listitem [ref=e289]:
+                    - link "Instagram" [ref=e290] [cursor=pointer]:
+                      - /url: https://instagram.com/rozetkaua
+                      - img [ref=e291]
+                  - listitem [ref=e293]:
+                    - link "X" [ref=e294] [cursor=pointer]:
+                      - /url: https://x.com/rozetka_ua
+                      - img [ref=e295]
+                  - listitem [ref=e297]:
+                    - link "Viber" [ref=e298] [cursor=pointer]:
+                      - /url: https://invite.viber.com/?g2=AQB9mwM%2F5f%2FxJUlMxP4V9flr2%2BvXTC1MpxdGFZ0P6d%2Fs6Ws%2FFe%2FQtLiZwA4E28sj
+                      - img [ref=e299]
+    - generic [ref=e303]:
+      - generic [ref=e305]:
+        - paragraph [ref=e306]:
+          - strong [ref=e307]: ROZETKA
+          - text: − найбільший онлайн-ритейлер в Україні. З 2005 року ми втілюємо маленькі мрії та грандіозні плани мільйонів людей. В інтернет-магазині Розетка можна знайти буквально все. Ми продаємо за справедливою ціною та надаємо гарантію, бо вважаємо, що онлайн-шопінг має бути максимально зручним і безпечним. І щоразу, коли хтось натискає «Купити» на сайті Розетка, ми розуміємо, що робимо потрібну справу.
+        - heading "Наше бачення" [level=2] [ref=e308]
+        - paragraph [ref=e309]: Ми віримо, що речі існують для того, щоб робити життя простішим, приємнішим і добрішим. Тому й пошук тієї самої речі повинен бути швидким, зручним і приємним. Ми не просто продаємо побутову техніку, електроніку, прикраси або вино. Ми допомагаємо знайти саме те, що треба, в одному місці та без зайвих хвилювань.
+        - paragraph [ref=e310]:
+          - strong [ref=e311]: Rozetka
+          - text: "− це:"
+        - list [ref=e312]:
+          - listitem [ref=e313]: •універсальна відповідь на будь-який запит;
+          - listitem [ref=e314]: •початок пошуку та його кінцева зупинка;
+          - listitem [ref=e315]: •справжній помічник без неприємних компромісів;
+          - listitem [ref=e316]: •платформа, що надихає мріяти сміливіше.
+        - heading "Ми піклуємось про ваш вибір" [level=2] [ref=e317]
+        - paragraph [ref=e318]:
+          - text: Ми знімаємо відеоогляди, пишемо статті та стежимо за новинками, щоб ви завжди були в курсі. Ми допомагаємо знайти речі на
+          - strong [ref=e319]: ROZETKA
+          - text: ":"
+        - list [ref=e320]:
+          - listitem [ref=e321]: •закоханим — чим здивувати одне одного;
+          - listitem [ref=e322]: •спортивним — як прогресувати швидше;
+          - listitem [ref=e323]: •хазяйновитим — як створити затишок.
+        - heading "Онлайн і офлайн — як вам зручно" [level=2] [ref=e324]
+        - paragraph [ref=e325]: "Ми відкрили понад 500 офлайн-магазинів у Києві, Одесі, Дніпрі, Львові, Харкові та ще у 170+ містах України. У нас можна:"
+        - list [ref=e326]:
+          - listitem [ref=e327]: •потримати товар в руках і протестувати;
+          - listitem [ref=e328]: •забрати покупку у поштоматі без спілкування;
+          - listitem [ref=e329]: •отримати доставку додому або у відділення пошти;
+          - listitem [ref=e330]: •оплатити готівкою, карткою або у кредит — як вам зручно.
+        - heading "ROZETKA — більше, ніж магазин" [level=2] [ref=e331]
+        - paragraph [ref=e332]:
+          - text: Сьогодні
+          - strong [ref=e333]: ROZETKA
+          - text: "— це не тільки ритейлер, а й маркетплейс:"
+        - list [ref=e334]:
+          - listitem [ref=e335]: •хтось розпочинає тут свій перший бізнес;
+          - listitem [ref=e336]: •інші привозять в Україну унікальні товари;
+          - listitem [ref=e337]: •ми допомагаємо ще більшій кількості людей бути щасливими.
+        - paragraph [ref=e338]: Ми хочемо, щоб запитання «де знайти щось потрібне» більше ніколи не виникало. Тому продовжуємо зростати разом з вами.
+      - button "Читати повністю ↓" [ref=e340] [cursor=pointer]:
+        - text: Читати повністю
+        - generic [ref=e341]: ↓
+    - contentinfo [ref=e343]:
+      - generic [ref=e345]:
+        - generic [ref=e346]:
+          - generic [ref=e347]:
+            - generic [ref=e348]:
+              - generic [ref=e349]: Ми в соціальних мережах
+              - generic [ref=e351]:
+                - list [ref=e352]:
+                  - listitem [ref=e353]:
+                    - link "TikTok" [ref=e354] [cursor=pointer]:
+                      - /url: https://www.tiktok.com/@rozetkaua
+                      - img [ref=e355]
+                  - listitem [ref=e357]:
+                    - link "Telegram" [ref=e358] [cursor=pointer]:
+                      - /url: https://t.me/rrozetka
+                      - img [ref=e359]
+                  - listitem [ref=e361]:
+                    - link "Facebook" [ref=e362] [cursor=pointer]:
+                      - /url: https://www.facebook.com/rozetka.ua
+                      - img [ref=e363]
+                  - listitem [ref=e365]:
+                    - link "YouTube" [ref=e366] [cursor=pointer]:
+                      - /url: https://bit.ly/RZTK_UA
+                      - img [ref=e367]
+                - list [ref=e369]:
+                  - listitem [ref=e370]:
+                    - link "Instagram" [ref=e371] [cursor=pointer]:
+                      - /url: https://instagram.com/rozetkaua
+                      - img [ref=e372]
+                  - listitem [ref=e374]:
+                    - link "X" [ref=e375] [cursor=pointer]:
+                      - /url: https://x.com/rozetka_ua
+                      - img [ref=e376]
+                  - listitem [ref=e378]:
+                    - link "Viber" [ref=e379] [cursor=pointer]:
+                      - /url: https://invite.viber.com/?g2=AQB9mwM%2F5f%2FxJUlMxP4V9flr2%2BvXTC1MpxdGFZ0P6d%2Fs6Ws%2FFe%2FQtLiZwA4E28sj
+                      - img [ref=e380]
+            - generic [ref=e382]:
+              - generic [ref=e383]: Скануйте QR-код та встановлюйте застосунок
+              - generic [ref=e384]:
+                - generic [ref=e385]:
+                  - img "QR-code"
+                - list [ref=e386]:
+                  - listitem [ref=e387]:
+                    - link "Додаток для iOS" [ref=e388] [cursor=pointer]:
+                      - /url: https://rozetka.onelink.me/LWXa/futtersite
+                      - img "AppStore" [ref=e389]
+                  - listitem [ref=e390]:
+                    - link "Додаток для Android" [ref=e391] [cursor=pointer]:
+                      - /url: https://rozetka.onelink.me/LWXa/futtersite
+                      - img "Google Play" [ref=e392]
+          - generic [ref=e393]:
+            - generic [ref=e394]:
+              - generic [ref=e396]: Інформація про компанію
+              - list [ref=e397]:
+                - listitem [ref=e398]:
+                  - link "Про нас" [ref=e399] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/pages/about/
+                - listitem [ref=e400]:
+                  - link "Умови використання сайту" [ref=e401] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/pages/legal_terms/
+                - listitem [ref=e402]:
+                  - link "Вакансії" [ref=e403] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/careers/
+                - listitem [ref=e404]:
+                  - link "Контакти" [ref=e405] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/contacts/
+                - listitem [ref=e406]:
+                  - link "Всі категорії" [ref=e407] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/all-categories-goods/
+            - generic [ref=e408]:
+              - generic [ref=e410]: Допомога
+              - list [ref=e411]:
+                - listitem [ref=e412]:
+                  - link "Доставка та оплата" [ref=e413] [cursor=pointer]:
+                    - /url: https://help.rozetka.com.ua/p/97-dostavka/
+                - listitem [ref=e414]:
+                  - link "Кредит" [ref=e415] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/pages/credit/
+                - listitem [ref=e416]:
+                  - link "Гарантія" [ref=e417] [cursor=pointer]:
+                    - /url: https://help.rozetka.com.ua/p/111-harantiya-i-povernennya-tovaru/
+                - listitem [ref=e418]:
+                  - link "Повернення товару" [ref=e419] [cursor=pointer]:
+                    - /url: https://help.rozetka.com.ua/p/102-povernennya-tovaru/
+                - listitem [ref=e420]:
+                  - link "Сервісні центри" [ref=e421] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/service-centers/
+            - generic [ref=e422]:
+              - generic [ref=e424]: Сервіси
+              - list [ref=e425]:
+                - listitem [ref=e426]:
+                  - link "Бонусний рахунок" [ref=e427] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/pages/loyalty/
+                - listitem [ref=e428]:
+                  - link "Картка Rozetka" [ref=e429] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/rozetka-card/
+                - listitem [ref=e430]:
+                  - link "Подарункові сертифікати" [ref=e431] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/pages/certificates/
+                - listitem [ref=e432]:
+                  - link "Rozetka Обмін" [ref=e433] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/pages/obmin/
+                - listitem [ref=e434]:
+                  - link "Корпоративним клієнтам" [ref=e435] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/pages/b2b/
+            - generic [ref=e436]:
+              - generic [ref=e438]: Партнерам
+              - list [ref=e439]:
+                - listitem [ref=e440]:
+                  - link "Продавати на Розетці" [ref=e441] [cursor=pointer]:
+                    - /url: https://seller.rozetka.com.ua/newseller
+                - listitem [ref=e442]:
+                  - link "Реклама на Розетці" [ref=e443] [cursor=pointer]:
+                    - /url: https://advertising.rozetka.ua/
+                - listitem [ref=e444]:
+                  - link "Співпраця з нами" [ref=e445] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/pages/partnership/
+                - listitem [ref=e446]:
+                  - link "Франчайзинг" [ref=e447] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/pages/franchise/
+                - listitem [ref=e448]:
+                  - link "Оренда приміщень" [ref=e449] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/news-articles-promotions/promotions/store_search/
+        - generic [ref=e450]:
+          - generic [ref=e451]:
+            - button "MasterCard Secure" [ref=e452] [cursor=pointer]:
+              - img "MasterCard Secure" [ref=e453]
+            - button "Visa Verified" [ref=e454] [cursor=pointer]:
+              - img "Visa Verified" [ref=e455]
+          - paragraph [ref=e456]: © 2001–2026 Інтернет-магазин «Розетка™» — Щоразу що треба ТМ використовується на підставі ліцензії правовласника RozetkaLTD
+  - iframe [ref=e458]:
+    - dialog "Вхід через Google" [ref=f9e4]:
+      - generic [ref=f9e5]:
+        - generic [ref=f9e6]:
+          - img [ref=f9e8]
+          - heading "Вхід через Google" [level=1] [ref=f9e14]
+        - button "Закрити" [ref=f9e15]:
+          - img [ref=f9e16]
+      - generic [ref=f9e19]:
+        - generic [ref=f9e20]:
+          - paragraph [ref=f9e21]: Увійдіть у додаток rozetka.com.ua через обліковий запис Google
+          - paragraph [ref=f9e22]: Більше не потрібно запам'ятовувати паролі. Входьте швидко, легко й безпечно.
+          - img [ref=f9e24]
+        - button "Продовжити" [ref=f9e56] [cursor=pointer]:
+          - generic [ref=f9e58]: Продовжити
+```
+
+# Test source
+
+```ts
+  1  | import { Page } from '@playwright/test';
+  2  | import { Locator } from '@playwright/test';
+  3  | 
+  4  | export class RozetkaMainPage {
+  5  | 
+  6  |     public get rozetkaLogo(): Locator {
+  7  |         return this.page.locator('[alt="Rozetka Logo"]');
+  8  |     }
+  9  | 
+  10 |     public get searchInput(): Locator {
+  11 |         return this.page.locator('[data-testid="search-suggest-input"]');
+  12 |     }
+  13 | 
+  14 |     public get popularQueriesHeader(): Locator {
+  15 |     return this.page.locator('div[class="text-base font-bold py-3"]');
+  16 | }
+  17 | 
+  18 |     public get searchButton(): Locator {
+  19 |         return this.page.locator('[data-testid="search-suggest-submit"]');
+  20 |     }
+  21 | 
+  22 |     public get searchResults(): Locator {
+  23 |         return this.page.locator('[class="tile-title black-link text-base"]');
+  24 |     }
+  25 | 
+  26 |     public get sortByDropdown(): Locator {
+  27 |         return this.page.locator('select[id="sort"]');
+  28 |     }
+  29 | 
+  30 |     public get sortByLowestPriceOption(): Locator {
+  31 |         return this.page.locator('option[value="cheap"]');
+  32 |     }
+  33 |     public get sortByHighestPriceOption(): Locator {
+  34 |         return this.page.locator('option[value="expensive"]');
+  35 |     }
+  36 | 
+  37 |     public get pricesOfProducts(): Locator {
+  38 |         return this.page.locator('div[class*="price text-2xl"]');
+  39 |     }
+  40 |     
+  41 |     public constructor(public page: Page) {}
+  42 | 
+  43 |     public async open() {
+  44 |         await this.page.goto('https://rozetka.com.ua/', {
+  45 |             waitUntil: 'commit'
+  46 |         });
+  47 |         await this.rozetkaLogo.waitFor({state: 'visible'});
+  48 |     }
+  49 | 
+  50 |     public async openSearch() {
+  51 |         await this.searchInput.click();
+  52 |     }
+  53 | 
+  54 |     public async searchForProduct(productName: string) {
+  55 |         await this.searchInput.fill(productName);
+  56 |         await this.searchButton.click();
+  57 |         await this.waitForSearchResults();
+  58 |     }
+  59 | 
+  60 |     public async getSearchResultsTitles(): Promise<string[]> {
+  61 |         return await this.searchResults.allTextContents();
+  62 |     }
+  63 | 
+  64 |     public async sortByLowestPrice() {
+  65 |         await this.sortByDropdown.selectOption('cheap');
+  66 |         await this.page.waitForTimeout(2000);
+  67 |     }
+  68 | 
+  69 |     public async sortByHighestPrice() {
+  70 |         await this.sortByDropdown.selectOption('expensive');
+  71 |         await this.page.waitForTimeout(2000);
+  72 |     }
+  73 | 
+  74 |     public async getProductPrices(): Promise<number[]> {
+  75 |         const priceTexts = await this.pricesOfProducts.allTextContents();
+  76 |         return priceTexts.map(priceText => {
+  77 |             const cleanPrice = priceText.replace(/\D/g, '');
+  78 |             return Number.parseInt(cleanPrice, 10);
+  79 |         });
+  80 |     }
+  81 | 
+  82 |     public async waitForSearchResults() {
+> 83 |         await this.searchResults.first().waitFor({ state: 'visible' });
+     |                                          ^ TimeoutError: locator.waitFor: Timeout 30000ms exceeded.
+  84 |     }
+  85 | }
+```

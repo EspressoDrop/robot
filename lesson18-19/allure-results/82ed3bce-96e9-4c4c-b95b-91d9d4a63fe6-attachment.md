@@ -1,0 +1,2053 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: example.spec.ts >> Rozetka main page >> should sort search results by lowest price and check prices are in ascending order
+- Location: tests\example.spec.ts:24:8
+
+# Error details
+
+```
+TimeoutError: locator.waitFor: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator('[class="tile-title black-link text-base"]').first() to be visible
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e4]:
+  - link "Великий літній розпродаж до −55%" [ref=e6] [cursor=pointer]:
+    - /url: https://rozetka.com.ua/ua/promo/bigsummersale/
+    - img "Великий літній розпродаж до −55%" [ref=e7]
+  - generic [ref=e8]:
+    - banner [ref=e10]:
+      - generic [ref=e12]:
+        - button "Відкрити меню" [ref=e13] [cursor=pointer]:
+          - img [ref=e14]
+        - link "Rozetka Logo" [ref=e16] [cursor=pointer]:
+          - /url: https://rozetka.com.ua/
+          - img "Rozetka Logo" [ref=e17]
+        - button "Каталог" [ref=e18] [cursor=pointer]:
+          - img [ref=e19]
+          - text: Каталог
+        - generic [ref=e23]:
+          - generic [ref=e24]:
+            - generic [ref=e26]:
+              - generic [ref=e27]:
+                - img
+                - textbox "Я шукаю..." [active] [ref=e28]
+              - button "Голосовий пошук" [ref=e29] [cursor=pointer]:
+                - img [ref=e30]
+            - button "Знайти" [ref=e32] [cursor=pointer]
+          - generic [ref=e35]:
+            - generic [ref=e36]: Популярні запити
+            - list [ref=e38]:
+              - listitem [ref=e39]:
+                - generic [ref=e40] [cursor=pointer]: шланги для поливу
+              - listitem [ref=e41]:
+                - generic [ref=e42] [cursor=pointer]: наповнювач для котів
+              - listitem [ref=e43]:
+                - generic [ref=e44] [cursor=pointer]: латяо
+              - listitem [ref=e45]:
+                - generic [ref=e46] [cursor=pointer]: алкогольні напої
+              - listitem [ref=e47]:
+                - generic [ref=e48] [cursor=pointer]: купальники
+              - listitem [ref=e49]:
+                - generic [ref=e50] [cursor=pointer]: картини по номерам
+              - listitem [ref=e51]:
+                - generic [ref=e52] [cursor=pointer]: фотоапарат
+              - listitem [ref=e53]:
+                - generic [ref=e54] [cursor=pointer]: жіночі шорти
+              - listitem [ref=e55]:
+                - generic [ref=e56] [cursor=pointer]: флешка
+              - listitem [ref=e57]:
+                - generic [ref=e58] [cursor=pointer]: жіночі кросівки
+              - listitem [ref=e59]:
+                - generic [ref=e60] [cursor=pointer]: міні-вентилятор
+              - listitem [ref=e61]:
+                - generic [ref=e62] [cursor=pointer]: мангал
+              - listitem [ref=e63]:
+                - generic [ref=e64] [cursor=pointer]: газонокосарка
+        - list [ref=e65]:
+          - listitem [ref=e66]:
+            - button [ref=e67] [cursor=pointer]:
+              - img [ref=e68]
+          - listitem [ref=e70]:
+            - button "Списки порівнянь" [ref=e71] [cursor=pointer]:
+              - img [ref=e72]
+          - listitem [ref=e74]:
+            - button "Відкрити корзину" [ref=e75] [cursor=pointer]:
+              - img [ref=e76]
+    - generic [ref=e79]:
+      - main [ref=e80]:
+        - generic [ref=e81]:
+          - generic [ref=e82]:
+            - generic [ref=e83]:
+              - button [ref=e84] [cursor=pointer]:
+                - img [ref=e85]
+              - generic [ref=e87]:
+                - link "Товари для спорту зі знижками до 60%!" [ref=e89] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/promo/goods_sport
+                  - img "Товари для спорту зі знижками до 60%!" [ref=e90]
+                - link "Великий літній розпродаж до −55%" [ref=e92] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/promo/bigsummersale/
+                  - img "Великий літній розпродаж до −55%" [ref=e93]
+                - link "Оплата частинами від 10 платежів на акційні товари продавця Rozetka" [ref=e95] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/promo/credit_choice/
+                  - img "Оплата частинами від 10 платежів на акційні товари продавця Rozetka" [ref=e96]
+                - link "Картка Rozetka" [ref=e98] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/rozetka-card/
+                  - img "Картка Rozetka" [ref=e99]
+                - link "Акція! Вигода до 6400 ₴ на смартфони Samsung Galaxy S26Ultra, додаткова вигода 5% при оплаті карткою ROZETKA." [ref=e101] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/news-articles-promotions/promotions/326672_sale_galaxyas26/
+                  - img "Акція! Вигода до 6400 ₴ на смартфони Samsung Galaxy S26Ultra, додаткова вигода 5% при оплаті карткою ROZETKA." [ref=e102]
+                - link "Акція! Смартфони iPhone 17 Pro в оплату частинами до 15 платежів!" [ref=e104] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/news-articles-promotions/promotions/325890_credit_iphone17pro/
+                  - img "Акція! Смартфони iPhone 17 Pro в оплату частинами до 15 платежів!" [ref=e105]
+                - link "Ноутбуки в оплату частинами до 20 платежів!" [ref=e107] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/notebooks/c80004/seller=rozetka_only/
+                  - img "Ноутбуки в оплату частинами до 20 платежів!" [ref=e108]
+                - link "Збираймося до школи! Шкільний гардероб і приладдя" [ref=e110] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/promo/school/
+                  - img "Збираймося до школи! Шкільний гардероб і приладдя" [ref=e111]
+                - link "Акція! Знижки до 57% на техніку Philips!" [ref=e113] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/news-articles-promotions/promotions/326243_sale_philips/
+                  - img "Акція! Знижки до 57% на техніку Philips!" [ref=e114]
+                - link "Топи продажів" [ref=e116] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/promo/top_sale/
+                  - img "Топи продажів" [ref=e117]
+                - link "Акція! До -16% на холодильники Samsung!" [ref=e119] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/news-articles-promotions/promotions/327361_sale_samsung/
+                  - img "Акція! До -16% на холодильники Samsung!" [ref=e120]
+                - link "Знижки до 40% на джин Tanqueray!" [ref=e122] [cursor=pointer]:
+                  - /url: "https://rozetka.com.ua/ua/news-articles-promotions/promotions/326945_sale_tanqueray/ "
+                  - img "Знижки до 40% на джин Tanqueray!" [ref=e123]
+                - link "Товари для спорту зі знижками до 60%!" [ref=e125] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/promo/goods_sport
+                  - img "Товари для спорту зі знижками до 60%!" [ref=e126]
+                - link "Великий літній розпродаж до −55%" [ref=e128] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/promo/bigsummersale/
+                  - img "Великий літній розпродаж до −55%" [ref=e129]
+              - button [ref=e148] [cursor=pointer]:
+                - img [ref=e149]
+            - button "Всі акції →" [ref=e152] [cursor=pointer]
+          - generic [ref=e155]:
+            - heading "Найкращі пропозиції для вас" [level=2] [ref=e157]
+            - generic [ref=e158]:
+              - article [ref=e160]:
+                - button "Перемістити в список бажань" [ref=e163] [cursor=pointer]:
+                  - img [ref=e164]
+                - link "Advion Cockroach Gel Syngenta (Адвіон гель) - засіб від тарганів, професійний гель від тарганів шприц 1 тюбик, 30 мл повна комплектація" [ref=e166] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/598521604/p598521604/#primacyToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODQ0NjE0MDQsInBheWxvYWQiOiJ7XCJwZ1wiOjU2MTQ3MTkxLFwiY1wiOjE0OTI2MixcImN0XCI6MSxcImNwY1wiOjEuODQsXCJzY1wiOjgsXCJwbFwiOjMsXCJjaWRcIjoxMDg2NzA0LFwicFwiOjEsXCJnXCI6M30ifQ.leAMxEyWgHlcgMklzHq788Ns9JbvrU69wZd-QDShCP4;primacySource=main
+                  - img "Advion Cockroach Gel Syngenta (Адвіон гель) - засіб від тарганів, професійний гель від тарганів шприц 1 тюбик, 30 мл повна комплектація" [ref=e167]
+                - link "Advion Cockroach Gel Syngenta (Адвіон гель) - засіб від тарганів, професійний гель від тарганів шприц 1 тюбик, 30 мл повна комплектація" [ref=e168] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/598521604/p598521604/#primacyToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODQ0NjE0MDQsInBheWxvYWQiOiJ7XCJwZ1wiOjU2MTQ3MTkxLFwiY1wiOjE0OTI2MixcImN0XCI6MSxcImNwY1wiOjEuODQsXCJzY1wiOjgsXCJwbFwiOjMsXCJjaWRcIjoxMDg2NzA0LFwicFwiOjEsXCJnXCI6M30ifQ.leAMxEyWgHlcgMklzHq788Ns9JbvrU69wZd-QDShCP4;primacySource=main
+                - generic [ref=e169]:
+                  - generic [ref=e170]:
+                    - generic [ref=e171]: 635₴
+                    - generic [ref=e172]: 530₴
+                  - button "Купити" [ref=e174] [cursor=pointer]:
+                    - img [ref=e175]
+                - generic [ref=e177]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e178] [cursor=pointer]:
+                    - img [ref=e179]
+                - generic [ref=e181]:
+                  - text: Реклама
+                  - button [ref=e182] [cursor=pointer]:
+                    - img [ref=e184]
+              - article [ref=e187]:
+                - button "Перемістити в список бажань" [ref=e190] [cursor=pointer]:
+                  - img [ref=e191]
+                - link "Поплавок + набір хімії для каркасного та надувного басейну AquaDoctor MC-T 3 в 1 (00153)" [ref=e193] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/444935021/p444935021/#primacyToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODQ0NjE0MDQsInBheWxvYWQiOiJ7XCJwZ1wiOjMzMjIwMDc3LFwiY1wiOjU5NDkwLFwiY3RcIjoxLFwiY3BjXCI6NC42MDAwMDAwMDAwMDAwMDA1LFwic2NcIjo4LFwicGxcIjozLFwiY2lkXCI6NDYyNzY5NCxcInBcIjoyLFwiZ1wiOjN9In0.1AfEOlMwCDYnCREGJHMDlg9MOjYHkL4WcO-RgHaJ2kA;primacySource=main
+                  - img "Поплавок + набір хімії для каркасного та надувного басейну AquaDoctor MC-T 3 в 1 (00153)" [ref=e194]
+                - link "Поплавок + набір хімії для каркасного та надувного басейну AquaDoctor MC-T 3 в 1 (00153)" [ref=e195] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/444935021/p444935021/#primacyToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODQ0NjE0MDQsInBheWxvYWQiOiJ7XCJwZ1wiOjMzMjIwMDc3LFwiY1wiOjU5NDkwLFwiY3RcIjoxLFwiY3BjXCI6NC42MDAwMDAwMDAwMDAwMDA1LFwic2NcIjo4LFwicGxcIjozLFwiY2lkXCI6NDYyNzY5NCxcInBcIjoyLFwiZ1wiOjN9In0.1AfEOlMwCDYnCREGJHMDlg9MOjYHkL4WcO-RgHaJ2kA;primacySource=main
+                - generic [ref=e196]:
+                  - generic [ref=e197]:
+                    - generic [ref=e198]: 300₴
+                    - generic [ref=e199]: 270₴
+                  - button "Купити" [ref=e201] [cursor=pointer]:
+                    - img [ref=e202]
+                - generic [ref=e204]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e205] [cursor=pointer]:
+                    - img [ref=e206]
+                - generic [ref=e208]:
+                  - text: Реклама
+                  - button [ref=e209] [cursor=pointer]:
+                    - img [ref=e211]
+              - article [ref=e214]:
+                - button "Перемістити в список бажань" [ref=e217] [cursor=pointer]:
+                  - img [ref=e218]
+                - link "Форма для запікання Luminarc Diwali 26 см (N6416)" [ref=e220] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/luminarc_n6416/p38614656/
+                  - img "Форма для запікання Luminarc Diwali 26 см (N6416)" [ref=e221]
+                - link "Форма для запікання Luminarc Diwali 26 см (N6416)" [ref=e222] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/luminarc_n6416/p38614656/
+                - generic [ref=e223]:
+                  - generic [ref=e224]:
+                    - generic [ref=e226]: 308₴
+                    - button "286₴" [ref=e227] [cursor=pointer]:
+                      - generic [ref=e228]: 286₴
+                      - img [ref=e229]
+                  - button "Купити" [ref=e231] [cursor=pointer]:
+                    - img [ref=e232]
+                - generic [ref=e234]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e235] [cursor=pointer]:
+                    - img [ref=e236]
+              - article [ref=e239]:
+                - button "Перемістити в список бажань" [ref=e242] [cursor=pointer]:
+                  - img [ref=e243]
+                - link "Чоловічий наручний годинник Skmei 1845 чорний" [ref=e245] [cursor=pointer]:
+                  - /url: https://bt.rozetka.com.ua/ua/367763157/p367763157/
+                  - img "Чоловічий наручний годинник Skmei 1845 чорний" [ref=e246]
+                - link "Чоловічий наручний годинник Skmei 1845 чорний" [ref=e247] [cursor=pointer]:
+                  - /url: https://bt.rozetka.com.ua/ua/367763157/p367763157/
+                - generic [ref=e248]:
+                  - generic [ref=e249]:
+                    - generic [ref=e250]: 600₴
+                    - generic [ref=e251]: 389₴
+                  - button "Купити" [ref=e253] [cursor=pointer]:
+                    - img [ref=e254]
+                - generic [ref=e256]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e257] [cursor=pointer]:
+                    - img [ref=e258]
+              - article [ref=e261]:
+                - button "Перемістити в список бажань" [ref=e264] [cursor=pointer]:
+                  - img [ref=e265]
+                - link "Упаковка пива Leffe Blonde світле фільтроване 6.6% 0.33 л x 24 шт (5410228142089)" [ref=e267] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/leffe_5410228142089/p7171246/
+                  - img "Упаковка пива Leffe Blonde світле фільтроване 6.6% 0.33 л x 24 шт (5410228142089)" [ref=e268]
+                - link "Упаковка пива Leffe Blonde світле фільтроване 6.6% 0.33 л x 24 шт (5410228142089)" [ref=e269] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/leffe_5410228142089/p7171246/
+                - generic [ref=e271]:
+                  - generic [ref=e272]:
+                    - generic [ref=e273]: 1 399₴
+                    - generic [ref=e274]: 1 895₴
+                  - button "1 329₴" [ref=e275] [cursor=pointer]:
+                    - generic [ref=e276]: 1 329₴
+                    - img [ref=e277]
+                - generic [ref=e278]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e279] [cursor=pointer]:
+                    - img [ref=e280]
+              - article [ref=e283]:
+                - button "Перемістити в список бажань" [ref=e286] [cursor=pointer]:
+                  - img [ref=e287]
+                - link "Полиця настінна MEBLIBUD Tiffany відкрита Дуб сонома (2203635400025)" [ref=e289] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/meblibud-2203635400025/p548647203/
+                  - img "Полиця настінна MEBLIBUD Tiffany відкрита Дуб сонома (2203635400025)" [ref=e290]
+                - link "Полиця настінна MEBLIBUD Tiffany відкрита Дуб сонома (2203635400025)" [ref=e291] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/meblibud-2203635400025/p548647203/
+                - generic [ref=e292]:
+                  - generic [ref=e293]:
+                    - generic [ref=e294]:
+                      - generic [ref=e295]: 754₴
+                      - generic [ref=e296]: 943₴
+                    - button "678₴" [ref=e297] [cursor=pointer]:
+                      - generic [ref=e298]: 678₴
+                      - img [ref=e299]
+                  - button "Купити" [ref=e301] [cursor=pointer]:
+                    - img [ref=e302]
+                - generic [ref=e304]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e305] [cursor=pointer]:
+                    - img [ref=e306]
+              - article [ref=e309]:
+                - button "Перемістити в список бажань" [ref=e312] [cursor=pointer]:
+                  - img [ref=e313]
+                - link "Олівець-стік від натирань Compeed Pencil stick засіб проти появи мозолів тертя шкіри Компид мазі від натоптишів Anti Blister Stick для загоєння мозолів 8 мл" [ref=e315] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/429945245/p429945245/#primacyToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODQ0NjE0MDQsInBheWxvYWQiOiJ7XCJwZ1wiOjUxNzMxOTM0LFwiY1wiOjE0MDg0NSxcImN0XCI6MSxcImNwY1wiOjAuNDUwODAwMDA4NzczODAzNyxcInNjXCI6OCxcInBsXCI6MyxcImNpZFwiOjQ2NTc0NjYsXCJwXCI6NyxcImdcIjozfSJ9.sH5jJyjs5LQgUcvWy7Hiwc15ZKLlDe6us1mbB1xrJWc;primacySource=main
+                  - img "Олівець-стік від натирань Compeed Pencil stick засіб проти появи мозолів тертя шкіри Компид мазі від натоптишів Anti Blister Stick для загоєння мозолів 8 мл" [ref=e316]
+                - link "Олівець-стік від натирань Compeed Pencil stick засіб проти появи мозолів тертя шкіри Компид мазі від натоптишів Anti Blister Stick для загоєння мозолів 8 мл" [ref=e317] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/429945245/p429945245/#primacyToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODQ0NjE0MDQsInBheWxvYWQiOiJ7XCJwZ1wiOjUxNzMxOTM0LFwiY1wiOjE0MDg0NSxcImN0XCI6MSxcImNwY1wiOjAuNDUwODAwMDA4NzczODAzNyxcInNjXCI6OCxcInBsXCI6MyxcImNpZFwiOjQ2NTc0NjYsXCJwXCI6NyxcImdcIjozfSJ9.sH5jJyjs5LQgUcvWy7Hiwc15ZKLlDe6us1mbB1xrJWc;primacySource=main
+                - generic [ref=e318]:
+                  - generic [ref=e319]:
+                    - generic [ref=e320]: 699₴
+                    - generic [ref=e321]: 489₴
+                  - button "Купити" [ref=e323] [cursor=pointer]:
+                    - img [ref=e324]
+                - generic [ref=e326]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e327] [cursor=pointer]:
+                    - img [ref=e328]
+                - generic [ref=e330]:
+                  - text: Реклама
+                  - button [ref=e331] [cursor=pointer]:
+                    - img [ref=e333]
+              - article [ref=e336]:
+                - button "Перемістити в список бажань" [ref=e339] [cursor=pointer]:
+                  - img [ref=e340]
+                - link "Нічник акумуляторний від USB сенсорна настільна лампа, регульована яскравість Mini Touch Lamp RGB з пультом" [ref=e342] [cursor=pointer]:
+                  - /url: https://build.rozetka.com.ua/ua/nochniki-bez-brenda-156041417/p559476495/
+                  - img "Нічник акумуляторний від USB сенсорна настільна лампа, регульована яскравість Mini Touch Lamp RGB з пультом" [ref=e343]
+                - link "Нічник акумуляторний від USB сенсорна настільна лампа, регульована яскравість Mini Touch Lamp RGB з пультом" [ref=e344] [cursor=pointer]:
+                  - /url: https://build.rozetka.com.ua/ua/nochniki-bez-brenda-156041417/p559476495/
+                - generic [ref=e345]:
+                  - generic [ref=e346]:
+                    - generic [ref=e347]: 999₴
+                    - generic [ref=e348]: 289₴
+                  - button "Купити" [ref=e350] [cursor=pointer]:
+                    - img [ref=e351]
+              - article [ref=e354]:
+                - button "Перемістити в список бажань" [ref=e357] [cursor=pointer]:
+                  - img [ref=e358]
+                - link "Цукерки Львівська майстерня шоколаду Екслюзивні 416 г (4820284840019)" [ref=e360] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/lvivska-maysternya-shokoladu-4820284840019/p512633229/
+                  - img "Цукерки Львівська майстерня шоколаду Екслюзивні 416 г (4820284840019)" [ref=e361]
+                - link "Цукерки Львівська майстерня шоколаду Екслюзивні 416 г (4820284840019)" [ref=e362] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/lvivska-maysternya-shokoladu-4820284840019/p512633229/
+                - generic [ref=e363]:
+                  - generic [ref=e364]:
+                    - generic [ref=e365]:
+                      - generic [ref=e366]: 781₴
+                      - generic [ref=e367]: 919₴
+                    - button "757₴" [ref=e368] [cursor=pointer]:
+                      - generic [ref=e369]: 757₴
+                      - img [ref=e370]
+                  - button "Купити" [ref=e372] [cursor=pointer]:
+                    - img [ref=e373]
+                - generic [ref=e375]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e376] [cursor=pointer]:
+                    - img [ref=e377]
+              - article [ref=e380]:
+                - button "Перемістити в список бажань" [ref=e383] [cursor=pointer]:
+                  - img [ref=e384]
+                - link "Крісло для кухні на ніжках Bonro В-173 FULL KD сіре" [ref=e386] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/400652922/p400652922/
+                  - img "Крісло для кухні на ніжках Bonro В-173 FULL KD сіре" [ref=e387]
+                - link "Крісло для кухні на ніжках Bonro В-173 FULL KD сіре" [ref=e388] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/400652922/p400652922/
+                - generic [ref=e389]:
+                  - generic [ref=e391]: 770₴
+                  - button "Купити" [ref=e393] [cursor=pointer]:
+                    - img [ref=e394]
+              - article [ref=e397]:
+                - button "Перемістити в список бажань" [ref=e400] [cursor=pointer]:
+                  - img [ref=e401]
+                - link "Ігрова бездротова мишка ajazz aj139 v2 ms чорного кольору" [ref=e403] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/576963763/p576963763/
+                  - img "Ігрова бездротова мишка ajazz aj139 v2 ms чорного кольору" [ref=e404]
+                - link "Ігрова бездротова мишка ajazz aj139 v2 ms чорного кольору" [ref=e405] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/576963763/p576963763/
+                - generic [ref=e406]:
+                  - generic [ref=e407]:
+                    - generic [ref=e408]: 1 999₴
+                    - generic [ref=e409]: 899₴
+                  - button "Купити" [ref=e411] [cursor=pointer]:
+                    - img [ref=e412]
+                - generic [ref=e414]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e415] [cursor=pointer]:
+                    - img [ref=e416]
+              - article [ref=e419]:
+                - button "Перемістити в список бажань" [ref=e422] [cursor=pointer]:
+                  - img [ref=e423]
+                - link "Ізопропиловий спирт 99,9% INEOS 1000 мл" [ref=e425] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/328912216/p328912216/#primacyToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODQ0NjE0MDQsInBheWxvYWQiOiJ7XCJwZ1wiOjUzMTgyOTExLFwiY1wiOjE0MDI2OCxcImN0XCI6MSxcImNwY1wiOjAuMjMwMDAwMDA0MTcyMzI1MTMsXCJzY1wiOjgsXCJwbFwiOjMsXCJjaWRcIjo4NDg3OCxcInBcIjoxMixcImdcIjozfSJ9.A_HnR9bh3OUsNJGejfnVf87bDHpeXKidtJ1oB2PA51w;primacySource=main
+                  - img "Ізопропиловий спирт 99,9% INEOS 1000 мл" [ref=e426]
+                - link "Ізопропиловий спирт 99,9% INEOS 1000 мл" [ref=e427] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/328912216/p328912216/#primacyToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODQ0NjE0MDQsInBheWxvYWQiOiJ7XCJwZ1wiOjUzMTgyOTExLFwiY1wiOjE0MDI2OCxcImN0XCI6MSxcImNwY1wiOjAuMjMwMDAwMDA0MTcyMzI1MTMsXCJzY1wiOjgsXCJwbFwiOjMsXCJjaWRcIjo4NDg3OCxcInBcIjoxMixcImdcIjozfSJ9.A_HnR9bh3OUsNJGejfnVf87bDHpeXKidtJ1oB2PA51w;primacySource=main
+                - generic [ref=e428]:
+                  - generic [ref=e429]:
+                    - generic [ref=e430]: 260₴
+                    - generic [ref=e431]: 230₴
+                  - button "Купити" [ref=e433] [cursor=pointer]:
+                    - img [ref=e434]
+                - generic [ref=e436]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e437] [cursor=pointer]:
+                    - img [ref=e438]
+                - generic [ref=e440]:
+                  - text: Реклама
+                  - button [ref=e441] [cursor=pointer]:
+                    - img [ref=e443]
+              - article [ref=e446]:
+                - button "Перемістити в список бажань" [ref=e449] [cursor=pointer]:
+                  - img [ref=e450]
+                - link "Спіруліна таблетована Здорово! 500 г (0.5 кг) (4820246911030)" [ref=e452] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/zdorovo-4820246911030/p454972427/
+                  - img "Спіруліна таблетована Здорово! 500 г (0.5 кг) (4820246911030)" [ref=e453]
+                - link "Спіруліна таблетована Здорово! 500 г (0.5 кг) (4820246911030)" [ref=e454] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/zdorovo-4820246911030/p454972427/
+                - generic [ref=e455]:
+                  - generic [ref=e456]:
+                    - generic [ref=e457]: 549₴
+                    - generic [ref=e458]: 519₴
+                  - button "Купити" [ref=e460] [cursor=pointer]:
+                    - img [ref=e461]
+                - generic [ref=e463]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e464] [cursor=pointer]:
+                    - img [ref=e465]
+              - article [ref=e468]:
+                - button "Перемістити в список бажань" [ref=e471] [cursor=pointer]:
+                  - img [ref=e472]
+                - link "3D пазл UFT монумент Батьківщина-Україна-Мати AR 71 елемент (Motherland)" [ref=e474] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/uft-motherland/p423418158/
+                  - img "3D пазл UFT монумент Батьківщина-Україна-Мати AR 71 елемент (Motherland)" [ref=e475]
+                - link "3D пазл UFT монумент Батьківщина-Україна-Мати AR 71 елемент (Motherland)" [ref=e476] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/uft-motherland/p423418158/
+                - generic [ref=e477]:
+                  - generic [ref=e478]:
+                    - generic [ref=e479]:
+                      - generic [ref=e480]: 693₴
+                      - generic [ref=e481]: 2 329₴
+                    - button "658₴" [ref=e482] [cursor=pointer]:
+                      - generic [ref=e483]: 658₴
+                      - img [ref=e484]
+                  - button "Купити" [ref=e486] [cursor=pointer]:
+                    - img [ref=e487]
+                - generic [ref=e489]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e490] [cursor=pointer]:
+                    - img [ref=e491]
+              - article [ref=e494]:
+                - button "Перемістити в список бажань" [ref=e497] [cursor=pointer]:
+                  - img [ref=e498]
+                - link "Упаковка молочного шоколаду Roshen Nut Out з цілим фундуком 90 г х 5 шт (4823077643392)" [ref=e500] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/roshen-4823077643392/p427964075/
+                  - img "Упаковка молочного шоколаду Roshen Nut Out з цілим фундуком 90 г х 5 шт (4823077643392)" [ref=e501]
+                - link "Упаковка молочного шоколаду Roshen Nut Out з цілим фундуком 90 г х 5 шт (4823077643392)" [ref=e502] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/roshen-4823077643392/p427964075/
+                - generic [ref=e503]:
+                  - generic [ref=e504]:
+                    - generic [ref=e505]:
+                      - generic [ref=e506]: 324₴
+                      - generic [ref=e507]: 497₴
+                    - button "314₴" [ref=e508] [cursor=pointer]:
+                      - generic [ref=e509]: 314₴
+                      - img [ref=e510]
+                  - button "Купити" [ref=e512] [cursor=pointer]:
+                    - img [ref=e513]
+                - generic [ref=e515]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e516] [cursor=pointer]:
+                    - img [ref=e517]
+              - article [ref=e520]:
+                - button "Перемістити в список бажань" [ref=e523] [cursor=pointer]:
+                  - img [ref=e524]
+                - link "Термозахист для фарбованого волосся Phytorelax Keratin Color 200 мл (8030976025273)" [ref=e526] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/phytorelax-laboratories-8030976025273/p332167630/
+                  - img "Термозахист для фарбованого волосся Phytorelax Keratin Color 200 мл (8030976025273)" [ref=e527]
+                - link "Термозахист для фарбованого волосся Phytorelax Keratin Color 200 мл (8030976025273)" [ref=e528] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/phytorelax-laboratories-8030976025273/p332167630/
+                - generic [ref=e529]:
+                  - generic [ref=e530]:
+                    - generic [ref=e531]: 698₴
+                    - generic [ref=e532]: 479₴
+                  - button "Купити" [ref=e534] [cursor=pointer]:
+                    - img [ref=e535]
+                - generic [ref=e537]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e538] [cursor=pointer]:
+                    - img [ref=e539]
+              - article [ref=e542]:
+                - button "Перемістити в список бажань" [ref=e545] [cursor=pointer]:
+                  - img [ref=e546]
+                - link "Ключ для консервації Продмаш автомат МЗА-П Люкс з підшипником Машинка закаточна Ключ для закатування банок Машинка для консервації" [ref=e548] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/385486683/p385486683/#primacyToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODQ0NjE0MDQsInBheWxvYWQiOiJ7XCJwZ1wiOjU3NDg1MzU2LFwiY1wiOjE3NTIwMSxcImN0XCI6MSxcImNwY1wiOjIuNDEzOTk5OTI3MDQzOTE0NSxcInNjXCI6OCxcInBsXCI6MyxcImNpZFwiOjQ2NzQ2OTYsXCJwXCI6MTcsXCJnXCI6M30ifQ.JwS6SCTN_nOEfuCI0mOPyHJTOtDCuR7bFX2EBPqoKYQ;primacySource=main
+                  - img "Ключ для консервації Продмаш автомат МЗА-П Люкс з підшипником Машинка закаточна Ключ для закатування банок Машинка для консервації" [ref=e549]
+                - link "Ключ для консервації Продмаш автомат МЗА-П Люкс з підшипником Машинка закаточна Ключ для закатування банок Машинка для консервації" [ref=e550] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/385486683/p385486683/#primacyToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODQ0NjE0MDQsInBheWxvYWQiOiJ7XCJwZ1wiOjU3NDg1MzU2LFwiY1wiOjE3NTIwMSxcImN0XCI6MSxcImNwY1wiOjIuNDEzOTk5OTI3MDQzOTE0NSxcInNjXCI6OCxcInBsXCI6MyxcImNpZFwiOjQ2NzQ2OTYsXCJwXCI6MTcsXCJnXCI6M30ifQ.JwS6SCTN_nOEfuCI0mOPyHJTOtDCuR7bFX2EBPqoKYQ;primacySource=main
+                - generic [ref=e551]:
+                  - generic [ref=e552]:
+                    - generic [ref=e553]: 650₴
+                    - generic [ref=e554]: 549₴
+                  - button "Купити" [ref=e556] [cursor=pointer]:
+                    - img [ref=e557]
+                - generic [ref=e559]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e560] [cursor=pointer]:
+                    - img [ref=e561]
+                - generic [ref=e563]:
+                  - text: Реклама
+                  - button [ref=e564] [cursor=pointer]:
+                    - img [ref=e566]
+              - article [ref=e569]:
+                - button "Перемістити в список бажань" [ref=e572] [cursor=pointer]:
+                  - img [ref=e573]
+                - link "Тонкий матрац-топер Delight Softline 120х190 см (Topper_Softline_120x190)" [ref=e575] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/futony-i-toppery-de-light-153152316/p551925447/
+                  - img "Тонкий матрац-топер Delight Softline 120х190 см (Topper_Softline_120x190)" [ref=e576]
+                - link "Тонкий матрац-топер Delight Softline 120х190 см (Topper_Softline_120x190)" [ref=e577] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/futony-i-toppery-de-light-153152316/p551925447/
+                - generic [ref=e578]:
+                  - generic [ref=e579]:
+                    - generic [ref=e580]: 4 381₴
+                    - generic [ref=e581]: 3 075₴
+                  - button "Купити" [ref=e583] [cursor=pointer]:
+                    - img [ref=e584]
+              - article [ref=e587]:
+                - button "Перемістити в список бажань" [ref=e590] [cursor=pointer]:
+                  - img [ref=e591]
+                - link "Одноразові станки для гоління (Бритви) жіночі Simply Venus 3 12 шт. (7702018070732)" [ref=e593] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/venus_7702018070732/p290219503/
+                  - img "Одноразові станки для гоління (Бритви) жіночі Simply Venus 3 12 шт. (7702018070732)" [ref=e594]
+                - link "Одноразові станки для гоління (Бритви) жіночі Simply Venus 3 12 шт. (7702018070732)" [ref=e595] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/venus_7702018070732/p290219503/
+                - generic [ref=e596]:
+                  - generic [ref=e597]:
+                    - generic [ref=e598]: 471₴
+                    - generic [ref=e599]: 349₴
+                  - button "Купити" [ref=e601] [cursor=pointer]:
+                    - img [ref=e602]
+                - generic [ref=e604]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e605] [cursor=pointer]:
+                    - img [ref=e606]
+              - article [ref=e609]:
+                - button "Перемістити в список бажань" [ref=e612] [cursor=pointer]:
+                  - img [ref=e613]
+                - link "Автомобільний акумулятор ISTA Standard Plus 60Аh 580А L+ (5604502250)" [ref=e615] [cursor=pointer]:
+                  - /url: https://auto.rozetka.com.ua/ua/ista_560_04_02/p64971081/
+                  - img "Автомобільний акумулятор ISTA Standard Plus 60Аh 580А L+ (5604502250)" [ref=e616]
+                - link "Автомобільний акумулятор ISTA Standard Plus 60Аh 580А L+ (5604502250)" [ref=e617] [cursor=pointer]:
+                  - /url: https://auto.rozetka.com.ua/ua/ista_560_04_02/p64971081/
+                - generic [ref=e618]:
+                  - generic [ref=e619]:
+                    - generic [ref=e621]: 2 497₴
+                    - button "2 372₴" [ref=e622] [cursor=pointer]:
+                      - generic [ref=e623]: 2 372₴
+                      - img [ref=e624]
+                  - button "Купити" [ref=e626] [cursor=pointer]:
+                    - img [ref=e627]
+                - generic [ref=e629]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e630] [cursor=pointer]:
+                    - img [ref=e631]
+              - article [ref=e634]:
+                - button "Перемістити в список бажань" [ref=e637] [cursor=pointer]:
+                  - img [ref=e638]
+                - link "Ароматизатор автомобільний літак-винищувач на сонячній батареї в подарунковій упаковці (Silver)" [ref=e640] [cursor=pointer]:
+                  - /url: https://auto.rozetka.com.ua/ua/397499085/p397499085/
+                  - img "Ароматизатор автомобільний літак-винищувач на сонячній батареї в подарунковій упаковці (Silver)" [ref=e641]
+                - link "Ароматизатор автомобільний літак-винищувач на сонячній батареї в подарунковій упаковці (Silver)" [ref=e642] [cursor=pointer]:
+                  - /url: https://auto.rozetka.com.ua/ua/397499085/p397499085/
+                - generic [ref=e643]:
+                  - generic [ref=e644]:
+                    - generic [ref=e645]: 640₴
+                    - generic [ref=e646]: 449₴
+                  - button "Купити" [ref=e648] [cursor=pointer]:
+                    - img [ref=e649]
+                - generic [ref=e651]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e652] [cursor=pointer]:
+                    - img [ref=e653]
+              - article [ref=e656]:
+                - button "Перемістити в список бажань" [ref=e659] [cursor=pointer]:
+                  - img [ref=e660]
+                - link "Портативний душ MaxFlow M67pro з насосом на акумуляторі 6000 mA Переносний душ похідний акумуляторний для кемпінгу дачі захист IPX8 продуктивність 6-9 л/хв" [ref=e662] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/528044994/p528044994/#primacyToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODQ0NjE0MDQsInBheWxvYWQiOiJ7XCJwZ1wiOjQ4MDI0MTE4LFwiY1wiOjExNzg2MixcImN0XCI6MSxcImNwY1wiOjEuOTQ2NDk5OTY3NTc1MDczMixcInNjXCI6OCxcInBsXCI6MyxcImNpZFwiOjQ2MjU5MTMsXCJwXCI6MjIsXCJnXCI6M30ifQ.gr6M_uOcMxG5s81RflGjA4aLFCWKjC79N5rr_MPvELc;primacySource=main
+                  - img "Портативний душ MaxFlow M67pro з насосом на акумуляторі 6000 mA Переносний душ похідний акумуляторний для кемпінгу дачі захист IPX8 продуктивність 6-9 л/хв" [ref=e663]
+                - link "Портативний душ MaxFlow M67pro з насосом на акумуляторі 6000 mA Переносний душ похідний акумуляторний для кемпінгу дачі захист IPX8 продуктивність 6-9 л/хв" [ref=e664] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/528044994/p528044994/#primacyToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODQ0NjE0MDQsInBheWxvYWQiOiJ7XCJwZ1wiOjQ4MDI0MTE4LFwiY1wiOjExNzg2MixcImN0XCI6MSxcImNwY1wiOjEuOTQ2NDk5OTY3NTc1MDczMixcInNjXCI6OCxcInBsXCI6MyxcImNpZFwiOjQ2MjU5MTMsXCJwXCI6MjIsXCJnXCI6M30ifQ.gr6M_uOcMxG5s81RflGjA4aLFCWKjC79N5rr_MPvELc;primacySource=main
+                - generic [ref=e665]:
+                  - generic [ref=e666]:
+                    - generic [ref=e667]: 2 795₴
+                    - generic [ref=e668]: 1 395₴
+                  - button "Купити" [ref=e670] [cursor=pointer]:
+                    - img [ref=e671]
+                - generic [ref=e673]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e674] [cursor=pointer]:
+                    - img [ref=e675]
+                - generic [ref=e677]:
+                  - text: Реклама
+                  - button [ref=e678] [cursor=pointer]:
+                    - img [ref=e680]
+              - article [ref=e683]:
+                - button "Перемістити в список бажань" [ref=e686] [cursor=pointer]:
+                  - img [ref=e687]
+                - link "Мультипіч NINJA Foodi Max Pro AF180EUWH" [ref=e689] [cursor=pointer]:
+                  - /url: https://bt.rozetka.com.ua/ua/ninja-af180euwh/p466919144/
+                  - img "Мультипіч NINJA Foodi Max Pro AF180EUWH" [ref=e690]
+                - link "Мультипіч NINJA Foodi Max Pro AF180EUWH" [ref=e691] [cursor=pointer]:
+                  - /url: https://bt.rozetka.com.ua/ua/ninja-af180euwh/p466919144/
+                - generic [ref=e692]:
+                  - generic [ref=e693]:
+                    - generic [ref=e694]: 12 999₴
+                    - generic [ref=e695]: 6 999₴
+                  - button "Купити" [ref=e697] [cursor=pointer]:
+                    - img [ref=e698]
+                - generic [ref=e700]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e701] [cursor=pointer]:
+                    - img [ref=e702]
+              - article [ref=e705]:
+                - button "Перемістити в список бажань" [ref=e708] [cursor=pointer]:
+                  - img [ref=e709]
+                - link "Зарядна станція BLUETTI Premium 100 V2" [ref=e711] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/572896267/p572896267/
+                  - img "Зарядна станція BLUETTI Premium 100 V2" [ref=e712]
+                - link "Зарядна станція BLUETTI Premium 100 V2" [ref=e713] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/572896267/p572896267/
+                - generic [ref=e714]:
+                  - generic [ref=e715]:
+                    - generic [ref=e716]: 47 445₴
+                    - generic [ref=e717]: 30 590₴
+                  - button "Купити" [ref=e719] [cursor=pointer]:
+                    - img [ref=e720]
+                - generic [ref=e722]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e723] [cursor=pointer]:
+                    - img [ref=e724]
+              - article [ref=e727]:
+                - button "Перемістити в список бажань" [ref=e730] [cursor=pointer]:
+                  - img [ref=e731]
+                - link "Підлога-пазл плюшевий 120x150см, 20 пазлів, тепла підлога, термокилимок для дому, дитячий мат, колір сірий" [ref=e733] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/464626684/p464626684/
+                  - img "Підлога-пазл плюшевий 120x150см, 20 пазлів, тепла підлога, термокилимок для дому, дитячий мат, колір сірий" [ref=e734]
+                - link "Підлога-пазл плюшевий 120x150см, 20 пазлів, тепла підлога, термокилимок для дому, дитячий мат, колір сірий" [ref=e735] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/464626684/p464626684/
+                - generic [ref=e736]:
+                  - generic [ref=e737]:
+                    - generic [ref=e738]: 1 250₴
+                    - generic [ref=e739]: 990₴
+                  - button "Купити" [ref=e741] [cursor=pointer]:
+                    - img [ref=e742]
+                - generic [ref=e744]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e745] [cursor=pointer]:
+                    - img [ref=e746]
+              - article [ref=e749]:
+                - button "Перемістити в список бажань" [ref=e752] [cursor=pointer]:
+                  - img [ref=e753]
+                - link "Тример садовий Krafftec PRO AZ-144 48V 6Ah акумуляторний безщітковий (жовтий)" [ref=e755] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/599278273/p599278273/
+                  - img "Тример садовий Krafftec PRO AZ-144 48V 6Ah акумуляторний безщітковий (жовтий)" [ref=e756]
+                - link "Тример садовий Krafftec PRO AZ-144 48V 6Ah акумуляторний безщітковий (жовтий)" [ref=e757] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/599278273/p599278273/
+                - generic [ref=e758]:
+                  - generic [ref=e759]:
+                    - generic [ref=e760]: 3 000₴
+                    - generic [ref=e761]: 2 299₴
+                  - button "Купити" [ref=e763] [cursor=pointer]:
+                    - img [ref=e764]
+                - generic [ref=e766]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e767] [cursor=pointer]:
+                    - img [ref=e768]
+              - article [ref=e771]:
+                - button "Перемістити в список бажань" [ref=e774] [cursor=pointer]:
+                  - img [ref=e775]
+                - link "Комплект пакетів для вакууматора 2 шт 20 см і 25 см пакети харчові в рулоні говровані аксесуари для вакуумного пакувальника" [ref=e777] [cursor=pointer]:
+                  - /url: https://bt.rozetka.com.ua/ua/478013539/p478013539/#primacyToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODQ0NjE0MDQsInBheWxvYWQiOiJ7XCJwZ1wiOjU1Mzg4NjkxLFwiY1wiOjE2MzcwNSxcImN0XCI6MSxcImNwY1wiOjMsXCJzY1wiOjgsXCJwbFwiOjMsXCJjaWRcIjo0NjcyODg4LFwicFwiOjI3LFwiZ1wiOjN9In0.IMFRJw1-4RlRG3rTfhg9fUBwkXUOp15DFusoKJn2aCw;primacySource=main
+                  - img "Комплект пакетів для вакууматора 2 шт 20 см і 25 см пакети харчові в рулоні говровані аксесуари для вакуумного пакувальника" [ref=e778]
+                - link "Комплект пакетів для вакууматора 2 шт 20 см і 25 см пакети харчові в рулоні говровані аксесуари для вакуумного пакувальника" [ref=e779] [cursor=pointer]:
+                  - /url: https://bt.rozetka.com.ua/ua/478013539/p478013539/#primacyToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODQ0NjE0MDQsInBheWxvYWQiOiJ7XCJwZ1wiOjU1Mzg4NjkxLFwiY1wiOjE2MzcwNSxcImN0XCI6MSxcImNwY1wiOjMsXCJzY1wiOjgsXCJwbFwiOjMsXCJjaWRcIjo0NjcyODg4LFwicFwiOjI3LFwiZ1wiOjN9In0.IMFRJw1-4RlRG3rTfhg9fUBwkXUOp15DFusoKJn2aCw;primacySource=main
+                - generic [ref=e780]:
+                  - generic [ref=e781]:
+                    - generic [ref=e782]: 599₴
+                    - generic [ref=e783]: 329₴
+                  - button "Купити" [ref=e785] [cursor=pointer]:
+                    - img [ref=e786]
+                - generic [ref=e788]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e789] [cursor=pointer]:
+                    - img [ref=e790]
+                - generic [ref=e792]:
+                  - text: Реклама
+                  - button [ref=e793] [cursor=pointer]:
+                    - img [ref=e795]
+              - article [ref=e798]:
+                - button "Перемістити в список бажань" [ref=e801] [cursor=pointer]:
+                  - img [ref=e802]
+                - link "Безщітковий акумуляторний шурупокрут ТехАС TA-CD32 з АКБ та ЗП" [ref=e804] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/shurupovert-tehas-ta-cd32/g75405643/
+                  - img "Безщітковий акумуляторний шурупокрут ТехАС TA-CD32 з АКБ та ЗП" [ref=e805]
+                - link "Безщітковий акумуляторний шурупокрут ТехАС TA-CD32 з АКБ та ЗП" [ref=e806] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/shurupovert-tehas-ta-cd32/g75405643/
+                - generic [ref=e807]:
+                  - generic [ref=e809]: 1 472₴
+                  - button "Купити" [ref=e811] [cursor=pointer]:
+                    - img [ref=e812]
+                - generic [ref=e814]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e815] [cursor=pointer]:
+                    - img [ref=e816]
+              - article [ref=e819]:
+                - button "Перемістити в список бажань" [ref=e822] [cursor=pointer]:
+                  - img [ref=e823]
+                - link "Пральна машина Indesit IM602B/IM712B/IM642B/IM762B" [ref=e825] [cursor=pointer]:
+                  - /url: https://bt.rozetka.com.ua/ua/indesit-869991735300/p570518800/
+                  - img "Пральна машина Indesit IM602B/IM712B/IM642B/IM762B" [ref=e826]
+                - link "Пральна машина Indesit IM602B/IM712B/IM642B/IM762B" [ref=e827] [cursor=pointer]:
+                  - /url: https://bt.rozetka.com.ua/ua/indesit-869991735300/p570518800/
+                - generic [ref=e828]:
+                  - generic [ref=e829]:
+                    - generic [ref=e830]: 14 899₴
+                    - generic [ref=e831]: 13 599₴
+                  - button "Купити" [ref=e833] [cursor=pointer]:
+                    - img [ref=e834]
+              - article [ref=e837]:
+                - button "Перемістити в список бажань" [ref=e840] [cursor=pointer]:
+                  - img [ref=e841]
+                - link "Чай листовий Ahmad Tea Граф Грей 200 г (54881001410)" [ref=e843] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/ahmad_tea_054881001410/p7895877/
+                  - img "Чай листовий Ahmad Tea Граф Грей 200 г (54881001410)" [ref=e844]
+                - link "Чай листовий Ahmad Tea Граф Грей 200 г (54881001410)" [ref=e845] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/ahmad_tea_054881001410/p7895877/
+                - generic [ref=e846]:
+                  - generic [ref=e847]:
+                    - generic [ref=e848]: 279₴
+                    - generic [ref=e849]: 239₴
+                  - button "Купити" [ref=e851] [cursor=pointer]:
+                    - img [ref=e852]
+                - generic [ref=e854]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e855] [cursor=pointer]:
+                    - img [ref=e856]
+              - article [ref=e859]:
+                - button "Перемістити в список бажань" [ref=e862] [cursor=pointer]:
+                  - img [ref=e863]
+                - link "Бігова доріжка Xiaomi KingSmith WalkingPad Z1F" [ref=e865] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/kingsmith-z1f/p486258664/
+                  - img "Бігова доріжка Xiaomi KingSmith WalkingPad Z1F" [ref=e866]
+                - link "Бігова доріжка Xiaomi KingSmith WalkingPad Z1F" [ref=e867] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/kingsmith-z1f/p486258664/
+                - generic [ref=e868]:
+                  - generic [ref=e869]:
+                    - generic [ref=e870]:
+                      - generic [ref=e871]: 16 499₴
+                      - generic [ref=e872]: 18 999₴
+                    - button "16 004₴" [ref=e873] [cursor=pointer]:
+                      - generic [ref=e874]: 16 004₴
+                      - img [ref=e875]
+                  - button "Купити" [ref=e877] [cursor=pointer]:
+                    - img [ref=e878]
+              - article [ref=e881]:
+                - button "Перемістити в список бажань" [ref=e884] [cursor=pointer]:
+                  - img [ref=e885]
+                - link "Крапельний тестер для басейну WTL для перевірки рівня ph та Cl" [ref=e887] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/347615052/p347615052/#primacyToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODQ0NjE0MDQsInBheWxvYWQiOiJ7XCJwZ1wiOjMzMjIwMDQyLFwiY1wiOjU5NDkwLFwiY3RcIjoxLFwiY3BjXCI6My43NSxcInNjXCI6OCxcInBsXCI6MyxcImNpZFwiOjQ2NTg4OTksXCJwXCI6MzIsXCJnXCI6M30ifQ.RfzXL_TPyifOaRC07hjtJ4bb47CFwTxePXvtIW9Vhbc;primacySource=main
+                  - img "Крапельний тестер для басейну WTL для перевірки рівня ph та Cl" [ref=e888]
+                - link "Крапельний тестер для басейну WTL для перевірки рівня ph та Cl" [ref=e889] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/347615052/p347615052/#primacyToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODQ0NjE0MDQsInBheWxvYWQiOiJ7XCJwZ1wiOjMzMjIwMDQyLFwiY1wiOjU5NDkwLFwiY3RcIjoxLFwiY3BjXCI6My43NSxcInNjXCI6OCxcInBsXCI6MyxcImNpZFwiOjQ2NTg4OTksXCJwXCI6MzIsXCJnXCI6M30ifQ.RfzXL_TPyifOaRC07hjtJ4bb47CFwTxePXvtIW9Vhbc;primacySource=main
+                - generic [ref=e890]:
+                  - generic [ref=e891]:
+                    - generic [ref=e892]: 312₴
+                    - generic [ref=e893]: 269₴
+                  - button "Купити" [ref=e895] [cursor=pointer]:
+                    - img [ref=e896]
+                - generic [ref=e898]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e899] [cursor=pointer]:
+                    - img [ref=e900]
+                - generic [ref=e902]:
+                  - text: Реклама
+                  - button [ref=e903] [cursor=pointer]:
+                    - img [ref=e905]
+              - article [ref=e908]:
+                - button "Перемістити в список бажань" [ref=e911] [cursor=pointer]:
+                  - img [ref=e912]
+                - link "Сухий корм для кішок Brit Premium by Nature Cat Adult Salmon з лососем" [ref=e914] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/brit_premium_8595602553136/p335016967/
+                  - img "Сухий корм для кішок Brit Premium by Nature Cat Adult Salmon з лососем" [ref=e915]
+                - link "Сухий корм для кішок Brit Premium by Nature Cat Adult Salmon з лососем" [ref=e916] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/brit_premium_8595602553136/p335016967/
+                - generic [ref=e917]:
+                  - generic [ref=e918]:
+                    - generic [ref=e919]: 539₴
+                    - generic [ref=e920]: 385₴
+                  - button "Купити" [ref=e922] [cursor=pointer]:
+                    - img [ref=e923]
+                - generic [ref=e925]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e926] [cursor=pointer]:
+                    - img [ref=e927]
+              - article [ref=e930]:
+                - button "Перемістити в список бажань" [ref=e933] [cursor=pointer]:
+                  - img [ref=e934]
+                - link "Джин South Bank London Dry Gin 0.7 л 37.5% (5021692111107)" [ref=e936] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/south_bank_5021692111107/p317947303/
+                  - img "Джин South Bank London Dry Gin 0.7 л 37.5% (5021692111107)" [ref=e937]
+                - link "Джин South Bank London Dry Gin 0.7 л 37.5% (5021692111107)" [ref=e938] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/south_bank_5021692111107/p317947303/
+                - generic [ref=e940]:
+                  - generic [ref=e941]: 599₴
+                  - generic [ref=e942]: 299₴
+                - generic [ref=e943]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e944] [cursor=pointer]:
+                    - img [ref=e945]
+              - article [ref=e948]:
+                - button "Перемістити в список бажань" [ref=e951] [cursor=pointer]:
+                  - img [ref=e952]
+                - link "Ігрова приставка BERGER M8 Black" [ref=e954] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/berger-m8-black/p595519345/
+                  - img "Ігрова приставка BERGER M8 Black" [ref=e955]
+                - link "Ігрова приставка BERGER M8 Black" [ref=e956] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/berger-m8-black/p595519345/
+                - generic [ref=e957]:
+                  - generic [ref=e958]:
+                    - generic [ref=e959]:
+                      - generic [ref=e960]: 879₴
+                      - generic [ref=e961]: 1 099₴
+                    - button "791₴" [ref=e962] [cursor=pointer]:
+                      - generic [ref=e963]: 791₴
+                      - img [ref=e964]
+                  - button "Купити" [ref=e966] [cursor=pointer]:
+                    - img [ref=e967]
+                - generic [ref=e969]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e970] [cursor=pointer]:
+                    - img [ref=e971]
+              - article [ref=e974]:
+                - button "Перемістити в список бажань" [ref=e977] [cursor=pointer]:
+                  - img [ref=e978]
+                - link "Пульт для кондиціонерів HITACHI RAR-3U4 [Conditioner] - 88044" [ref=e980] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/342403651/p342403651/
+                  - img "Пульт для кондиціонерів HITACHI RAR-3U4 [Conditioner] - 88044" [ref=e981]
+                - link "Пульт для кондиціонерів HITACHI RAR-3U4 [Conditioner] - 88044" [ref=e982] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/342403651/p342403651/
+                - generic [ref=e983]:
+                  - generic [ref=e985]: 350₴
+                  - button "Купити" [ref=e987] [cursor=pointer]:
+                    - img [ref=e988]
+              - article [ref=e991]:
+                - button "Перемістити в список бажань" [ref=e994] [cursor=pointer]:
+                  - img [ref=e995]
+                - link "Знищувач комах мух комарів мошок пастка електрична ультрафіолетова інсектицидна лампа мухобійка мухоловка антимоскітна лампа для будинку офісу складу ресторану вулиці кухні комплект + ланцюжок для підвіщування АМ529" [ref=e997] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/514990379/p514990379/#primacyToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODQ0NjE0MDQsInBheWxvYWQiOiJ7XCJwZ1wiOjUwNDQxMzQ0LFwiY1wiOjEzNDUyMSxcImN0XCI6MSxcImNwY1wiOjEuNTY3NDk5OTM1NjI2OTgzNixcInNjXCI6OCxcInBsXCI6MyxcImNpZFwiOjEwODY3MDQsXCJwXCI6MzcsXCJnXCI6M30ifQ.2RFSf-DrE623Q-xsIsuUP6OEpLn0B_zXw2fH_MIabSU;primacySource=main
+                  - img "Знищувач комах мух комарів мошок пастка електрична ультрафіолетова інсектицидна лампа мухобійка мухоловка антимоскітна лампа для будинку офісу складу ресторану вулиці кухні комплект + ланцюжок для підвіщування АМ529" [ref=e998]
+                - link "Знищувач комах мух комарів мошок пастка електрична ультрафіолетова інсектицидна лампа мухобійка мухоловка антимоскітна лампа для будинку офісу складу ресторану вулиці кухні комплект + ланцюжок для підвіщування АМ529" [ref=e999] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/514990379/p514990379/#primacyToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODQ0NjE0MDQsInBheWxvYWQiOiJ7XCJwZ1wiOjUwNDQxMzQ0LFwiY1wiOjEzNDUyMSxcImN0XCI6MSxcImNwY1wiOjEuNTY3NDk5OTM1NjI2OTgzNixcInNjXCI6OCxcInBsXCI6MyxcImNpZFwiOjEwODY3MDQsXCJwXCI6MzcsXCJnXCI6M30ifQ.2RFSf-DrE623Q-xsIsuUP6OEpLn0B_zXw2fH_MIabSU;primacySource=main
+                - generic [ref=e1000]:
+                  - generic [ref=e1001]:
+                    - generic [ref=e1002]: 1 597₴
+                    - generic [ref=e1003]: 1 393₴
+                  - button "Купити" [ref=e1005] [cursor=pointer]:
+                    - img [ref=e1006]
+                - generic [ref=e1008]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e1009] [cursor=pointer]:
+                    - img [ref=e1010]
+                - generic [ref=e1012]:
+                  - text: Реклама
+                  - button [ref=e1013] [cursor=pointer]:
+                    - img [ref=e1015]
+              - article [ref=e1018]:
+                - button "Перемістити в список бажань" [ref=e1021] [cursor=pointer]:
+                  - img [ref=e1022]
+                - link "Посудомийна машина BEKO BDIS38040A" [ref=e1024] [cursor=pointer]:
+                  - /url: https://bt.rozetka.com.ua/ua/beko-7641103935/p373489143/
+                  - img "Посудомийна машина BEKO BDIS38040A" [ref=e1025]
+                - link "Посудомийна машина BEKO BDIS38040A" [ref=e1026] [cursor=pointer]:
+                  - /url: https://bt.rozetka.com.ua/ua/beko-7641103935/p373489143/
+                - generic [ref=e1027]:
+                  - generic [ref=e1028]:
+                    - generic [ref=e1029]: 19 399₴
+                    - generic [ref=e1030]: 16 999₴
+                  - button "Купити" [ref=e1032] [cursor=pointer]:
+                    - img [ref=e1033]
+              - article [ref=e1036]:
+                - button "Перемістити в список бажань" [ref=e1039] [cursor=pointer]:
+                  - img [ref=e1040]
+                - link "Сумка для інструментів Metabo 460 x 260 x 280 мм (657006000)" [ref=e1042] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/metabo_657006000/p13019545/
+                  - img "Сумка для інструментів Metabo 460 x 260 x 280 мм (657006000)" [ref=e1043]
+                - link "Сумка для інструментів Metabo 460 x 260 x 280 мм (657006000)" [ref=e1044] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/metabo_657006000/p13019545/
+                - generic [ref=e1045]:
+                  - generic [ref=e1046]:
+                    - generic [ref=e1047]: 1 165₴
+                    - generic [ref=e1048]: 1 121₴
+                  - button "Купити" [ref=e1050] [cursor=pointer]:
+                    - img [ref=e1051]
+                - generic [ref=e1053]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e1054] [cursor=pointer]:
+                    - img [ref=e1055]
+              - article [ref=e1058]:
+                - button "Перемістити в список бажань" [ref=e1061] [cursor=pointer]:
+                  - img [ref=e1062]
+                - link "Карниз Quadrum Заглушка 300 см подвійний Сатин 25/19 мм гладка (кільця з гачками)" [ref=e1064] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/264768401/p264768401/
+                  - img "Карниз Quadrum Заглушка 300 см подвійний Сатин 25/19 мм гладка (кільця з гачками)" [ref=e1065]
+                - link "Карниз Quadrum Заглушка 300 см подвійний Сатин 25/19 мм гладка (кільця з гачками)" [ref=e1066] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/264768401/p264768401/
+                - generic [ref=e1067]:
+                  - generic [ref=e1068]:
+                    - generic [ref=e1069]: 1 454₴
+                    - generic [ref=e1070]: 1 347₴
+                  - button "Купити" [ref=e1072] [cursor=pointer]:
+                    - img [ref=e1073]
+              - article [ref=e1076]:
+                - button "Перемістити в список бажань" [ref=e1079] [cursor=pointer]:
+                  - img [ref=e1080]
+                - link "Рюкзак шкільний Extreme Brave TS-48 Yes (559924)" [ref=e1082] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/506212729/p506212729/
+                  - img "Рюкзак шкільний Extreme Brave TS-48 Yes (559924)" [ref=e1083]
+                - link "Рюкзак шкільний Extreme Brave TS-48 Yes (559924)" [ref=e1084] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/506212729/p506212729/
+                - generic [ref=e1085]:
+                  - generic [ref=e1086]:
+                    - generic [ref=e1087]: 3 135₴
+                    - generic [ref=e1088]: 1 649₴
+                  - button "Купити" [ref=e1090] [cursor=pointer]:
+                    - img [ref=e1091]
+                - generic [ref=e1093]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e1094] [cursor=pointer]:
+                    - img [ref=e1095]
+              - article [ref=e1098]:
+                - button "Перемістити в список бажань" [ref=e1101] [cursor=pointer]:
+                  - img [ref=e1102]
+                - link "Сіль кам'яна Артемсіль українська харчова 10кг кухонна для консервації огірків помідорів поваренная соль харчова закруток кухонна для їжі приготування кухні мішок солі Артем соль натуральна засолювання на зиму без домішок антизлежувача без йоду" [ref=e1104] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/sol-bez-brenda-153257217/p552581958/#primacyToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODQ0NjE0MDQsInBheWxvYWQiOiJ7XCJwZ1wiOjUzNDY1MjUyLFwiY1wiOjE1MTc4NixcImN0XCI6MSxcImNwY1wiOjEuMzU4NDk5OTQ0MjEwMDUyMyxcInNjXCI6OCxcInBsXCI6MyxcImNpZFwiOjQ2NDkyOTgsXCJwXCI6NDIsXCJnXCI6M30ifQ.Y_PjBdo9QxSih4x2eUXhrShtTBNQ-AZHzdMLQczDdsI;primacySource=main
+                  - img "Сіль кам'яна Артемсіль українська харчова 10кг кухонна для консервації огірків помідорів поваренная соль харчова закруток кухонна для їжі приготування кухні мішок солі Артем соль натуральна засолювання на зиму без домішок антизлежувача без йоду" [ref=e1105]
+                - link "Сіль кам'яна Артемсіль українська харчова 10кг кухонна для консервації огірків помідорів поваренная соль харчова закруток кухонна для їжі приготування кухні мішок солі Артем соль натуральна засолювання на зиму без домішок антизлежувача без йоду" [ref=e1106] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/sol-bez-brenda-153257217/p552581958/#primacyToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODQ0NjE0MDQsInBheWxvYWQiOiJ7XCJwZ1wiOjUzNDY1MjUyLFwiY1wiOjE1MTc4NixcImN0XCI6MSxcImNwY1wiOjEuMzU4NDk5OTQ0MjEwMDUyMyxcInNjXCI6OCxcInBsXCI6MyxcImNpZFwiOjQ2NDkyOTgsXCJwXCI6NDIsXCJnXCI6M30ifQ.Y_PjBdo9QxSih4x2eUXhrShtTBNQ-AZHzdMLQczDdsI;primacySource=main
+                - generic [ref=e1107]:
+                  - generic [ref=e1108]:
+                    - generic [ref=e1109]: 1 000₴
+                    - generic [ref=e1110]: 499₴
+                  - button "Купити" [ref=e1112] [cursor=pointer]:
+                    - img [ref=e1113]
+                - generic [ref=e1115]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e1116] [cursor=pointer]:
+                    - img [ref=e1117]
+                - generic [ref=e1119]:
+                  - text: Реклама
+                  - button [ref=e1120] [cursor=pointer]:
+                    - img [ref=e1122]
+              - article [ref=e1125]:
+                - button "Перемістити в список бажань" [ref=e1128] [cursor=pointer]:
+                  - img [ref=e1129]
+                - link "Трусики в ручик сліпи бавовняні набір 5 шт. 89011-M" [ref=e1131] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/343383400/p343383400/
+                  - img "Трусики в ручик сліпи бавовняні набір 5 шт. 89011-M" [ref=e1132]
+                - link "Трусики в ручик сліпи бавовняні набір 5 шт. 89011-M" [ref=e1133] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/343383400/p343383400/
+                - generic [ref=e1134]:
+                  - generic [ref=e1135]:
+                    - generic [ref=e1136]: 600₴
+                    - generic [ref=e1137]: 529₴
+                  - button "Купити" [ref=e1139] [cursor=pointer]:
+                    - img [ref=e1140]
+                - generic [ref=e1142]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e1143] [cursor=pointer]:
+                    - img [ref=e1144]
+              - article [ref=e1147]:
+                - button "Перемістити в список бажань" [ref=e1150] [cursor=pointer]:
+                  - img [ref=e1151]
+                - link "Миючий акумуляторний пилосос Rowenta X-Clean 5 Pro GZ5436E0" [ref=e1153] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/rowenta-gz5436e0/p588451612/
+                  - img "Миючий акумуляторний пилосос Rowenta X-Clean 5 Pro GZ5436E0" [ref=e1154]
+                - link "Миючий акумуляторний пилосос Rowenta X-Clean 5 Pro GZ5436E0" [ref=e1155] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/rowenta-gz5436e0/p588451612/
+                - generic [ref=e1156]:
+                  - generic [ref=e1157]:
+                    - generic [ref=e1158]: 20 999₴
+                    - generic [ref=e1159]: 13 999₴
+                  - button "Купити" [ref=e1161] [cursor=pointer]:
+                    - img [ref=e1162]
+                - generic [ref=e1164]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e1165] [cursor=pointer]:
+                    - img [ref=e1166]
+              - article [ref=e1169]:
+                - button "Перемістити в список бажань" [ref=e1172] [cursor=pointer]:
+                  - img [ref=e1173]
+                - link "Подовжені щипці для грилю барбекю MADORU із зручною ручкою з нержавіючої сталі для мангалу будинку, ресторану, кемпінгу, риболовлі, пікніка" [ref=e1175] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/410265645/p410265645/
+                  - img "Подовжені щипці для грилю барбекю MADORU із зручною ручкою з нержавіючої сталі для мангалу будинку, ресторану, кемпінгу, риболовлі, пікніка" [ref=e1176]
+                - link "Подовжені щипці для грилю барбекю MADORU із зручною ручкою з нержавіючої сталі для мангалу будинку, ресторану, кемпінгу, риболовлі, пікніка" [ref=e1177] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/410265645/p410265645/
+                - generic [ref=e1178]:
+                  - generic [ref=e1179]:
+                    - generic [ref=e1180]: 500₴
+                    - generic [ref=e1181]: 295₴
+                  - button "Купити" [ref=e1183] [cursor=pointer]:
+                    - img [ref=e1184]
+                - generic [ref=e1186]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e1187] [cursor=pointer]:
+                    - img [ref=e1188]
+              - article [ref=e1191]:
+                - button "Перемістити в список бажань" [ref=e1194] [cursor=pointer]:
+                  - img [ref=e1195]
+                - link "Лампочка з акумулятором світлодіодна світильник аварійний автономний MLT White 2 акумулятора 18650, патрон E27" [ref=e1197] [cursor=pointer]:
+                  - /url: https://build.rozetka.com.ua/ua/svetodiodnie-lampi-led-uft-156534299/p561055710/
+                  - img "Лампочка з акумулятором світлодіодна світильник аварійний автономний MLT White 2 акумулятора 18650, патрон E27" [ref=e1198]
+                - link "Лампочка з акумулятором світлодіодна світильник аварійний автономний MLT White 2 акумулятора 18650, патрон E27" [ref=e1199] [cursor=pointer]:
+                  - /url: https://build.rozetka.com.ua/ua/svetodiodnie-lampi-led-uft-156534299/p561055710/
+                - generic [ref=e1200]:
+                  - generic [ref=e1201]:
+                    - generic [ref=e1202]: 433₴
+                    - generic [ref=e1203]: 289₴
+                  - button "Купити" [ref=e1205] [cursor=pointer]:
+                    - img [ref=e1206]
+                - generic [ref=e1208]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e1209] [cursor=pointer]:
+                    - img [ref=e1210]
+              - article [ref=e1213]:
+                - button "Перемістити в список бажань" [ref=e1216] [cursor=pointer]:
+                  - img [ref=e1217]
+                - link "Душ портативний акумуляторний переносний туристичний" [ref=e1219] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/570532192/p570532192/#primacyToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODQ0NjE0MDQsInBheWxvYWQiOiJ7XCJwZ1wiOjU2MDI0ODQzLFwiY1wiOjE2NzEzNSxcImN0XCI6MSxcImNwY1wiOjIuNTk5OTk5OTk5OTk5OTk5NixcInNjXCI6OCxcInBsXCI6MyxcImNpZFwiOjQ2MjU5MTMsXCJwXCI6NDcsXCJnXCI6M30ifQ.rcAp1MTZmpGE91zJSUPCsjWbUzpMc7Bk4BGaVbieRE4;primacySource=main
+                  - img "Душ портативний акумуляторний переносний туристичний" [ref=e1220]
+                - link "Душ портативний акумуляторний переносний туристичний" [ref=e1221] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/570532192/p570532192/#primacyToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODQ0NjE0MDQsInBheWxvYWQiOiJ7XCJwZ1wiOjU2MDI0ODQzLFwiY1wiOjE2NzEzNSxcImN0XCI6MSxcImNwY1wiOjIuNTk5OTk5OTk5OTk5OTk5NixcInNjXCI6OCxcInBsXCI6MyxcImNpZFwiOjQ2MjU5MTMsXCJwXCI6NDcsXCJnXCI6M30ifQ.rcAp1MTZmpGE91zJSUPCsjWbUzpMc7Bk4BGaVbieRE4;primacySource=main
+                - generic [ref=e1222]:
+                  - generic [ref=e1223]:
+                    - generic [ref=e1224]: 1 399₴
+                    - generic [ref=e1225]: 669₴
+                  - button "Купити" [ref=e1227] [cursor=pointer]:
+                    - img [ref=e1228]
+                - generic [ref=e1230]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e1231] [cursor=pointer]:
+                    - img [ref=e1232]
+                - generic [ref=e1234]:
+                  - text: Реклама
+                  - button [ref=e1235] [cursor=pointer]:
+                    - img [ref=e1237]
+              - article [ref=e1240]:
+                - button "Перемістити в список бажань" [ref=e1243] [cursor=pointer]:
+                  - img [ref=e1244]
+                - link "Матрац ватяний 80Х190" [ref=e1246] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/404145609/p404145609/
+                  - img "Матрац ватяний 80Х190" [ref=e1247]
+                - link "Матрац ватяний 80Х190" [ref=e1248] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/404145609/p404145609/
+                - generic [ref=e1249]:
+                  - generic [ref=e1251]: 520₴
+                  - button "Купити" [ref=e1253] [cursor=pointer]:
+                    - img [ref=e1254]
+                - generic [ref=e1256]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e1257] [cursor=pointer]:
+                    - img [ref=e1258]
+              - article [ref=e1261]:
+                - button "Перемістити в список бажань" [ref=e1264] [cursor=pointer]:
+                  - img [ref=e1265]
+                - link "Кондиціонер Insight для відновлення пошкодженого волосся 900 мл (8029352353604)" [ref=e1267] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/insight_8029352353604/p343666699/
+                  - img "Кондиціонер Insight для відновлення пошкодженого волосся 900 мл (8029352353604)" [ref=e1268]
+                - link "Кондиціонер Insight для відновлення пошкодженого волосся 900 мл (8029352353604)" [ref=e1269] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/insight_8029352353604/p343666699/
+                - generic [ref=e1270]:
+                  - generic [ref=e1271]:
+                    - generic [ref=e1272]:
+                      - generic [ref=e1273]: 769₴
+                      - generic [ref=e1274]: 1 099₴
+                    - button "715₴" [ref=e1275] [cursor=pointer]:
+                      - generic [ref=e1276]: 715₴
+                      - img [ref=e1277]
+                  - button "Купити" [ref=e1279] [cursor=pointer]:
+                    - img [ref=e1280]
+                - generic [ref=e1282]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e1283] [cursor=pointer]:
+                    - img [ref=e1284]
+              - article [ref=e1287]:
+                - button "Перемістити в список бажань" [ref=e1290] [cursor=pointer]:
+                  - img [ref=e1291]
+                - link "Туалетна вода для чоловіків Denim Musk 100 мл (8008970004105)" [ref=e1293] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/denim-8008970004105/p350180535/
+                  - img "Туалетна вода для чоловіків Denim Musk 100 мл (8008970004105)" [ref=e1294]
+                - link "Туалетна вода для чоловіків Denim Musk 100 мл (8008970004105)" [ref=e1295] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/denim-8008970004105/p350180535/
+                - generic [ref=e1296]:
+                  - generic [ref=e1297]:
+                    - generic [ref=e1298]:
+                      - generic [ref=e1299]: 269₴
+                      - generic [ref=e1300]: 395₴
+                    - button "255₴" [ref=e1301] [cursor=pointer]:
+                      - generic [ref=e1302]: 255₴
+                      - img [ref=e1303]
+                  - button "Купити" [ref=e1305] [cursor=pointer]:
+                    - img [ref=e1306]
+                - generic [ref=e1308]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e1309] [cursor=pointer]:
+                    - img [ref=e1310]
+              - article [ref=e1313]:
+                - button "Перемістити в список бажань" [ref=e1316] [cursor=pointer]:
+                  - img [ref=e1317]
+                - link "Килимок для ванної Aquarius з ефектом пам'яті водопоглинаючий антиковзкий Графіт гладкий" [ref=e1319] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/423011727/p423011727/
+                  - img "Килимок для ванної Aquarius з ефектом пам'яті водопоглинаючий антиковзкий Графіт гладкий" [ref=e1320]
+                - link "Килимок для ванної Aquarius з ефектом пам'яті водопоглинаючий антиковзкий Графіт гладкий" [ref=e1321] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/423011727/p423011727/
+                - generic [ref=e1322]:
+                  - generic [ref=e1323]:
+                    - generic [ref=e1324]: 760₴
+                    - generic [ref=e1325]: 570₴
+                  - button "Купити" [ref=e1327] [cursor=pointer]:
+                    - img [ref=e1328]
+                - generic [ref=e1330]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e1331] [cursor=pointer]:
+                    - img [ref=e1332]
+              - article [ref=e1335]:
+                - button "Перемістити в список бажань" [ref=e1338] [cursor=pointer]:
+                  - img [ref=e1339]
+                - link "Міні-вентилятор з цифровим дисплеєм та підставкою N15 Переносний вентилятор з акумулятором, 5 режимів швидкості" [ref=e1341] [cursor=pointer]:
+                  - /url: https://bt.rozetka.com.ua/ua/586314133/p586314133/#primacyToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODQ0NjE0MDQsInBheWxvYWQiOiJ7XCJwZ1wiOjU3NjEyODY4LFwiY1wiOjE3NjI0NixcImN0XCI6MSxcImNwY1wiOjEuMTY5OTk5OTY5MDA1NTg0NSxcInNjXCI6OCxcInBsXCI6MyxcImNpZFwiOjgwMTg2LFwicFwiOjUyLFwiZ1wiOjN9In0.0pYL6Z6czeng9A2KsxuMs5JTS0aNz7npiu8foGy7bzI;primacySource=main
+                  - img "Міні-вентилятор з цифровим дисплеєм та підставкою N15 Переносний вентилятор з акумулятором, 5 режимів швидкості" [ref=e1342]
+                - link "Міні-вентилятор з цифровим дисплеєм та підставкою N15 Переносний вентилятор з акумулятором, 5 режимів швидкості" [ref=e1343] [cursor=pointer]:
+                  - /url: https://bt.rozetka.com.ua/ua/586314133/p586314133/#primacyToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODQ0NjE0MDQsInBheWxvYWQiOiJ7XCJwZ1wiOjU3NjEyODY4LFwiY1wiOjE3NjI0NixcImN0XCI6MSxcImNwY1wiOjEuMTY5OTk5OTY5MDA1NTg0NSxcInNjXCI6OCxcInBsXCI6MyxcImNpZFwiOjgwMTg2LFwicFwiOjUyLFwiZ1wiOjN9In0.0pYL6Z6czeng9A2KsxuMs5JTS0aNz7npiu8foGy7bzI;primacySource=main
+                - generic [ref=e1344]:
+                  - generic [ref=e1345]:
+                    - generic [ref=e1346]: 550₴
+                    - generic [ref=e1347]: 297₴
+                  - button "Купити" [ref=e1349] [cursor=pointer]:
+                    - img [ref=e1350]
+                - generic [ref=e1352]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e1353] [cursor=pointer]:
+                    - img [ref=e1354]
+                - generic [ref=e1356]:
+                  - text: Реклама
+                  - button [ref=e1357] [cursor=pointer]:
+                    - img [ref=e1359]
+              - article [ref=e1362]:
+                - button "Перемістити в список бажань" [ref=e1365] [cursor=pointer]:
+                  - img [ref=e1366]
+                - link "Туш для вій Maybelline New York Volume Express Colossal Чорна 10.7 мл (30174931)" [ref=e1368] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/maybelline_new_york_30079861/p16936046/
+                  - img "Туш для вій Maybelline New York Volume Express Colossal Чорна 10.7 мл (30174931)" [ref=e1369]
+                - link "Туш для вій Maybelline New York Volume Express Colossal Чорна 10.7 мл (30174931)" [ref=e1370] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/maybelline_new_york_30079861/p16936046/
+                - generic [ref=e1371]:
+                  - generic [ref=e1372]:
+                    - generic [ref=e1373]: 400₴
+                    - generic [ref=e1374]: 269₴
+                  - button "Купити" [ref=e1376] [cursor=pointer]:
+                    - img [ref=e1377]
+                - generic [ref=e1379]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e1380] [cursor=pointer]:
+                    - img [ref=e1381]
+              - article [ref=e1384]:
+                - button "Перемістити в список бажань" [ref=e1387] [cursor=pointer]:
+                  - img [ref=e1388]
+                - link "Boiron Camilia Камілія Засіб для заспокоєння ясен при прорізуванні зубів зняття болю знеболювальне для ясен у дітей 30 доз по 1 мл" [ref=e1390] [cursor=pointer]:
+                  - /url: https://fit.rozetka.com.ua/ua/special_adds-boiron-149529702/p541314040/
+                  - img "Boiron Camilia Камілія Засіб для заспокоєння ясен при прорізуванні зубів зняття болю знеболювальне для ясен у дітей 30 доз по 1 мл" [ref=e1391]
+                - link "Boiron Camilia Камілія Засіб для заспокоєння ясен при прорізуванні зубів зняття болю знеболювальне для ясен у дітей 30 доз по 1 мл" [ref=e1392] [cursor=pointer]:
+                  - /url: https://fit.rozetka.com.ua/ua/special_adds-boiron-149529702/p541314040/
+                - generic [ref=e1393]:
+                  - generic [ref=e1394]:
+                    - generic [ref=e1395]: 820₴
+                    - generic [ref=e1396]: 770₴
+                  - button "Купити" [ref=e1398] [cursor=pointer]:
+                    - img [ref=e1399]
+                - generic [ref=e1401]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e1402] [cursor=pointer]:
+                    - img [ref=e1403]
+              - article [ref=e1406]:
+                - button "Перемістити в список бажань" [ref=e1409] [cursor=pointer]:
+                  - img [ref=e1410]
+                - link "Масажер вакуумний антицелюлітний LPG 10 роликів для тіла, сідниць, ніг, рук, живота" [ref=e1412] [cursor=pointer]:
+                  - /url: https://bt.rozetka.com.ua/ua/564683525/p564683525/
+                  - img "Масажер вакуумний антицелюлітний LPG 10 роликів для тіла, сідниць, ніг, рук, живота" [ref=e1413]
+                - link "Масажер вакуумний антицелюлітний LPG 10 роликів для тіла, сідниць, ніг, рук, живота" [ref=e1414] [cursor=pointer]:
+                  - /url: https://bt.rozetka.com.ua/ua/564683525/p564683525/
+                - generic [ref=e1415]:
+                  - generic [ref=e1416]:
+                    - generic [ref=e1417]: 1 199₴
+                    - generic [ref=e1418]: 899₴
+                  - button "Купити" [ref=e1420] [cursor=pointer]:
+                    - img [ref=e1421]
+              - article [ref=e1424]:
+                - button "Перемістити в список бажань" [ref=e1427] [cursor=pointer]:
+                  - img [ref=e1428]
+                - link "Пудра ензимна для вмивання Soika Enzyme Powder з екстрактом центелли та алоє 60 г (4820258804498)" [ref=e1430] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/soika-4820258804498/p550038684/
+                  - img "Пудра ензимна для вмивання Soika Enzyme Powder з екстрактом центелли та алоє 60 г (4820258804498)" [ref=e1431]
+                - link "Пудра ензимна для вмивання Soika Enzyme Powder з екстрактом центелли та алоє 60 г (4820258804498)" [ref=e1432] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/soika-4820258804498/p550038684/
+                - generic [ref=e1433]:
+                  - generic [ref=e1434]:
+                    - generic [ref=e1436]: 264₴
+                    - button "250₴" [ref=e1437] [cursor=pointer]:
+                      - generic [ref=e1438]: 250₴
+                      - img [ref=e1439]
+                  - button "Купити" [ref=e1441] [cursor=pointer]:
+                    - img [ref=e1442]
+                - generic [ref=e1444]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e1445] [cursor=pointer]:
+                    - img [ref=e1446]
+              - article [ref=e1449]:
+                - button "Перемістити в список бажань" [ref=e1452] [cursor=pointer]:
+                  - img [ref=e1453]
+                - link "Міні кондиціонер Greenberg G-1 настільний маленький портативний зі зволожувачем повітря мобільний для дому офісу кімнати настільні кондиціонери вентилятори в кімнату мінікондиціонер зволожувач з контейнером для льоду охолодчувач від usb з led" [ref=e1455] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/508438624/p508438624/#primacyToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODQ0NjE0MDQsInBheWxvYWQiOiJ7XCJwZ1wiOjU1MjEzNzg1LFwiY1wiOjE2MjQyMSxcImN0XCI6MSxcImNwY1wiOjIuMTk0NTAwMDA1MjQ1MjA4NCxcInNjXCI6OCxcInBsXCI6MyxcImNpZFwiOjQ2NTcxNDYsXCJwXCI6NTcsXCJnXCI6M30ifQ.mjsAUmvPoVuSyv4hOnxB0n51hzs_I0G8t6bpHGfjeeE;primacySource=main
+                  - img "Міні кондиціонер Greenberg G-1 настільний маленький портативний зі зволожувачем повітря мобільний для дому офісу кімнати настільні кондиціонери вентилятори в кімнату мінікондиціонер зволожувач з контейнером для льоду охолодчувач від usb з led" [ref=e1456]
+                - link "Міні кондиціонер Greenberg G-1 настільний маленький портативний зі зволожувачем повітря мобільний для дому офісу кімнати настільні кондиціонери вентилятори в кімнату мінікондиціонер зволожувач з контейнером для льоду охолодчувач від usb з led" [ref=e1457] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/508438624/p508438624/#primacyToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODQ0NjE0MDQsInBheWxvYWQiOiJ7XCJwZ1wiOjU1MjEzNzg1LFwiY1wiOjE2MjQyMSxcImN0XCI6MSxcImNwY1wiOjIuMTk0NTAwMDA1MjQ1MjA4NCxcInNjXCI6OCxcInBsXCI6MyxcImNpZFwiOjQ2NTcxNDYsXCJwXCI6NTcsXCJnXCI6M30ifQ.mjsAUmvPoVuSyv4hOnxB0n51hzs_I0G8t6bpHGfjeeE;primacySource=main
+                - generic [ref=e1458]:
+                  - generic [ref=e1459]:
+                    - generic [ref=e1460]: 700₴
+                    - generic [ref=e1461]: 399₴
+                  - button "Купити" [ref=e1463] [cursor=pointer]:
+                    - img [ref=e1464]
+                - generic [ref=e1466]:
+                  - text: Реклама
+                  - button [ref=e1467] [cursor=pointer]:
+                    - img [ref=e1469]
+              - article [ref=e1472]:
+                - button "Перемістити в список бажань" [ref=e1475] [cursor=pointer]:
+                  - img [ref=e1476]
+                - link "Очисник-кондиціонер для шкіри \"Шкіра Люкс\" Turtle Wax Luxe Leather 500 мл (5010322739453)" [ref=e1478] [cursor=pointer]:
+                  - /url: https://auto.rozetka.com.ua/ua/turtle_wax_5010322754302/p89176911/
+                  - img "Очисник-кондиціонер для шкіри \"Шкіра Люкс\" Turtle Wax Luxe Leather 500 мл (5010322739453)" [ref=e1479]
+                - link "Очисник-кондиціонер для шкіри \"Шкіра Люкс\" Turtle Wax Luxe Leather 500 мл (5010322739453)" [ref=e1480] [cursor=pointer]:
+                  - /url: https://auto.rozetka.com.ua/ua/turtle_wax_5010322754302/p89176911/
+                - generic [ref=e1481]:
+                  - generic [ref=e1482]:
+                    - generic [ref=e1483]: 539₴
+                    - generic [ref=e1484]: 430₴
+                  - button "Купити" [ref=e1486] [cursor=pointer]:
+                    - img [ref=e1487]
+                - generic [ref=e1489]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e1490] [cursor=pointer]:
+                    - img [ref=e1491]
+              - article [ref=e1494]:
+                - button "Перемістити в список бажань" [ref=e1497] [cursor=pointer]:
+                  - img [ref=e1498]
+                - link "Акумуляторний триммер Stromo ATS20 (1 АКб 3 Ач та ЗУ)" [ref=e1500] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/trimmers-stromo-153549995/p553505985/
+                  - img "Акумуляторний триммер Stromo ATS20 (1 АКб 3 Ач та ЗУ)" [ref=e1501]
+                - link "Акумуляторний триммер Stromo ATS20 (1 АКб 3 Ач та ЗУ)" [ref=e1502] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/trimmers-stromo-153549995/p553505985/
+                - generic [ref=e1503]:
+                  - generic [ref=e1504]:
+                    - generic [ref=e1505]: 3 500₴
+                    - generic [ref=e1506]: 1 980₴
+                  - button "Купити" [ref=e1508] [cursor=pointer]:
+                    - img [ref=e1509]
+                - generic [ref=e1511]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e1512] [cursor=pointer]:
+                    - img [ref=e1513]
+              - article [ref=e1516]:
+                - button "Перемістити в список бажань" [ref=e1519] [cursor=pointer]:
+                  - img [ref=e1520]
+                - link "Термос Kamille 1800 мл пластиковий зі скляною колбою KM-2081" [ref=e1522] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/68304981/p68304981/
+                  - img "Термос Kamille 1800 мл пластиковий зі скляною колбою KM-2081" [ref=e1523]
+                - link "Термос Kamille 1800 мл пластиковий зі скляною колбою KM-2081" [ref=e1524] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/68304981/p68304981/
+                - generic [ref=e1525]:
+                  - generic [ref=e1526]:
+                    - generic [ref=e1527]: 833₴
+                    - generic [ref=e1528]: 584₴
+                  - button "Купити" [ref=e1530] [cursor=pointer]:
+                    - img [ref=e1531]
+                - generic [ref=e1533]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e1534] [cursor=pointer]:
+                    - img [ref=e1535]
+              - article [ref=e1538]:
+                - button "Перемістити в список бажань" [ref=e1541] [cursor=pointer]:
+                  - img [ref=e1542]
+                - link "Підставка для телефона Ugreen LP678 Foldable Multi-Angle Phone Stand Grey (15608)" [ref=e1544] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/ugreen-ugr-15608/p409391613/
+                  - img "Підставка для телефона Ugreen LP678 Foldable Multi-Angle Phone Stand Grey (15608)" [ref=e1545]
+                - link "Підставка для телефона Ugreen LP678 Foldable Multi-Angle Phone Stand Grey (15608)" [ref=e1546] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/ugreen-ugr-15608/p409391613/
+                - generic [ref=e1547]:
+                  - generic [ref=e1549]: 599₴
+                  - button "Купити" [ref=e1551] [cursor=pointer]:
+                    - img [ref=e1552]
+                - generic [ref=e1554]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e1555] [cursor=pointer]:
+                    - img [ref=e1556]
+              - article [ref=e1559]:
+                - button "Перемістити в список бажань" [ref=e1562] [cursor=pointer]:
+                  - img [ref=e1563]
+                - link "Тривалий (повільний) хлор 3 в 1 AquaDoctor MC-T 1 кг в великих таблетках з синіми вкрапленнями по 200 г (15972)" [ref=e1565] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/279396828/p279396828/#primacyToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODQ0NjE0MDQsInBheWxvYWQiOiJ7XCJwZ1wiOjMzMjE5OTM2LFwiY1wiOjU5NDkwLFwiY3RcIjoxLFwiY3BjXCI6Mi43NDk5OTk5OTk5OTk5OTk2LFwic2NcIjo4LFwicGxcIjozLFwiY2lkXCI6NDYyNzY5NCxcInBcIjo2MixcImdcIjozfSJ9.9KIM59yCHWkYceyLhjPXg5tZGON32FZrH9CqJ-DK6Gg;primacySource=main
+                  - img "Тривалий (повільний) хлор 3 в 1 AquaDoctor MC-T 1 кг в великих таблетках з синіми вкрапленнями по 200 г (15972)" [ref=e1566]
+                - link "Тривалий (повільний) хлор 3 в 1 AquaDoctor MC-T 1 кг в великих таблетках з синіми вкрапленнями по 200 г (15972)" [ref=e1567] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/279396828/p279396828/#primacyToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODQ0NjE0MDQsInBheWxvYWQiOiJ7XCJwZ1wiOjMzMjE5OTM2LFwiY1wiOjU5NDkwLFwiY3RcIjoxLFwiY3BjXCI6Mi43NDk5OTk5OTk5OTk5OTk2LFwic2NcIjo4LFwicGxcIjozLFwiY2lkXCI6NDYyNzY5NCxcInBcIjo2MixcImdcIjozfSJ9.9KIM59yCHWkYceyLhjPXg5tZGON32FZrH9CqJ-DK6Gg;primacySource=main
+                - generic [ref=e1568]:
+                  - generic [ref=e1570]: 580₴
+                  - button "Купити" [ref=e1572] [cursor=pointer]:
+                    - img [ref=e1573]
+                - generic [ref=e1575]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e1576] [cursor=pointer]:
+                    - img [ref=e1577]
+                - generic [ref=e1579]:
+                  - text: Реклама
+                  - button [ref=e1580] [cursor=pointer]:
+                    - img [ref=e1582]
+              - article [ref=e1585]:
+                - button "Перемістити в список бажань" [ref=e1588] [cursor=pointer]:
+                  - img [ref=e1589]
+                - link "Нічник з годинником на акумуляторі настільний світильник дитячий бездротовий акумуляторний Hausland світлодіодний led ліхтар настільна лампа в спальню для читання з пультом ДК білий (02920001)" [ref=e1591] [cursor=pointer]:
+                  - /url: https://build.rozetka.com.ua/ua/577843687/p577843687/
+                  - img "Нічник з годинником на акумуляторі настільний світильник дитячий бездротовий акумуляторний Hausland світлодіодний led ліхтар настільна лампа в спальню для читання з пультом ДК білий (02920001)" [ref=e1592]
+                - link "Нічник з годинником на акумуляторі настільний світильник дитячий бездротовий акумуляторний Hausland світлодіодний led ліхтар настільна лампа в спальню для читання з пультом ДК білий (02920001)" [ref=e1593] [cursor=pointer]:
+                  - /url: https://build.rozetka.com.ua/ua/577843687/p577843687/
+                - generic [ref=e1594]:
+                  - generic [ref=e1595]:
+                    - generic [ref=e1596]: 640₴
+                    - generic [ref=e1597]: 395₴
+                  - button "Купити" [ref=e1599] [cursor=pointer]:
+                    - img [ref=e1600]
+                - generic [ref=e1602]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e1603] [cursor=pointer]:
+                    - img [ref=e1604]
+              - article [ref=e1607]:
+                - button "Перемістити в список бажань" [ref=e1610] [cursor=pointer]:
+                  - img [ref=e1611]
+                - link "Карта пам'яті microSD 32 GB Class 10 A1 для смартфонів планшетів фотоапаратів відеореєстраторів камер флешка MicroSDHC 32 Гб" [ref=e1613] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/597443314/p597443314/
+                  - img "Карта пам'яті microSD 32 GB Class 10 A1 для смартфонів планшетів фотоапаратів відеореєстраторів камер флешка MicroSDHC 32 Гб" [ref=e1614]
+                - link "Карта пам'яті microSD 32 GB Class 10 A1 для смартфонів планшетів фотоапаратів відеореєстраторів камер флешка MicroSDHC 32 Гб" [ref=e1615] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/597443314/p597443314/
+                - generic [ref=e1616]:
+                  - generic [ref=e1617]:
+                    - generic [ref=e1618]: 699₴
+                    - generic [ref=e1619]: 489₴
+                  - button "Купити" [ref=e1621] [cursor=pointer]:
+                    - img [ref=e1622]
+                - generic [ref=e1624]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e1625] [cursor=pointer]:
+                    - img [ref=e1626]
+              - article [ref=e1629]:
+                - button "Перемістити в список бажань" [ref=e1632] [cursor=pointer]:
+                  - img [ref=e1633]
+                - link "Крісло офісне на колесах Bonro B-627 чорне" [ref=e1635] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/415264878/p415264878/
+                  - img "Крісло офісне на колесах Bonro B-627 чорне" [ref=e1636]
+                - link "Крісло офісне на колесах Bonro B-627 чорне" [ref=e1637] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/415264878/p415264878/
+                - generic [ref=e1638]:
+                  - generic [ref=e1640]: 2 596₴
+                  - button "Купити" [ref=e1642] [cursor=pointer]:
+                    - img [ref=e1643]
+              - article [ref=e1646]:
+                - button "Перемістити в список бажань" [ref=e1649] [cursor=pointer]:
+                  - img [ref=e1650]
+                - link "Акумуляторні ножиці-кущоріз 24V . Електроножиці для трави." [ref=e1652] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/503907034/p503907034/
+                  - img "Акумуляторні ножиці-кущоріз 24V . Електроножиці для трави." [ref=e1653]
+                - link "Акумуляторні ножиці-кущоріз 24V . Електроножиці для трави." [ref=e1654] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/503907034/p503907034/
+                - generic [ref=e1655]:
+                  - generic [ref=e1656]:
+                    - generic [ref=e1657]: 5 106₴
+                    - generic [ref=e1658]: 1 900₴
+                  - button "Купити" [ref=e1660] [cursor=pointer]:
+                    - img [ref=e1661]
+                - generic [ref=e1663]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e1664] [cursor=pointer]:
+                    - img [ref=e1665]
+              - article [ref=e1668]:
+                - button "Перемістити в список бажань" [ref=e1671] [cursor=pointer]:
+                  - img [ref=e1672]
+                - link "Портативний вентилятор на шию гнучкий на акумуляторі переносний нашийний безлопатевий шийний компактний міні портативні вентилятори з акумулятором для шиї" [ref=e1674] [cursor=pointer]:
+                  - /url: https://bt.rozetka.com.ua/ua/442369952/p442369952/#primacyToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODQ0NjE0MDQsInBheWxvYWQiOiJ7XCJwZ1wiOjU2NzU4NjAzLFwiY1wiOjE2NTE0MixcImN0XCI6MSxcImNwY1wiOjEuMTIwMDAwMDA0NzY4MzcxNixcInNjXCI6OCxcInBsXCI6MyxcImNpZFwiOjgwMTg2LFwicFwiOjY3LFwiZ1wiOjN9In0.-adtczA2ac9Z8eWzu7v3yQfX6PAQJRLbIpJRXBgWZr0;primacySource=main
+                  - img "Портативний вентилятор на шию гнучкий на акумуляторі переносний нашийний безлопатевий шийний компактний міні портативні вентилятори з акумулятором для шиї" [ref=e1675]
+                - link "Портативний вентилятор на шию гнучкий на акумуляторі переносний нашийний безлопатевий шийний компактний міні портативні вентилятори з акумулятором для шиї" [ref=e1676] [cursor=pointer]:
+                  - /url: https://bt.rozetka.com.ua/ua/442369952/p442369952/#primacyToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODQ0NjE0MDQsInBheWxvYWQiOiJ7XCJwZ1wiOjU2NzU4NjAzLFwiY1wiOjE2NTE0MixcImN0XCI6MSxcImNwY1wiOjEuMTIwMDAwMDA0NzY4MzcxNixcInNjXCI6OCxcInBsXCI6MyxcImNpZFwiOjgwMTg2LFwicFwiOjY3LFwiZ1wiOjN9In0.-adtczA2ac9Z8eWzu7v3yQfX6PAQJRLbIpJRXBgWZr0;primacySource=main
+                - generic [ref=e1677]:
+                  - generic [ref=e1678]:
+                    - generic [ref=e1679]: 1 677₴
+                    - generic [ref=e1680]: 398₴
+                  - button "Купити" [ref=e1682] [cursor=pointer]:
+                    - img [ref=e1683]
+                - generic [ref=e1685]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e1686] [cursor=pointer]:
+                    - img [ref=e1687]
+                - generic [ref=e1689]:
+                  - text: Реклама
+                  - button [ref=e1690] [cursor=pointer]:
+                    - img [ref=e1692]
+              - article [ref=e1695]:
+                - button "Перемістити в список бажань" [ref=e1698] [cursor=pointer]:
+                  - img [ref=e1699]
+                - link "Електроплита чавунна двоконфорочна VEGAS VEP-0040" [ref=e1701] [cursor=pointer]:
+                  - /url: https://bt.rozetka.com.ua/ua/409585536/p409585536/
+                  - img "Електроплита чавунна двоконфорочна VEGAS VEP-0040" [ref=e1702]
+                - link "Електроплита чавунна двоконфорочна VEGAS VEP-0040" [ref=e1703] [cursor=pointer]:
+                  - /url: https://bt.rozetka.com.ua/ua/409585536/p409585536/
+                - generic [ref=e1704]:
+                  - generic [ref=e1706]: 969₴
+                  - button "Купити" [ref=e1708] [cursor=pointer]:
+                    - img [ref=e1709]
+                - generic [ref=e1711]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e1712] [cursor=pointer]:
+                    - img [ref=e1713]
+              - article [ref=e1716]:
+                - button "Перемістити в список бажань" [ref=e1719] [cursor=pointer]:
+                  - img [ref=e1720]
+                - link "Ковдра Руно Літня Євро 200х220 см Антиалергенне волокно Біле (322.52СЛКУ_Білий)" [ref=e1722] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/runo_4820041939352/p16878860/
+                  - img "Ковдра Руно Літня Євро 200х220 см Антиалергенне волокно Біле (322.52СЛКУ_Білий)" [ref=e1723]
+                - link "Ковдра Руно Літня Євро 200х220 см Антиалергенне волокно Біле (322.52СЛКУ_Білий)" [ref=e1724] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/runo_4820041939352/p16878860/
+                - generic [ref=e1725]:
+                  - generic [ref=e1726]:
+                    - generic [ref=e1727]:
+                      - generic [ref=e1728]: 879₴
+                      - generic [ref=e1729]: 1 177₴
+                    - button "791₴" [ref=e1730] [cursor=pointer]:
+                      - generic [ref=e1731]: 791₴
+                      - img [ref=e1732]
+                  - button "Купити" [ref=e1734] [cursor=pointer]:
+                    - img [ref=e1735]
+                - generic [ref=e1737]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e1738] [cursor=pointer]:
+                    - img [ref=e1739]
+              - article [ref=e1742]:
+                - button "Перемістити в список бажань" [ref=e1745] [cursor=pointer]:
+                  - img [ref=e1746]
+                - link "Дитяче автокрісло бустер для дітей від 4 до 12 років Wasler блакитне" [ref=e1748] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/384124221/p384124221/
+                  - img "Дитяче автокрісло бустер для дітей від 4 до 12 років Wasler блакитне" [ref=e1749]
+                - link "Дитяче автокрісло бустер для дітей від 4 до 12 років Wasler блакитне" [ref=e1750] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/384124221/p384124221/
+                - generic [ref=e1751]:
+                  - generic [ref=e1752]:
+                    - generic [ref=e1753]: 850₴
+                    - generic [ref=e1754]: 600₴
+                  - button "Купити" [ref=e1756] [cursor=pointer]:
+                    - img [ref=e1757]
+                - generic [ref=e1759]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e1760] [cursor=pointer]:
+                    - img [ref=e1761]
+              - article [ref=e1764]:
+                - button "Перемістити в список бажань" [ref=e1767] [cursor=pointer]:
+                  - img [ref=e1768]
+                - link "Фільтр-глечик Brita Marella XL MXpro графіт + 2 картриджі (1051759_П)" [ref=e1770] [cursor=pointer]:
+                  - /url: https://bt.rozetka.com.ua/ua/brita-1051759-p/p598575802/
+                  - img "Фільтр-глечик Brita Marella XL MXpro графіт + 2 картриджі (1051759_П)" [ref=e1771]
+                - link "Фільтр-глечик Brita Marella XL MXpro графіт + 2 картриджі (1051759_П)" [ref=e1772] [cursor=pointer]:
+                  - /url: https://bt.rozetka.com.ua/ua/brita-1051759-p/p598575802/
+                - generic [ref=e1773]:
+                  - generic [ref=e1774]:
+                    - generic [ref=e1775]: 2 399₴
+                    - generic [ref=e1776]: 1 177₴
+                  - button "Купити" [ref=e1778] [cursor=pointer]:
+                    - img [ref=e1779]
+                - generic [ref=e1781]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e1782] [cursor=pointer]:
+                    - img [ref=e1783]
+              - article [ref=e1786]:
+                - button "Перемістити в список бажань" [ref=e1789] [cursor=pointer]:
+                  - img [ref=e1790]
+                - link "Ваги підлогові смарт розумні скляні для дому Scale one Black електронні фітнес Bluetooth з додатком для смартфона 180 кг чорні" [ref=e1792] [cursor=pointer]:
+                  - /url: https://bt.rozetka.com.ua/ua/398670300/p398670300/#primacyToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODQ0NjE0MDQsInBheWxvYWQiOiJ7XCJwZ1wiOjU1MjM5OTYyLFwiY1wiOjE2MjYxNyxcImN0XCI6MSxcImNwY1wiOjEuNzk5OTk5OTk5OTk5OTk5OCxcInNjXCI6OCxcInBsXCI6MyxcImNpZFwiOjgxMjMyLFwicFwiOjcyLFwiZ1wiOjN9In0.Xfl7OL2zwX7sfkaFYsjCHD7FGnrA94d5TcNaLLWsRwY;primacySource=main
+                  - img "Ваги підлогові смарт розумні скляні для дому Scale one Black електронні фітнес Bluetooth з додатком для смартфона 180 кг чорні" [ref=e1793]
+                - link "Ваги підлогові смарт розумні скляні для дому Scale one Black електронні фітнес Bluetooth з додатком для смартфона 180 кг чорні" [ref=e1794] [cursor=pointer]:
+                  - /url: https://bt.rozetka.com.ua/ua/398670300/p398670300/#primacyToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODQ0NjE0MDQsInBheWxvYWQiOiJ7XCJwZ1wiOjU1MjM5OTYyLFwiY1wiOjE2MjYxNyxcImN0XCI6MSxcImNwY1wiOjEuNzk5OTk5OTk5OTk5OTk5OCxcInNjXCI6OCxcInBsXCI6MyxcImNpZFwiOjgxMjMyLFwicFwiOjcyLFwiZ1wiOjN9In0.Xfl7OL2zwX7sfkaFYsjCHD7FGnrA94d5TcNaLLWsRwY;primacySource=main
+                - generic [ref=e1795]:
+                  - generic [ref=e1796]:
+                    - generic [ref=e1797]: 999₴
+                    - generic [ref=e1798]: 519₴
+                  - button "Купити" [ref=e1800] [cursor=pointer]:
+                    - img [ref=e1801]
+                - generic [ref=e1803]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e1804] [cursor=pointer]:
+                    - img [ref=e1805]
+                - generic [ref=e1807]:
+                  - text: Реклама
+                  - button [ref=e1808] [cursor=pointer]:
+                    - img [ref=e1810]
+              - article [ref=e1813]:
+                - button "Перемістити в список бажань" [ref=e1816] [cursor=pointer]:
+                  - img [ref=e1817]
+                - link "Силіконовий електрочайник складаний 600 мл дорожній Hoffmans Electronics HM-2546 Швидкозакипальний чайник Чорний" [ref=e1819] [cursor=pointer]:
+                  - /url: https://bt.rozetka.com.ua/ua/597726151/p597726151/
+                  - img "Силіконовий електрочайник складаний 600 мл дорожній Hoffmans Electronics HM-2546 Швидкозакипальний чайник Чорний" [ref=e1820]
+                - link "Силіконовий електрочайник складаний 600 мл дорожній Hoffmans Electronics HM-2546 Швидкозакипальний чайник Чорний" [ref=e1821] [cursor=pointer]:
+                  - /url: https://bt.rozetka.com.ua/ua/597726151/p597726151/
+                - generic [ref=e1822]:
+                  - generic [ref=e1823]:
+                    - generic [ref=e1824]: 690₴
+                    - generic [ref=e1825]: 500₴
+                  - button "Купити" [ref=e1827] [cursor=pointer]:
+                    - img [ref=e1828]
+              - article [ref=e1831]:
+                - button "Перемістити в список бажань" [ref=e1834] [cursor=pointer]:
+                  - img [ref=e1835]
+                - link "Стелаж металевий фарбований Меткас РЕК-1 1500 х750 х 300 мм 4 полиці зі сталі Білий (РЕК15011 07530 44)" [ref=e1837] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/metkas-rek15011-07530-44/p421290462/
+                  - img "Стелаж металевий фарбований Меткас РЕК-1 1500 х750 х 300 мм 4 полиці зі сталі Білий (РЕК15011 07530 44)" [ref=e1838]
+                - link "Стелаж металевий фарбований Меткас РЕК-1 1500 х750 х 300 мм 4 полиці зі сталі Білий (РЕК15011 07530 44)" [ref=e1839] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/metkas-rek15011-07530-44/p421290462/
+                - generic [ref=e1840]:
+                  - generic [ref=e1842]: 1 182₴
+                  - button "Купити" [ref=e1844] [cursor=pointer]:
+                    - img [ref=e1845]
+                - generic [ref=e1847]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e1848] [cursor=pointer]:
+                    - img [ref=e1849]
+              - article [ref=e1852]:
+                - button "Перемістити в список бажань" [ref=e1855] [cursor=pointer]:
+                  - img [ref=e1856]
+                - 'link "Minecraft: Java & Bedrock Edition for PC (Код активації для ПК)" [ref=e1858] [cursor=pointer]':
+                  - /url: https://rozetka.com.ua/ua/586522267/p586522267/
+                  - 'img "Minecraft: Java & Bedrock Edition for PC (Код активації для ПК)" [ref=e1859]'
+                - 'link "Minecraft: Java & Bedrock Edition for PC (Код активації для ПК)" [ref=e1860] [cursor=pointer]':
+                  - /url: https://rozetka.com.ua/ua/586522267/p586522267/
+                - generic [ref=e1861]:
+                  - generic [ref=e1862]:
+                    - generic [ref=e1863]: 1 500₴
+                    - generic [ref=e1864]: 1 050₴
+                  - button "Купити" [ref=e1866] [cursor=pointer]:
+                    - img [ref=e1867]
+                - generic [ref=e1869]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e1870] [cursor=pointer]:
+                    - img [ref=e1871]
+              - article [ref=e1874]:
+                - button "Перемістити в список бажань" [ref=e1877] [cursor=pointer]:
+                  - img [ref=e1878]
+                - link "Мастило літієве K2 PRO WHITE GREASE PTFE спрей 400 мл біле (W121) (K20422)" [ref=e1880] [cursor=pointer]:
+                  - /url: https://auto.rozetka.com.ua/ua/k2-k20422/p316875235/
+                  - img "Мастило літієве K2 PRO WHITE GREASE PTFE спрей 400 мл біле (W121) (K20422)" [ref=e1881]
+                - link "Мастило літієве K2 PRO WHITE GREASE PTFE спрей 400 мл біле (W121) (K20422)" [ref=e1882] [cursor=pointer]:
+                  - /url: https://auto.rozetka.com.ua/ua/k2-k20422/p316875235/
+                - generic [ref=e1883]:
+                  - generic [ref=e1885]: 209₴
+                  - button "Купити" [ref=e1887] [cursor=pointer]:
+                    - img [ref=e1888]
+                - generic [ref=e1890]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e1891] [cursor=pointer]:
+                    - img [ref=e1892]
+              - article [ref=e1895]:
+                - button "Перемістити в список бажань" [ref=e1898] [cursor=pointer]:
+                  - img [ref=e1899]
+                - link "Фільтр для кавомашини Philips AquaClean CA6903/10" [ref=e1901] [cursor=pointer]:
+                  - /url: https://bt.rozetka.com.ua/ua/340426295/p340426295/#primacyToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODQ0NjE0MDQsInBheWxvYWQiOiJ7XCJwZ1wiOjU2NjYwNDYwLFwiY1wiOjE3MTc2MyxcImN0XCI6MSxcImNwY1wiOjAuODk5OTk5OTk5OTk5OTk5OSxcInNjXCI6OCxcInBsXCI6MyxcImNpZFwiOjQ2NzI4NjgsXCJwXCI6NzcsXCJnXCI6M30ifQ.wvQS-gouUSt44XPRnnY4FjcgiIzhvhOtojOorwOgY5M;primacySource=main
+                  - img "Фільтр для кавомашини Philips AquaClean CA6903/10" [ref=e1902]
+                - link "Фільтр для кавомашини Philips AquaClean CA6903/10" [ref=e1903] [cursor=pointer]:
+                  - /url: https://bt.rozetka.com.ua/ua/340426295/p340426295/#primacyToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODQ0NjE0MDQsInBheWxvYWQiOiJ7XCJwZ1wiOjU2NjYwNDYwLFwiY1wiOjE3MTc2MyxcImN0XCI6MSxcImNwY1wiOjAuODk5OTk5OTk5OTk5OTk5OSxcInNjXCI6OCxcInBsXCI6MyxcImNpZFwiOjQ2NzI4NjgsXCJwXCI6NzcsXCJnXCI6M30ifQ.wvQS-gouUSt44XPRnnY4FjcgiIzhvhOtojOorwOgY5M;primacySource=main
+                - generic [ref=e1904]:
+                  - generic [ref=e1905]:
+                    - generic [ref=e1906]: 899₴
+                    - generic [ref=e1907]: 669₴
+                  - button "Купити" [ref=e1909] [cursor=pointer]:
+                    - img [ref=e1910]
+                - generic [ref=e1912]:
+                  - text: Безкоштовна доставка
+                  - button "Що таке Smart" [ref=e1913] [cursor=pointer]:
+                    - img [ref=e1914]
+                - generic [ref=e1916]:
+                  - text: Реклама
+                  - button [ref=e1917] [cursor=pointer]:
+                    - img [ref=e1919]
+      - navigation [ref=e1922]:
+        - generic [ref=e1923]:
+          - generic [ref=e1924]:
+            - link "Картка Rozetka Персональні знижки та бонуси" [ref=e1926] [cursor=pointer]:
+              - /url: https://rozetka.com.ua/ua/rozetka-card/
+              - generic [ref=e1927]:
+                - img [ref=e1928]
+                - generic [ref=e1929]:
+                  - generic [ref=e1930]: Картка Rozetka
+                  - generic [ref=e1931]: Персональні знижки та бонуси
+            - link "Smart підписка Безкоштовна доставка лише 50 ₴/міс." [ref=e1933] [cursor=pointer]:
+              - /url: https://rozetka.com.ua/ua/smart/
+              - img [ref=e1934]
+              - generic [ref=e1935]:
+                - generic [ref=e1936]: Smart підписка
+                - generic [ref=e1937]: Безкоштовна доставка лише 50 ₴/міс.
+          - list [ref=e1939]:
+            - listitem [ref=e1940]:
+              - link "2416 2416 Ноутбуки та комп’ютери" [ref=e1941] [cursor=pointer]:
+                - /url: https://rozetka.com.ua/ua/computers-notebooks/c80253/
+                - img "2416" [ref=e1942]
+                - img "2416" [ref=e1943]
+                - text: Ноутбуки та комп’ютери
+            - listitem [ref=e1944]:
+              - link "3361 3361 Смартфони, ТВ і електроніка" [ref=e1945] [cursor=pointer]:
+                - /url: https://rozetka.com.ua/ua/telefony-tv-i-ehlektronika/c4627949/
+                - img "3361" [ref=e1946]
+                - img "3361" [ref=e1947]
+                - text: Смартфони, ТВ і електроніка
+            - listitem [ref=e1948]:
+              - link "18421 18421 Товари для геймерів" [ref=e1949] [cursor=pointer]:
+                - /url: https://rozetka.com.ua/ua/game-zone/c80261/
+                - img "18421" [ref=e1950]
+                - img "18421" [ref=e1951]
+                - text: Товари для геймерів
+            - listitem [ref=e1952]:
+              - link "4306 4306 Побутова техніка" [ref=e1953] [cursor=pointer]:
+                - /url: https://bt.rozetka.com.ua/ua/
+                - img "4306" [ref=e1954]
+                - img "4306" [ref=e1955]
+                - text: Побутова техніка
+            - listitem [ref=e1956]:
+              - link "5300 5300 Товари для дому" [ref=e1957] [cursor=pointer]:
+                - /url: https://rozetka.com.ua/ua/tovary-dlya-doma/c2394287/
+                - img "5300" [ref=e1958]
+                - img "5300" [ref=e1959]
+                - text: Товари для дому
+            - listitem [ref=e1960]:
+              - link "6700 6700 Авто і мото" [ref=e1961] [cursor=pointer]:
+                - /url: https://auto.rozetka.com.ua/ua/
+                - img "6700" [ref=e1962]
+                - img "6700" [ref=e1963]
+                - text: Авто і мото
+            - listitem [ref=e1964]:
+              - link "23505 23505 Інструменти та обладнання" [ref=e1965] [cursor=pointer]:
+                - /url: https://rozetka.com.ua/ua/2577232/c2577232/
+                - img "23505" [ref=e1966]
+                - img "23505" [ref=e1967]
+                - text: Інструменти та обладнання
+            - listitem [ref=e1968]:
+              - link "7806 7806 Сантехніка та ремонт" [ref=e1969] [cursor=pointer]:
+                - /url: https://build.rozetka.com.ua/ua/
+                - img "7806" [ref=e1970]
+                - img "7806" [ref=e1971]
+                - text: Сантехніка та ремонт
+            - listitem [ref=e1972]:
+              - link "8261 8261 Дача, сад і город" [ref=e1973] [cursor=pointer]:
+                - /url: https://rozetka.com.ua/ua/dacha-sad-ogorod/c2394297/
+                - img "8261" [ref=e1974]
+                - img "8261" [ref=e1975]
+                - text: Дача, сад і город
+            - listitem [ref=e1976]:
+              - link "9017 9017 Спорт і захоплення" [ref=e1977] [cursor=pointer]:
+                - /url: https://rozetka.com.ua/ua/sport-i-uvlecheniya/c4627893/
+                - img "9017" [ref=e1978]
+                - img "9017" [ref=e1979]
+                - text: Спорт і захоплення
+            - listitem [ref=e1980]:
+              - link "10515 10515 Одяг, взуття та прикраси" [ref=e1981] [cursor=pointer]:
+                - /url: https://rozetka.com.ua/ua/shoes_clothes/c1162030/
+                - img "10515" [ref=e1982]
+                - img "10515" [ref=e1983]
+                - text: Одяг, взуття та прикраси
+            - listitem [ref=e1984]:
+              - link "12258 12258 Краса та здоров’я" [ref=e1985] [cursor=pointer]:
+                - /url: https://rozetka.com.ua/ua/krasota-i-zdorovje/c4629305/
+                - img "12258" [ref=e1986]
+                - img "12258" [ref=e1987]
+                - text: Краса та здоров’я
+            - listitem [ref=e1988]:
+              - link "13224 13224 Дитячі товари" [ref=e1989] [cursor=pointer]:
+                - /url: https://rozetka.com.ua/ua/kids/c88468/
+                - img "13224" [ref=e1990]
+                - img "13224" [ref=e1991]
+                - text: Дитячі товари
+            - listitem [ref=e1992]:
+              - link "15954 15954 Зоотовари" [ref=e1993] [cursor=pointer]:
+                - /url: https://rozetka.com.ua/ua/zootovary/c3520929/
+                - img "15954" [ref=e1994]
+                - img "15954" [ref=e1995]
+                - text: Зоотовари
+            - listitem [ref=e1996]:
+              - link "14127 14127 Офіс, школа, книги" [ref=e1997] [cursor=pointer]:
+                - /url: https://rozetka.com.ua/ua/office-school-books/c4625734/
+                - img "14127" [ref=e1998]
+                - img "14127" [ref=e1999]
+                - text: Офіс, школа, книги
+            - listitem [ref=e2000]:
+              - link "14939 14939 Алкогольні напої та продукти" [ref=e2001] [cursor=pointer]:
+                - /url: https://rozetka.com.ua/ua/alkoholnie-napitki-i-produkty/c4626923/
+                - img "14939" [ref=e2002]
+                - img "14939" [ref=e2003]
+                - text: Алкогольні напої та продукти
+            - listitem [ref=e2004]:
+              - link "20310 20310 Побутова хімія" [ref=e2005] [cursor=pointer]:
+                - /url: https://rozetka.com.ua/ua/bytovaya-himiya/c4429255/
+                - img "20310" [ref=e2006]
+                - img "20310" [ref=e2007]
+                - text: Побутова хімія
+            - listitem [ref=e2008]:
+              - link "23064 23064 Енергонезалежність" [ref=e2009] [cursor=pointer]:
+                - /url: https://rozetka.com.ua/ua/energonezalezhnist/c241576/
+                - img "23064" [ref=e2010]
+                - img "23064" [ref=e2011]
+                - text: Енергонезалежність
+            - listitem [ref=e2012]:
+              - link "23799 23799 Подарунки та сувеніри" [ref=e2013] [cursor=pointer]:
+                - /url: https://rozetka.com.ua/ua/podarki-i-tovary-dlya-prazdnikov/c80260/
+                - img "23799" [ref=e2014]
+                - img "23799" [ref=e2015]
+                - text: Подарунки та сувеніри
+            - listitem [ref=e2016]:
+              - link "16332 16332 Літній марафон" [ref=e2017] [cursor=pointer]:
+                - /url: https://rozetka.com.ua/ua/promo/bigsummersale/
+                - img "16332" [ref=e2018]
+                - img "16332" [ref=e2019]
+                - text: Літній марафон
+            - listitem [ref=e2020]:
+              - link "17191 17191 Топи продажів" [ref=e2021] [cursor=pointer]:
+                - /url: https://rozetka.com.ua/ua/promo/top_sale/
+                - img "17191" [ref=e2022]
+                - img "17191" [ref=e2023]
+                - text: Топи продажів
+            - listitem [ref=e2024]:
+              - link "23469 23469 Всі акції" [ref=e2025] [cursor=pointer]:
+                - /url: https://rozetka.com.ua/ua/news-articles-promotions/promotions/
+                - img "23469" [ref=e2026]
+                - img "23469" [ref=e2027]
+                - text: Всі акції
+          - link "Довідковий центр" [ref=e2030] [cursor=pointer]:
+            - /url: https://help.rozetka.com.ua/
+            - img [ref=e2031]
+            - text: Довідковий центр
+          - link "Чат з ROZETKA" [ref=e2034] [cursor=pointer]:
+            - /url: https://t.me/Rozetka_helpBot?start=src=hc
+            - img [ref=e2035]
+            - text: Чат з ROZETKA
+          - link "Магазини Rozetka" [ref=e2038] [cursor=pointer]:
+            - /url: https://rozetka.com.ua/ua/retail/kyiv/
+            - img [ref=e2039]
+            - text: Магазини Rozetka
+          - button "Київ Київ обл., Київ р-н." [ref=e2042] [cursor=pointer]:
+            - img [ref=e2043]
+            - generic [ref=e2045]:
+              - generic [ref=e2046]: Київ
+              - generic [ref=e2047]: Київ обл., Київ р-н.
+          - button "Відстежити посилку" [ref=e2049] [cursor=pointer]:
+            - img [ref=e2050]
+            - text: Відстежити посилку
+          - link "Продавати на Розетці" [ref=e2052] [cursor=pointer]:
+            - /url: https://seller.rozetka.com.ua/newseller
+            - img [ref=e2053]
+            - generic [ref=e2055]: Продавати на Розетці
+          - complementary [ref=e2057]:
+            - generic [ref=e2059]:
+              - paragraph [ref=e2060]: Увійдіть, щоб отримувати рекомендації, персональні бонуси і знижки.
+              - button "Увійдіть в особистий кабінет" [ref=e2061] [cursor=pointer]
+          - generic [ref=e2063]:
+            - generic [ref=e2064]: Встановлюйте наші застосунки
+            - link "AppStore" [ref=e2065] [cursor=pointer]:
+              - /url: https://rozetka.onelink.me/LWXa/futtersite
+              - img "AppStore" [ref=e2066]
+            - link "Google Play" [ref=e2067] [cursor=pointer]:
+              - /url: https://rozetka.onelink.me/LWXa/futtersite
+              - img "Google Play" [ref=e2068]
+          - generic [ref=e2070]:
+            - generic [ref=e2071]: Ми в соціальних мережах
+            - generic [ref=e2073]:
+              - list [ref=e2074]:
+                - listitem [ref=e2075]:
+                  - link "TikTok" [ref=e2076] [cursor=pointer]:
+                    - /url: https://www.tiktok.com/@rozetkaua
+                    - img [ref=e2077]
+                - listitem [ref=e2079]:
+                  - link "Telegram" [ref=e2080] [cursor=pointer]:
+                    - /url: https://t.me/rrozetka
+                    - img [ref=e2081]
+                - listitem [ref=e2083]:
+                  - link "Facebook" [ref=e2084] [cursor=pointer]:
+                    - /url: https://www.facebook.com/rozetka.ua
+                    - img [ref=e2085]
+                - listitem [ref=e2087]:
+                  - link "YouTube" [ref=e2088] [cursor=pointer]:
+                    - /url: https://bit.ly/RZTK_UA
+                    - img [ref=e2089]
+              - list [ref=e2091]:
+                - listitem [ref=e2092]:
+                  - link "Instagram" [ref=e2093] [cursor=pointer]:
+                    - /url: https://instagram.com/rozetkaua
+                    - img [ref=e2094]
+                - listitem [ref=e2096]:
+                  - link "X" [ref=e2097] [cursor=pointer]:
+                    - /url: https://x.com/rozetka_ua
+                    - img [ref=e2098]
+                - listitem [ref=e2100]:
+                  - link "Viber" [ref=e2101] [cursor=pointer]:
+                    - /url: https://invite.viber.com/?g2=AQB9mwM%2F5f%2FxJUlMxP4V9flr2%2BvXTC1MpxdGFZ0P6d%2Fs6Ws%2FFe%2FQtLiZwA4E28sj
+                    - img [ref=e2102]
+  - generic [ref=e2106]:
+    - generic [ref=e2108]:
+      - paragraph [ref=e2109]:
+        - strong [ref=e2110]: ROZETKA
+        - text: − найбільший онлайн-ритейлер в Україні. З 2005 року ми втілюємо маленькі мрії та грандіозні плани мільйонів людей. В інтернет-магазині Розетка можна знайти буквально все. Ми продаємо за справедливою ціною та надаємо гарантію, бо вважаємо, що онлайн-шопінг має бути максимально зручним і безпечним. І щоразу, коли хтось натискає «Купити» на сайті Розетка, ми розуміємо, що робимо потрібну справу.
+      - heading "Наше бачення" [level=2] [ref=e2111]
+      - paragraph [ref=e2112]: Ми віримо, що речі існують для того, щоб робити життя простішим, приємнішим і добрішим. Тому й пошук тієї самої речі повинен бути швидким, зручним і приємним. Ми не просто продаємо побутову техніку, електроніку, прикраси або вино. Ми допомагаємо знайти саме те, що треба, в одному місці та без зайвих хвилювань.
+      - paragraph [ref=e2113]:
+        - strong [ref=e2114]: Rozetka
+        - text: "− це:"
+      - list [ref=e2115]:
+        - listitem [ref=e2116]: •універсальна відповідь на будь-який запит;
+        - listitem [ref=e2117]: •початок пошуку та його кінцева зупинка;
+        - listitem [ref=e2118]: •справжній помічник без неприємних компромісів;
+        - listitem [ref=e2119]: •платформа, що надихає мріяти сміливіше.
+      - heading "Ми піклуємось про ваш вибір" [level=2] [ref=e2120]
+      - paragraph [ref=e2121]:
+        - text: Ми знімаємо відеоогляди, пишемо статті та стежимо за новинками, щоб ви завжди були в курсі. Ми допомагаємо знайти речі на
+        - strong [ref=e2122]: ROZETKA
+        - text: ":"
+      - list [ref=e2123]:
+        - listitem [ref=e2124]: •закоханим — чим здивувати одне одного;
+        - listitem [ref=e2125]: •спортивним — як прогресувати швидше;
+        - listitem [ref=e2126]: •хазяйновитим — як створити затишок.
+      - heading "Онлайн і офлайн — як вам зручно" [level=2] [ref=e2127]
+      - paragraph [ref=e2128]: "Ми відкрили понад 500 офлайн-магазинів у Києві, Одесі, Дніпрі, Львові, Харкові та ще у 170+ містах України. У нас можна:"
+      - list [ref=e2129]:
+        - listitem [ref=e2130]: •потримати товар в руках і протестувати;
+        - listitem [ref=e2131]: •забрати покупку у поштоматі без спілкування;
+        - listitem [ref=e2132]: •отримати доставку додому або у відділення пошти;
+        - listitem [ref=e2133]: •оплатити готівкою, карткою або у кредит — як вам зручно.
+      - heading "ROZETKA — більше, ніж магазин" [level=2] [ref=e2134]
+      - paragraph [ref=e2135]:
+        - text: Сьогодні
+        - strong [ref=e2136]: ROZETKA
+        - text: "— це не тільки ритейлер, а й маркетплейс:"
+      - list [ref=e2137]:
+        - listitem [ref=e2138]: •хтось розпочинає тут свій перший бізнес;
+        - listitem [ref=e2139]: •інші привозять в Україну унікальні товари;
+        - listitem [ref=e2140]: •ми допомагаємо ще більшій кількості людей бути щасливими.
+      - paragraph [ref=e2141]: Ми хочемо, щоб запитання «де знайти щось потрібне» більше ніколи не виникало. Тому продовжуємо зростати разом з вами.
+    - button "Читати повністю ↓" [ref=e2143] [cursor=pointer]:
+      - text: Читати повністю
+      - generic [ref=e2144]: ↓
+  - contentinfo [ref=e2146]:
+    - generic [ref=e2148]:
+      - generic [ref=e2149]:
+        - generic [ref=e2150]:
+          - generic [ref=e2151]:
+            - generic [ref=e2152]: Ми в соціальних мережах
+            - generic [ref=e2154]:
+              - list [ref=e2155]:
+                - listitem [ref=e2156]:
+                  - link "TikTok" [ref=e2157] [cursor=pointer]:
+                    - /url: https://www.tiktok.com/@rozetkaua
+                    - img [ref=e2158]
+                - listitem [ref=e2160]:
+                  - link "Telegram" [ref=e2161] [cursor=pointer]:
+                    - /url: https://t.me/rrozetka
+                    - img [ref=e2162]
+                - listitem [ref=e2164]:
+                  - link "Facebook" [ref=e2165] [cursor=pointer]:
+                    - /url: https://www.facebook.com/rozetka.ua
+                    - img [ref=e2166]
+                - listitem [ref=e2168]:
+                  - link "YouTube" [ref=e2169] [cursor=pointer]:
+                    - /url: https://bit.ly/RZTK_UA
+                    - img [ref=e2170]
+              - list [ref=e2172]:
+                - listitem [ref=e2173]:
+                  - link "Instagram" [ref=e2174] [cursor=pointer]:
+                    - /url: https://instagram.com/rozetkaua
+                    - img [ref=e2175]
+                - listitem [ref=e2177]:
+                  - link "X" [ref=e2178] [cursor=pointer]:
+                    - /url: https://x.com/rozetka_ua
+                    - img [ref=e2179]
+                - listitem [ref=e2181]:
+                  - link "Viber" [ref=e2182] [cursor=pointer]:
+                    - /url: https://invite.viber.com/?g2=AQB9mwM%2F5f%2FxJUlMxP4V9flr2%2BvXTC1MpxdGFZ0P6d%2Fs6Ws%2FFe%2FQtLiZwA4E28sj
+                    - img [ref=e2183]
+          - generic [ref=e2185]:
+            - generic [ref=e2186]: Скануйте QR-код та встановлюйте застосунок
+            - generic [ref=e2187]:
+              - generic [ref=e2188]:
+                - img "QR-code"
+              - list [ref=e2189]:
+                - listitem [ref=e2190]:
+                  - link "Додаток для iOS" [ref=e2191] [cursor=pointer]:
+                    - /url: https://rozetka.onelink.me/LWXa/futtersite
+                    - img "AppStore" [ref=e2192]
+                - listitem [ref=e2193]:
+                  - link "Додаток для Android" [ref=e2194] [cursor=pointer]:
+                    - /url: https://rozetka.onelink.me/LWXa/futtersite
+                    - img "Google Play" [ref=e2195]
+        - generic [ref=e2196]:
+          - generic [ref=e2197]:
+            - generic [ref=e2199]: Інформація про компанію
+            - list [ref=e2200]:
+              - listitem [ref=e2201]:
+                - link "Про нас" [ref=e2202] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/pages/about/
+              - listitem [ref=e2203]:
+                - link "Умови використання сайту" [ref=e2204] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/pages/legal_terms/
+              - listitem [ref=e2205]:
+                - link "Вакансії" [ref=e2206] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/careers/
+              - listitem [ref=e2207]:
+                - link "Контакти" [ref=e2208] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/contacts/
+              - listitem [ref=e2209]:
+                - link "Всі категорії" [ref=e2210] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/all-categories-goods/
+          - generic [ref=e2211]:
+            - generic [ref=e2213]: Допомога
+            - list [ref=e2214]:
+              - listitem [ref=e2215]:
+                - link "Доставка та оплата" [ref=e2216] [cursor=pointer]:
+                  - /url: https://help.rozetka.com.ua/p/97-dostavka/
+              - listitem [ref=e2217]:
+                - link "Кредит" [ref=e2218] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/pages/credit/
+              - listitem [ref=e2219]:
+                - link "Гарантія" [ref=e2220] [cursor=pointer]:
+                  - /url: https://help.rozetka.com.ua/p/111-harantiya-i-povernennya-tovaru/
+              - listitem [ref=e2221]:
+                - link "Повернення товару" [ref=e2222] [cursor=pointer]:
+                  - /url: https://help.rozetka.com.ua/p/102-povernennya-tovaru/
+              - listitem [ref=e2223]:
+                - link "Сервісні центри" [ref=e2224] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/service-centers/
+          - generic [ref=e2225]:
+            - generic [ref=e2227]: Сервіси
+            - list [ref=e2228]:
+              - listitem [ref=e2229]:
+                - link "Бонусний рахунок" [ref=e2230] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/pages/loyalty/
+              - listitem [ref=e2231]:
+                - link "Картка Rozetka" [ref=e2232] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/rozetka-card/
+              - listitem [ref=e2233]:
+                - link "Подарункові сертифікати" [ref=e2234] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/pages/certificates/
+              - listitem [ref=e2235]:
+                - link "Rozetka Обмін" [ref=e2236] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/pages/obmin/
+              - listitem [ref=e2237]:
+                - link "Корпоративним клієнтам" [ref=e2238] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/pages/b2b/
+          - generic [ref=e2239]:
+            - generic [ref=e2241]: Партнерам
+            - list [ref=e2242]:
+              - listitem [ref=e2243]:
+                - link "Продавати на Розетці" [ref=e2244] [cursor=pointer]:
+                  - /url: https://seller.rozetka.com.ua/newseller
+              - listitem [ref=e2245]:
+                - link "Реклама на Розетці" [ref=e2246] [cursor=pointer]:
+                  - /url: https://advertising.rozetka.ua/
+              - listitem [ref=e2247]:
+                - link "Співпраця з нами" [ref=e2248] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/pages/partnership/
+              - listitem [ref=e2249]:
+                - link "Франчайзинг" [ref=e2250] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/pages/franchise/
+              - listitem [ref=e2251]:
+                - link "Оренда приміщень" [ref=e2252] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/news-articles-promotions/promotions/store_search/
+      - generic [ref=e2253]:
+        - generic [ref=e2254]:
+          - button "MasterCard Secure" [ref=e2255] [cursor=pointer]:
+            - img "MasterCard Secure" [ref=e2256]
+          - button "Visa Verified" [ref=e2257] [cursor=pointer]:
+            - img "Visa Verified" [ref=e2258]
+        - paragraph [ref=e2259]: © 2001–2026 Інтернет-магазин «Розетка™» — Щоразу що треба ТМ використовується на підставі ліцензії правовласника RozetkaLTD
+```
+
+# Test source
+
+```ts
+  1  | import { Page } from '@playwright/test';
+  2  | import { Locator } from '@playwright/test';
+  3  | 
+  4  | export class RozetkaMainPage {
+  5  | 
+  6  |     public get rozetkaLogo(): Locator {
+  7  |         return this.page.locator('[alt="Rozetka Logo"]');
+  8  |     }
+  9  | 
+  10 |     public get searchInput(): Locator {
+  11 |         return this.page.locator('[data-testid="search-suggest-input"]');
+  12 |     }
+  13 | 
+  14 |     public get popularQueriesHeader(): Locator {
+  15 |     return this.page.locator('div[class="text-base font-bold py-3"]');
+  16 | }
+  17 | 
+  18 |     public get searchButton(): Locator {
+  19 |         return this.page.locator('[data-testid="search-suggest-submit"]');
+  20 |     }
+  21 | 
+  22 |     public get searchResults(): Locator {
+  23 |         return this.page.locator('[class="tile-title black-link text-base"]');
+  24 |     }
+  25 | 
+  26 |     public get sortByDropdown(): Locator {
+  27 |         return this.page.locator('select[id="sort"]');
+  28 |     }
+  29 | 
+  30 |     public get sortByLowestPriceOption(): Locator {
+  31 |         return this.page.locator('option[value="cheap"]');
+  32 |     }
+  33 |     public get sortByHighestPriceOption(): Locator {
+  34 |         return this.page.locator('option[value="expensive"]');
+  35 |     }
+  36 | 
+  37 |     public get pricesOfProducts(): Locator {
+  38 |         return this.page.locator('div[class*="price text-2xl"]');
+  39 |     }
+  40 |     
+  41 |     public constructor(public page: Page) {}
+  42 | 
+  43 |     public async open() {
+  44 |         await this.page.goto('https://rozetka.com.ua/', {
+  45 |             waitUntil: 'commit'
+  46 |         });
+  47 |         await this.rozetkaLogo.waitFor({state: 'visible'});
+  48 |     }
+  49 | 
+  50 |     public async openSearch() {
+  51 |         await this.searchInput.click();
+  52 |     }
+  53 | 
+  54 |     public async searchForProduct(productName: string) {
+  55 |         await this.searchInput.fill(productName);
+  56 |         await this.searchButton.click();
+  57 |         await this.waitForSearchResults();
+  58 |     }
+  59 | 
+  60 |     public async getSearchResultsTitles(): Promise<string[]> {
+  61 |         return await this.searchResults.allTextContents();
+  62 |     }
+  63 | 
+  64 |     public async sortByLowestPrice() {
+  65 |         await this.sortByDropdown.selectOption('cheap');
+  66 |         await this.page.waitForTimeout(2000);
+  67 |     }
+  68 | 
+  69 |     public async sortByHighestPrice() {
+  70 |         await this.sortByDropdown.selectOption('expensive');
+  71 |         await this.page.waitForTimeout(2000);
+  72 |     }
+  73 | 
+  74 |     public async getProductPrices(): Promise<number[]> {
+  75 |         const priceTexts = await this.pricesOfProducts.allTextContents();
+  76 |         return priceTexts.map(priceText => {
+  77 |             const cleanPrice = priceText.replace(/\D/g, '');
+  78 |             return Number.parseInt(cleanPrice, 10);
+  79 |         });
+  80 |     }
+  81 | 
+  82 |     public async waitForSearchResults() {
+> 83 |         await this.searchResults.first().waitFor({ state: 'visible' });
+     |                                          ^ TimeoutError: locator.waitFor: Timeout 30000ms exceeded.
+  84 |     }
+  85 | }
+```
