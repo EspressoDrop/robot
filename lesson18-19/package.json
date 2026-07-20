@@ -4,11 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "playwright test",
+    "test": "playwright test --project=chromium --headed",
     "test:debug": "playwright test --debug",
     "test:headed": "playwright test --headed",
     "test:report": "playwright show-report",
-    "test:report:open": "playwright show-report --open"
+    "test:report:open": "playwright show-report --open",
+    "allure:generate": "npx allure generate allure-results --single-file --clean -o allure-report",
+    "allure:open": "npx allure open allure-report",
+    "allure:report": "npm run allure:generate && npm run allure:open"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +23,8 @@
     "@stylistic/eslint-plugin": "^5.10.0",
     "@stylistic/eslint-plugin-ts": "^4.4.1",
     "@types/node": "^26.1.0",
+    "allure-commandline": "^2.43.0",
+    "allure-playwright": "^3.10.2",
     "eslint": "^10.6.0",
     "eslint-plugin-prettier": "^5.5.6",
     "eslint-plugin-unicorn": "^71.1.0",
