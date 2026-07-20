@@ -1,0 +1,1853 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: example.spec.ts >> Rozetka main page >> should sort search results by highest price and check prices are in descending order
+- Location: tests\example.spec.ts:35:8
+
+# Error details
+
+```
+Error: expect(received).toBeGreaterThanOrEqual(expected)
+
+Expected: >= 82999
+Received:    72500
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e4]:
+  - link "Великий літній розпродаж до −55%" [ref=e6] [cursor=pointer]:
+    - /url: https://rozetka.com.ua/ua/promo/bigsummersale/
+    - img "Великий літній розпродаж до −55%" [ref=e7]
+  - generic [ref=e8]:
+    - banner [ref=e10]:
+      - generic [ref=e12]:
+        - button "Відкрити меню" [ref=e13] [cursor=pointer]:
+          - img [ref=e14]
+        - link "Rozetka Logo" [ref=e16] [cursor=pointer]:
+          - /url: https://rozetka.com.ua/
+          - img "Rozetka Logo" [ref=e17]
+        - button "Каталог" [ref=e18] [cursor=pointer]:
+          - img [ref=e19]
+          - text: Каталог
+        - generic [ref=e24]:
+          - generic [ref=e26]:
+            - generic [ref=e27]:
+              - img
+              - textbox "Я шукаю..." [ref=e28]: ecoflow
+            - button "Очистити пошук" [ref=e29] [cursor=pointer]:
+              - img [ref=e30]
+            - button "Голосовий пошук" [ref=e32] [cursor=pointer]:
+              - img [ref=e33]
+          - button "Знайти" [ref=e35] [cursor=pointer]
+        - list [ref=e36]:
+          - listitem
+          - listitem [ref=e37]:
+            - button [ref=e38] [cursor=pointer]:
+              - img [ref=e39]
+          - listitem [ref=e41]:
+            - button "Списки порівнянь" [ref=e42] [cursor=pointer]:
+              - img [ref=e43]
+          - listitem [ref=e45]:
+            - button "Відкрити корзину" [ref=e46] [cursor=pointer]:
+              - img [ref=e47]
+    - generic [ref=e49]:
+      - heading "Результати пошуку «ecoflow»" [level=2] [ref=e53]
+      - main [ref=e55]:
+        - generic [ref=e56]:
+          - generic [ref=e57]:
+            - generic [ref=e59]:
+              - paragraph [ref=e60]: Знайдено 1618 товарів
+              - list [ref=e61]:
+                - listitem [ref=e62]:
+                  - button "Очистити всі" [ref=e63] [cursor=pointer]
+                - listitem [ref=e64]:
+                  - button "EcoFlow" [ref=e65] [cursor=pointer]:
+                    - generic [ref=e66]: EcoFlow
+                    - img [ref=e67]
+            - generic [ref=e69]:
+              - combobox "Сортування" [ref=e71] [cursor=pointer]:
+                - option "Від дешевих до дорогих"
+                - option "Від дорогих до дешевих" [selected]
+                - option "За релевантністю"
+              - generic [ref=e72]:
+                - button "Крупна плитка" [ref=e73] [cursor=pointer]:
+                  - img [ref=e74]
+                - button "Мала плитка" [ref=e76]:
+                  - img [ref=e77]
+          - generic [ref=e79]:
+            - navigation [ref=e80]:
+              - generic [ref=e81]:
+                - generic [ref=e82]:
+                  - list [ref=e85]:
+                    - listitem [ref=e86]:
+                      - generic [ref=e87]:
+                        - link "Смартфони, ТВ і електроніка" [ref=e88] [cursor=pointer]:
+                          - /url: /ua/search/?producer=ecoflow&redirected=1&section_id=4627949&sort=expensive&text=ecoflow
+                        - button "Всі" [ref=e89] [cursor=pointer]:
+                          - text: Всі
+                          - img [ref=e90]
+                      - list [ref=e92]:
+                        - listitem [ref=e93]:
+                          - link "Зарядні станції" [ref=e94] [cursor=pointer]:
+                            - /url: /ua/search/?producer=ecoflow&redirected=1&section_id=4674585&sort=expensive&text=ecoflow
+                        - listitem [ref=e95]:
+                          - link "Універсальні мобільні батареї" [ref=e96] [cursor=pointer]:
+                            - /url: /ua/search/?producer=ecoflow&redirected=1&section_id=387969&sort=expensive&text=ecoflow
+                        - listitem [ref=e97]:
+                          - link "Аксесуари для УМБ та зарядних станцій" [ref=e98] [cursor=pointer]:
+                            - /url: /ua/search/?producer=ecoflow&redirected=1&section_id=4674588&sort=expensive&text=ecoflow
+                    - listitem [ref=e99]:
+                      - generic [ref=e100]:
+                        - link "Авто і мото товари" [ref=e101] [cursor=pointer]:
+                          - /url: /ua/search/?producer=ecoflow&redirected=1&section_id=4627858&sort=expensive&text=ecoflow
+                        - button "Всі" [ref=e102] [cursor=pointer]:
+                          - text: Всі
+                          - img [ref=e103]
+                      - list [ref=e105]:
+                        - listitem [ref=e106]:
+                          - link "Автохолодильники" [ref=e107] [cursor=pointer]:
+                            - /url: /ua/search/?producer=ecoflow&redirected=1&section_id=4674624&sort=expensive&text=ecoflow
+                        - listitem [ref=e108]:
+                          - link "Аксесуари для заряджання електромобіля" [ref=e109] [cursor=pointer]:
+                            - /url: /ua/search/?producer=ecoflow&redirected=1&section_id=4647510&sort=expensive&text=ecoflow
+                        - listitem [ref=e110]:
+                          - link "Автомобільні інвертори" [ref=e111] [cursor=pointer]:
+                            - /url: /ua/search/?producer=ecoflow&redirected=1&section_id=4639256&sort=expensive&text=ecoflow
+                    - listitem [ref=e112]:
+                      - generic [ref=e113]:
+                        - link "Інструменти й обладнання" [ref=e114] [cursor=pointer]:
+                          - /url: /ua/search/?producer=ecoflow&redirected=1&section_id=2577232&sort=expensive&text=ecoflow
+                        - button "Всі" [ref=e115] [cursor=pointer]:
+                          - text: Всі
+                          - img [ref=e116]
+                      - list [ref=e118]:
+                        - listitem [ref=e119]:
+                          - link "Інвертори" [ref=e120] [cursor=pointer]:
+                            - /url: /ua/search/?producer=ecoflow&redirected=1&section_id=4625577&sort=expensive&text=ecoflow
+                        - listitem [ref=e121]:
+                          - link "Аксесуари для перетворювачів інверторів" [ref=e122] [cursor=pointer]:
+                            - /url: /ua/search/?producer=ecoflow&redirected=1&section_id=4674999&sort=expensive&text=ecoflow
+                        - listitem [ref=e123]:
+                          - link "Акумулятори для інвертора" [ref=e124] [cursor=pointer]:
+                            - /url: /ua/search/?producer=ecoflow&redirected=1&section_id=4674996&sort=expensive&text=ecoflow
+                    - listitem [ref=e125]:
+                      - generic [ref=e126]:
+                        - link "Спорт і захоплення" [ref=e127] [cursor=pointer]:
+                          - /url: /ua/search/?producer=ecoflow&redirected=1&section_id=4627893&sort=expensive&text=ecoflow
+                        - button "Всі" [ref=e128] [cursor=pointer]:
+                          - text: Всі
+                          - img [ref=e129]
+                      - list [ref=e131]:
+                        - listitem [ref=e132]:
+                          - link "Ліхтарі й аксесуари" [ref=e133] [cursor=pointer]:
+                            - /url: /ua/search/?producer=ecoflow&redirected=1&section_id=85432&sort=expensive&text=ecoflow
+                        - listitem [ref=e134]:
+                          - link "Складані меблі" [ref=e135] [cursor=pointer]:
+                            - /url: /ua/search/?producer=ecoflow&redirected=1&section_id=82672&sort=expensive&text=ecoflow
+                        - listitem [ref=e136]:
+                          - link "Туристичні килимки" [ref=e137] [cursor=pointer]:
+                            - /url: /ua/search/?producer=ecoflow&redirected=1&section_id=82618&sort=expensive&text=ecoflow
+                    - listitem [ref=e138]:
+                      - generic [ref=e139]:
+                        - link "Побутова техніка, інтер'єр" [ref=e140] [cursor=pointer]:
+                          - /url: /ua/search/?producer=ecoflow&redirected=1&section_id=80025&sort=expensive&text=ecoflow
+                        - button "Всі" [ref=e141] [cursor=pointer]:
+                          - text: Всі
+                          - img [ref=e142]
+                      - list [ref=e144]:
+                        - listitem [ref=e145]:
+                          - link "Запчастини для кондиціонерів" [ref=e146] [cursor=pointer]:
+                            - /url: /ua/search/?producer=ecoflow&redirected=1&section_id=4676026&sort=expensive&text=ecoflow
+                        - listitem [ref=e147]:
+                          - link "Бойлери" [ref=e148] [cursor=pointer]:
+                            - /url: /ua/search/?producer=ecoflow&redirected=1&section_id=80131&sort=expensive&text=ecoflow
+                        - listitem [ref=e149]:
+                          - link "Кондиціонери" [ref=e150] [cursor=pointer]:
+                            - /url: /ua/search/?producer=ecoflow&redirected=1&section_id=80133&sort=expensive&text=ecoflow
+                    - listitem [ref=e151]:
+                      - button "Всі категорії" [ref=e152] [cursor=pointer]:
+                        - text: Всі категорії
+                        - img [ref=e153]
+                  - group [ref=e155] [cursor=pointer]:
+                    - generic "Продавець" [ref=e156]:
+                      - generic [ref=e157]: Продавець
+                      - img [ref=e158]
+                    - list [ref=e162]:
+                      - listitem [ref=e163]:
+                        - link "Rozetka +" [ref=e164]:
+                          - /url: /ua/search/?producer=ecoflow&redirected=1&seller=rozetka&sort=expensive&text=ecoflow
+                      - listitem [ref=e165]:
+                        - link "Інші продавці" [ref=e166]:
+                          - /url: /ua/search/?producer=ecoflow&redirected=1&seller=other&sort=expensive&text=ecoflow
+                  - group [ref=e167] [cursor=pointer]:
+                    - generic "Виробник 6" [ref=e168]:
+                      - generic [ref=e169]: Виробник 6
+                      - img [ref=e170]
+                    - list [ref=e174]:
+                      - listitem [ref=e175]:
+                        - link "Bluetti" [ref=e176]:
+                          - /url: /ua/search/?producer=ecoflow,bluetti&redirected=1&sort=expensive&text=ecoflow
+                      - listitem [ref=e177]:
+                        - generic [ref=e178]: EcoFlow
+                      - listitem [ref=e179]:
+                        - link "River" [ref=e180]:
+                          - /url: /ua/search/?producer=ecoflow,river&redirected=1&sort=expensive&text=ecoflow
+                      - listitem [ref=e181]:
+                        - link "Snap" [ref=e182]:
+                          - /url: /ua/search/?producer=ecoflow,snap&redirected=1&sort=expensive&text=ecoflow
+                      - listitem [ref=e183]:
+                        - link "Solar" [ref=e184]:
+                          - /url: /ua/search/?producer=ecoflow,solar&redirected=1&sort=expensive&text=ecoflow
+                      - listitem [ref=e185]:
+                        - link "Без бренда" [ref=e186]:
+                          - /url: /ua/search/?producer=ecoflow,bez-brenda&redirected=1&sort=expensive&text=ecoflow
+                  - group [ref=e187] [cursor=pointer]:
+                    - generic "Ціна" [ref=e188]:
+                      - generic [ref=e189]: Ціна
+                      - img [ref=e190]
+                    - generic [ref=e194]:
+                      - generic [ref=e195]:
+                        - textbox [ref=e196]: "199"
+                        - generic [ref=e197]: —
+                        - textbox [ref=e198]: "1387799"
+                      - generic [ref=e199]:
+                        - button [ref=e202]
+                        - button [ref=e203]
+                  - group [ref=e204] [cursor=pointer]:
+                    - generic "Країна-виробник товару 5" [ref=e205]:
+                      - generic [ref=e206]: Країна-виробник товару 5
+                      - img [ref=e207]
+                    - list [ref=e211]:
+                      - listitem [ref=e212]:
+                        - link "Німеччина" [ref=e213]:
+                          - /url: /ua/search/?producer=ecoflow&redirected=1&sort=expensive&strana-proizvoditelj-tovara-90098=619924&text=ecoflow
+                      - listitem [ref=e214]:
+                        - link "Китай" [ref=e215]:
+                          - /url: /ua/search/?producer=ecoflow&redirected=1&sort=expensive&strana-proizvoditelj-tovara-90098=544331&text=ecoflow
+                      - listitem [ref=e216]:
+                        - link "США" [ref=e217]:
+                          - /url: /ua/search/?producer=ecoflow&redirected=1&sort=expensive&strana-proizvoditelj-tovara-90098=619903&text=ecoflow
+                      - listitem [ref=e218]:
+                        - link "Україна" [ref=e219]:
+                          - /url: /ua/search/?producer=ecoflow&redirected=1&sort=expensive&strana-proizvoditelj-tovara-90098=544338&text=ecoflow
+                      - listitem [ref=e220]:
+                        - link "Франція" [ref=e221]:
+                          - /url: /ua/search/?producer=ecoflow&redirected=1&sort=expensive&strana-proizvoditelj-tovara-90098=619938&text=ecoflow
+                  - group [ref=e222] [cursor=pointer]:
+                    - generic "Доставка 2" [ref=e223]:
+                      - generic [ref=e224]: Доставка 2
+                      - img [ref=e225]
+                    - list [ref=e229]:
+                      - listitem [ref=e230]:
+                        - link "Готовий до відправлення" [ref=e231]:
+                          - /url: /ua/search/?delivery=fast-delivery&producer=ecoflow&redirected=1&sort=expensive&text=ecoflow
+                      - listitem [ref=e232]:
+                        - link "Доставка в магазини ROZETKA" [ref=e233]:
+                          - /url: /ua/search/?delivery=free-shipping-to-the-store&producer=ecoflow&redirected=1&sort=expensive&text=ecoflow
+                  - group [ref=e234] [cursor=pointer]:
+                    - generic "Єдина підписка Smart 1" [ref=e235]:
+                      - generic [ref=e236]: Єдина підписка Smart 1
+                      - img [ref=e237]
+                    - list [ref=e241]:
+                      - listitem [ref=e242]:
+                        - link "Товари з підпискою Smart" [ref=e243]:
+                          - /url: /ua/search/?premium=tovari-s-besplatnoy-dostavkoy&producer=ecoflow&redirected=1&sort=expensive&text=ecoflow
+                - generic [ref=e244] [cursor=pointer]:
+                  - paragraph [ref=e245]: Оберіть категорію, щоб відкрити більше фільтрів
+                  - img [ref=e246]
+            - generic [ref=e248]:
+              - generic [ref=e249]:
+                - article [ref=e252]:
+                  - generic [ref=e254]:
+                    - button "Перемістити в список бажань" [ref=e256] [cursor=pointer]:
+                      - img [ref=e257]
+                    - button "Перемістити у список порівняння" [ref=e260] [cursor=pointer]:
+                      - img [ref=e261]
+                  - link "Зарядна станція EcoFlow DELTA Pro ULTRA" [ref=e263] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/583955212/p583955212/
+                    - img "Зарядна станція EcoFlow DELTA Pro ULTRA" [ref=e264]
+                  - link "Зарядна станція EcoFlow DELTA Pro ULTRA" [ref=e266] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/583955212/p583955212/
+                  - generic [ref=e269] [cursor=pointer]:
+                    - img [ref=e270]
+                    - text: Залишити відгук
+                  - generic [ref=e272]:
+                    - generic [ref=e274]: 272 679₴
+                    - button "Купити" [ref=e276] [cursor=pointer]:
+                      - img [ref=e277]
+                  - generic [ref=e279]: Є в наявності
+                - article [ref=e282]:
+                  - generic [ref=e284]:
+                    - button "Перемістити в список бажань" [ref=e286] [cursor=pointer]:
+                      - img [ref=e287]
+                    - button "Перемістити у список порівняння" [ref=e290] [cursor=pointer]:
+                      - img [ref=e291]
+                  - link "Комплект енергонезалежності EcoFlow Power Independence Kit (Без Батарей та генератора)" [ref=e293] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/591201001/p591201001/
+                    - img "Комплект енергонезалежності EcoFlow Power Independence Kit (Без Батарей та генератора)" [ref=e294]
+                  - link "Комплект енергонезалежності EcoFlow Power Independence Kit (Без Батарей та генератора)" [ref=e296] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/591201001/p591201001/
+                  - generic [ref=e299] [cursor=pointer]:
+                    - img [ref=e300]
+                    - text: Залишити відгук
+                  - generic [ref=e302]:
+                    - generic [ref=e304]: 198 749₴
+                    - button "Купити" [ref=e306] [cursor=pointer]:
+                      - img [ref=e307]
+                  - generic [ref=e309]: Є в наявності
+                - article [ref=e312]:
+                  - generic [ref=e314]:
+                    - button "Перемістити в список бажань" [ref=e316] [cursor=pointer]:
+                      - img [ref=e317]
+                    - button "Перемістити у список порівняння" [ref=e320] [cursor=pointer]:
+                      - img [ref=e321]
+                  - generic [ref=e323]: −18%
+                  - link "Зарядна станція EcoFlow Delta Pro 3 / 4000 Вт / 4096 Вт⋅год / LiFePO4" [ref=e324] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/570504148/p570504148/
+                    - img "Зарядна станція EcoFlow Delta Pro 3 / 4000 Вт / 4096 Вт⋅год / LiFePO4" [ref=e325]
+                  - link "Зарядна станція EcoFlow Delta Pro 3 / 4000 Вт / 4096 Вт⋅год / LiFePO4" [ref=e327] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/570504148/p570504148/
+                  - generic [ref=e329] [cursor=pointer]:
+                    - img [ref=e334]
+                    - generic [ref=e336]:
+                      - img [ref=e337]
+                      - text: "1"
+                  - generic [ref=e339]:
+                    - generic [ref=e340]:
+                      - generic [ref=e341]: 242 154₴
+                      - generic [ref=e342]: 198 563₴
+                    - button "Купити" [ref=e344] [cursor=pointer]:
+                      - img [ref=e345]
+                  - generic [ref=e347]: Є в наявності
+                  - generic [ref=e349]:
+                    - img [ref=e350]
+                    - generic [ref=e352]:
+                      - text: +
+                      - generic [ref=e353]: 199 бонусних
+                      - text: ₴
+                - article [ref=e356]:
+                  - generic [ref=e358]:
+                    - button "Перемістити в список бажань" [ref=e360] [cursor=pointer]:
+                      - img [ref=e361]
+                    - button "Перемістити у список порівняння" [ref=e364] [cursor=pointer]:
+                      - img [ref=e365]
+                  - link "Автономна солнечна електростанція EcoFlow Power Independence Kit без батарей (ZMM100-Combo3-EU)" [ref=e367] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/592493740/p592493740/
+                    - img "Автономна солнечна електростанція EcoFlow Power Independence Kit без батарей (ZMM100-Combo3-EU)" [ref=e368]
+                  - link "Автономна солнечна електростанція EcoFlow Power Independence Kit без батарей (ZMM100-Combo3-EU)" [ref=e370] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/592493740/p592493740/
+                  - generic [ref=e373] [cursor=pointer]:
+                    - img [ref=e374]
+                    - text: Залишити відгук
+                  - generic [ref=e376]:
+                    - generic [ref=e378]: 185 247₴
+                    - button "Купити" [ref=e380] [cursor=pointer]:
+                      - img [ref=e381]
+                  - generic [ref=e383]: Є в наявності
+                - article [ref=e386]:
+                  - generic [ref=e388]:
+                    - button "Перемістити в список бажань" [ref=e390] [cursor=pointer]:
+                      - img [ref=e391]
+                    - button "Перемістити у список порівняння" [ref=e394] [cursor=pointer]:
+                      - img [ref=e395]
+                  - generic [ref=e397]: −10%
+                  - link "Зарядна станція EcoFlow DELTA Pro 3 (Global)" [ref=e398] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/564973334/p564973334/
+                    - img "Зарядна станція EcoFlow DELTA Pro 3 (Global)" [ref=e399]
+                  - link "Зарядна станція EcoFlow DELTA Pro 3 (Global)" [ref=e401] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/564973334/p564973334/
+                  - generic [ref=e404] [cursor=pointer]:
+                    - img [ref=e405]
+                    - text: Залишити відгук
+                  - generic [ref=e407]:
+                    - generic [ref=e408]:
+                      - generic [ref=e409]: 176 689₴
+                      - generic [ref=e410]: 159 019₴
+                    - button "Купити" [ref=e412] [cursor=pointer]:
+                      - img [ref=e413]
+                  - generic [ref=e415]:
+                    - text: Безкоштовна доставка
+                    - button "Що таке Smart" [ref=e416] [cursor=pointer]:
+                      - img [ref=e417]
+                - article [ref=e421]:
+                  - generic [ref=e423]:
+                    - button "Перемістити в список бажань" [ref=e425] [cursor=pointer]:
+                      - img [ref=e426]
+                    - button "Перемістити у список порівняння" [ref=e429] [cursor=pointer]:
+                      - img [ref=e430]
+                  - generic [ref=e432]: ТОП ПРОДАЖІВ
+                  - link "Зарядна станція EcoFlow DELTA Pro 3" [ref=e433] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/589536163/p589536163/
+                    - img "Зарядна станція EcoFlow DELTA Pro 3" [ref=e434]
+                  - link "Зарядна станція EcoFlow DELTA Pro 3" [ref=e436] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/589536163/p589536163/
+                  - generic [ref=e438] [cursor=pointer]:
+                    - img [ref=e443]
+                    - generic [ref=e445]:
+                      - img [ref=e446]
+                      - text: "90"
+                  - generic [ref=e448]:
+                    - generic [ref=e449]:
+                      - generic [ref=e450]: 176 500₴
+                      - generic [ref=e451]: 158 999₴
+                    - button "Купити" [ref=e453] [cursor=pointer]:
+                      - img [ref=e454]
+                  - generic [ref=e457]:
+                    - text: від
+                    - generic [ref=e458]: 133 449₴
+                    - text: у
+                    - button "Переглянути у інших продавців" [ref=e459] [cursor=pointer]: інших продавців
+                  - generic [ref=e460]: Є в наявності
+                - article [ref=e463]:
+                  - generic [ref=e465]:
+                    - button "Перемістити в список бажань" [ref=e467] [cursor=pointer]:
+                      - img [ref=e468]
+                    - button "Перемістити у список порівняння" [ref=e471] [cursor=pointer]:
+                      - img [ref=e472]
+                  - generic [ref=e474]: −9%
+                  - link "Комплект енергонезалежності EcoFlow Power Independence Kit без батарей і генератора (ZMM100-Combo3-EU)" [ref=e475] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/zaryadnie-stantsii-4674585-ecoflow-155314521/p557827290/
+                    - img "Комплект енергонезалежності EcoFlow Power Independence Kit без батарей і генератора (ZMM100-Combo3-EU)" [ref=e476]
+                  - link "Комплект енергонезалежності EcoFlow Power Independence Kit без батарей і генератора (ZMM100-Combo3-EU)" [ref=e478] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/zaryadnie-stantsii-4674585-ecoflow-155314521/p557827290/
+                  - generic [ref=e481] [cursor=pointer]:
+                    - img [ref=e482]
+                    - text: Залишити відгук
+                  - generic [ref=e484]:
+                    - generic [ref=e485]:
+                      - generic [ref=e486]: 174 496₴
+                      - generic [ref=e487]: 158 633₴
+                    - button "Купити" [ref=e489] [cursor=pointer]:
+                      - img [ref=e490]
+                  - generic [ref=e492]:
+                    - text: Безкоштовна доставка
+                    - button "Що таке Smart" [ref=e493] [cursor=pointer]:
+                      - img [ref=e494]
+                - article [ref=e498]:
+                  - generic [ref=e500]:
+                    - button "Перемістити в список бажань" [ref=e502] [cursor=pointer]:
+                      - img [ref=e503]
+                    - button "Перемістити у список порівняння" [ref=e506] [cursor=pointer]:
+                      - img [ref=e507]
+                  - link "Інвертор EcoFlow DELTA Pro Ultra 6900W (EFDeltaProUltra-EU)" [ref=e509] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/597607024/p597607024/
+                    - img "Інвертор EcoFlow DELTA Pro Ultra 6900W (EFDeltaProUltra-EU)" [ref=e510]
+                  - link "Інвертор EcoFlow DELTA Pro Ultra 6900W (EFDeltaProUltra-EU)" [ref=e512] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/597607024/p597607024/
+                  - generic [ref=e515] [cursor=pointer]:
+                    - img [ref=e516]
+                    - text: Залишити відгук
+                  - generic [ref=e518]:
+                    - generic [ref=e520]: 156 349₴
+                    - button "Купити" [ref=e522] [cursor=pointer]:
+                      - img [ref=e523]
+                  - generic [ref=e525]:
+                    - text: Безкоштовна доставка
+                    - button "Що таке Smart" [ref=e526] [cursor=pointer]:
+                      - img [ref=e527]
+                - article [ref=e531]:
+                  - generic [ref=e533]:
+                    - button "Перемістити в список бажань" [ref=e535] [cursor=pointer]:
+                      - img [ref=e536]
+                    - button "Перемістити у список порівняння" [ref=e539] [cursor=pointer]:
+                      - img [ref=e540]
+                  - generic [ref=e542]: −22%
+                  - link "Зарядна станція EcoFlow DELTA Pro 3 4000W 4096Wh (електростанція для дому, UPS, ДБЖ) EU" [ref=e543] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/579888970/p579888970/
+                    - img "Зарядна станція EcoFlow DELTA Pro 3 4000W 4096Wh (електростанція для дому, UPS, ДБЖ) EU" [ref=e544]
+                  - link "Зарядна станція EcoFlow DELTA Pro 3 4000W 4096Wh (електростанція для дому, UPS, ДБЖ) EU" [ref=e546] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/579888970/p579888970/
+                  - generic [ref=e549] [cursor=pointer]:
+                    - img [ref=e550]
+                    - text: Залишити відгук
+                  - generic [ref=e552]:
+                    - generic [ref=e553]:
+                      - generic [ref=e554]: 199 000₴
+                      - generic [ref=e555]: 156 000₴
+                    - button "Купити" [ref=e557] [cursor=pointer]:
+                      - img [ref=e558]
+                  - generic [ref=e560]:
+                    - text: Безкоштовна доставка
+                    - button "Що таке Smart" [ref=e561] [cursor=pointer]:
+                      - img [ref=e562]
+                - article [ref=e566]:
+                  - generic [ref=e568]:
+                    - button "Перемістити в список бажань" [ref=e570] [cursor=pointer]:
+                      - img [ref=e571]
+                    - button "Перемістити у список порівняння" [ref=e574] [cursor=pointer]:
+                      - img [ref=e575]
+                  - generic [ref=e577]: −15%
+                  - link "Зарядна станція EcoFlow DELTA Pro 3 (4096 Вт·год) LiFePO4" [ref=e578] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/579870769/p579870769/
+                    - img "Зарядна станція EcoFlow DELTA Pro 3 (4096 Вт·год) LiFePO4" [ref=e579]
+                  - link "Зарядна станція EcoFlow DELTA Pro 3 (4096 Вт·год) LiFePO4" [ref=e581] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/579870769/p579870769/
+                  - generic [ref=e584] [cursor=pointer]:
+                    - img [ref=e585]
+                    - text: Залишити відгук
+                  - generic [ref=e587]:
+                    - generic [ref=e588]:
+                      - generic [ref=e589]: 183 000₴
+                      - generic [ref=e590]: 155 500₴
+                    - button "Купити" [ref=e592] [cursor=pointer]:
+                      - img [ref=e593]
+                  - generic [ref=e595]:
+                    - text: Безкоштовна доставка
+                    - button "Що таке Smart" [ref=e596] [cursor=pointer]:
+                      - img [ref=e597]
+                - article [ref=e601]:
+                  - generic [ref=e603]:
+                    - button "Перемістити в список бажань" [ref=e605] [cursor=pointer]:
+                      - img [ref=e606]
+                    - button "Перемістити у список порівняння" [ref=e609] [cursor=pointer]:
+                      - img [ref=e610]
+                  - generic [ref=e612]: −6%
+                  - link "Зарядна станція EcoFlow DELTA Pro 3 EU-Version (EFDELTAPRO3-EU-CBox)" [ref=e613] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/578501560/p578501560/
+                    - img "Зарядна станція EcoFlow DELTA Pro 3 EU-Version (EFDELTAPRO3-EU-CBox)" [ref=e614]
+                  - link "Зарядна станція EcoFlow DELTA Pro 3 EU-Version (EFDELTAPRO3-EU-CBox)" [ref=e616] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/578501560/p578501560/
+                  - generic [ref=e619] [cursor=pointer]:
+                    - img [ref=e620]
+                    - text: Залишити відгук
+                  - generic [ref=e622]:
+                    - generic [ref=e623]:
+                      - generic [ref=e624]: 158 000₴
+                      - generic [ref=e625]: 148 000₴
+                    - button "Купити" [ref=e627] [cursor=pointer]:
+                      - img [ref=e628]
+                  - generic [ref=e630]: Є в наявності
+                - article [ref=e633]:
+                  - generic [ref=e635]:
+                    - button "Перемістити в список бажань" [ref=e637] [cursor=pointer]:
+                      - img [ref=e638]
+                    - button "Перемістити у список порівняння" [ref=e641] [cursor=pointer]:
+                      - img [ref=e642]
+                  - generic [ref=e644]: −14%
+                  - link "Зарядна станція EcoFlow DELTA Pro 3 / 4000 Вт / 4096 Вт⋅год / LiFePO4 (EFDELTAPRO3-EU-CBox) / Теплоремікс" [ref=e645] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/zaryadnie-stantsii-4674585-ecoflow-148386730/p536224994/
+                    - img "Зарядна станція EcoFlow DELTA Pro 3 / 4000 Вт / 4096 Вт⋅год / LiFePO4 (EFDELTAPRO3-EU-CBox) / Теплоремікс" [ref=e646]
+                  - link "Зарядна станція EcoFlow DELTA Pro 3 / 4000 Вт / 4096 Вт⋅год / LiFePO4 (EFDELTAPRO3-EU-CBox) / Теплоремікс" [ref=e648] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/zaryadnie-stantsii-4674585-ecoflow-148386730/p536224994/
+                  - generic [ref=e651] [cursor=pointer]:
+                    - img [ref=e652]
+                    - text: Залишити відгук
+                  - generic [ref=e654]:
+                    - generic [ref=e655]:
+                      - generic [ref=e656]: 169 999₴
+                      - generic [ref=e657]: 146 700₴
+                    - button "Купити" [ref=e659] [cursor=pointer]:
+                      - img [ref=e660]
+                  - generic [ref=e662]: Є в наявності
+                - article [ref=e665]:
+                  - generic [ref=e667]:
+                    - button "Перемістити в список бажань" [ref=e669] [cursor=pointer]:
+                      - img [ref=e670]
+                    - button "Перемістити у список порівняння" [ref=e673] [cursor=pointer]:
+                      - img [ref=e674]
+                  - generic [ref=e676]: −14%
+                  - link "Зарядна станція EcoFlow DELTA Pro 3 / 4000 Вт / 4096 Вт⋅год / LiFePO4 (EFDELTAPRO3-EU-CBox-int) / Теплотехніка" [ref=e677] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/zaryadnie-stantsii-4674585-ecoflow-148330157/p535783399/
+                    - img "Зарядна станція EcoFlow DELTA Pro 3 / 4000 Вт / 4096 Вт⋅год / LiFePO4 (EFDELTAPRO3-EU-CBox-int) / Теплотехніка" [ref=e678]
+                  - link "Зарядна станція EcoFlow DELTA Pro 3 / 4000 Вт / 4096 Вт⋅год / LiFePO4 (EFDELTAPRO3-EU-CBox-int) / Теплотехніка" [ref=e680] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/zaryadnie-stantsii-4674585-ecoflow-148330157/p535783399/
+                  - generic [ref=e682] [cursor=pointer]:
+                    - img [ref=e687]
+                    - generic [ref=e689]:
+                      - img [ref=e690]
+                      - text: "1"
+                  - generic [ref=e692]:
+                    - generic [ref=e693]:
+                      - generic [ref=e694]: 169 999₴
+                      - generic [ref=e695]: 146 600₴
+                    - button "Купити" [ref=e697] [cursor=pointer]:
+                      - img [ref=e698]
+                  - generic [ref=e700]: Є в наявності
+                - article [ref=e703]:
+                  - generic [ref=e705]:
+                    - button "Перемістити в список бажань" [ref=e707] [cursor=pointer]:
+                      - img [ref=e708]
+                    - button "Перемістити у список порівняння" [ref=e711] [cursor=pointer]:
+                      - img [ref=e712]
+                  - link "Комплект енергонезалежності EcoFlow Power Get Set Kit (Без Батарей)" [ref=e714] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/587831098/p587831098/
+                    - img "Комплект енергонезалежності EcoFlow Power Get Set Kit (Без Батарей)" [ref=e715]
+                  - link "Комплект енергонезалежності EcoFlow Power Get Set Kit (Без Батарей)" [ref=e717] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/587831098/p587831098/
+                  - generic [ref=e720] [cursor=pointer]:
+                    - img [ref=e721]
+                    - text: Залишити відгук
+                  - generic [ref=e723]:
+                    - generic [ref=e725]: 146 249₴
+                    - button "Купити" [ref=e727] [cursor=pointer]:
+                      - img [ref=e728]
+                  - generic [ref=e730]: Є в наявності
+                - article [ref=e733]:
+                  - generic [ref=e735]:
+                    - button "Перемістити в список бажань" [ref=e737] [cursor=pointer]:
+                      - img [ref=e738]
+                    - button "Перемістити у список порівняння" [ref=e741] [cursor=pointer]:
+                      - img [ref=e742]
+                  - link "Зарядна станція EcoFlow DELTA Pro 3 EU-Version (EFDELTAPRO3-EU-CBox)" [ref=e744] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/589982584/p589982584/
+                    - img "Зарядна станція EcoFlow DELTA Pro 3 EU-Version (EFDELTAPRO3-EU-CBox)" [ref=e745]
+                  - link "Зарядна станція EcoFlow DELTA Pro 3 EU-Version (EFDELTAPRO3-EU-CBox)" [ref=e747] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/589982584/p589982584/
+                  - generic [ref=e750] [cursor=pointer]:
+                    - img [ref=e751]
+                    - text: Залишити відгук
+                  - generic [ref=e753]:
+                    - generic [ref=e755]: 141 500₴
+                    - button "Купити" [ref=e757] [cursor=pointer]:
+                      - img [ref=e758]
+                  - generic [ref=e760]:
+                    - text: Безкоштовна доставка
+                    - button "Що таке Smart" [ref=e761] [cursor=pointer]:
+                      - img [ref=e762]
+                - article [ref=e766]:
+                  - generic [ref=e768]:
+                    - button "Перемістити в список бажань" [ref=e770] [cursor=pointer]:
+                      - img [ref=e771]
+                    - button "Перемістити у список порівняння" [ref=e774] [cursor=pointer]:
+                      - img [ref=e775]
+                  - link "Зарядна станція EcoFlow DELTA Pro 3 EU-Version (EFDELTAPRO3-EU-CBox)" [ref=e777] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/602267563/p602267563/
+                    - img "Зарядна станція EcoFlow DELTA Pro 3 EU-Version (EFDELTAPRO3-EU-CBox)" [ref=e778]
+                  - link "Зарядна станція EcoFlow DELTA Pro 3 EU-Version (EFDELTAPRO3-EU-CBox)" [ref=e780] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/602267563/p602267563/
+                  - generic [ref=e783] [cursor=pointer]:
+                    - img [ref=e784]
+                    - text: Залишити відгук
+                  - generic [ref=e786]:
+                    - generic [ref=e788]: 141 100₴
+                    - button "Купити" [ref=e790] [cursor=pointer]:
+                      - img [ref=e791]
+                  - generic [ref=e793]:
+                    - text: Безкоштовна доставка
+                    - button "Що таке Smart" [ref=e794] [cursor=pointer]:
+                      - img [ref=e795]
+                - article [ref=e799]:
+                  - generic [ref=e801]:
+                    - button "Перемістити в список бажань" [ref=e803] [cursor=pointer]:
+                      - img [ref=e804]
+                    - button "Перемістити у список порівняння" [ref=e807] [cursor=pointer]:
+                      - img [ref=e808]
+                  - link "Зарядна станція EcoFlow DELTA Pro 3 EU-Version (EFDELTAPRO3-EU-CBox)" [ref=e810] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/582429121/p582429121/
+                    - img "Зарядна станція EcoFlow DELTA Pro 3 EU-Version (EFDELTAPRO3-EU-CBox)" [ref=e811]
+                  - link "Зарядна станція EcoFlow DELTA Pro 3 EU-Version (EFDELTAPRO3-EU-CBox)" [ref=e813] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/582429121/p582429121/
+                  - generic [ref=e816] [cursor=pointer]:
+                    - img [ref=e817]
+                    - text: Залишити відгук
+                  - generic [ref=e819]:
+                    - generic [ref=e821]: 139 665₴
+                    - button "Купити" [ref=e823] [cursor=pointer]:
+                      - img [ref=e824]
+                  - generic [ref=e826]: Є в наявності
+                - article [ref=e829]:
+                  - generic [ref=e831]:
+                    - button "Перемістити в список бажань" [ref=e833] [cursor=pointer]:
+                      - img [ref=e834]
+                    - button "Перемістити у список порівняння" [ref=e837] [cursor=pointer]:
+                      - img [ref=e838]
+                  - link "Зарядна станція EcoFlow DELTA Pro 3 EU-Version (EFDELTAPRO3-EU-CBox)" [ref=e840] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/zaryadnie-stantsii-4674585-ecoflow-157298950/p563372937/
+                    - img "Зарядна станція EcoFlow DELTA Pro 3 EU-Version (EFDELTAPRO3-EU-CBox)" [ref=e841]
+                  - link "Зарядна станція EcoFlow DELTA Pro 3 EU-Version (EFDELTAPRO3-EU-CBox)" [ref=e843] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/zaryadnie-stantsii-4674585-ecoflow-157298950/p563372937/
+                  - generic [ref=e846] [cursor=pointer]:
+                    - img [ref=e847]
+                    - text: Залишити відгук
+                  - generic [ref=e849]:
+                    - generic [ref=e851]: 139 189₴
+                    - button "Купити" [ref=e853] [cursor=pointer]:
+                      - img [ref=e854]
+                  - generic [ref=e856]:
+                    - text: Безкоштовна доставка
+                    - button "Що таке Smart" [ref=e857] [cursor=pointer]:
+                      - img [ref=e858]
+                - article [ref=e862]:
+                  - generic [ref=e864]:
+                    - button "Перемістити в список бажань" [ref=e866] [cursor=pointer]:
+                      - img [ref=e867]
+                    - button "Перемістити у список порівняння" [ref=e870] [cursor=pointer]:
+                      - img [ref=e871]
+                  - link "Зарядна станція EcoFlow DELTA Pro 3 EU-Version (EFDELTAPRO3-EU-CBox)" [ref=e873] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/456170229/p456170229/
+                    - img "Зарядна станція EcoFlow DELTA Pro 3 EU-Version (EFDELTAPRO3-EU-CBox)" [ref=e874]
+                  - link "Зарядна станція EcoFlow DELTA Pro 3 EU-Version (EFDELTAPRO3-EU-CBox)" [ref=e876] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/456170229/p456170229/
+                  - generic [ref=e879] [cursor=pointer]:
+                    - img [ref=e880]
+                    - text: Залишити відгук
+                  - generic [ref=e882]:
+                    - generic [ref=e884]: 138 106₴
+                    - button "Купити" [ref=e886] [cursor=pointer]:
+                      - img [ref=e887]
+                  - generic [ref=e889]: Є в наявності
+                - article [ref=e892]:
+                  - generic [ref=e894]:
+                    - button "Перемістити в список бажань" [ref=e896] [cursor=pointer]:
+                      - img [ref=e897]
+                    - button "Перемістити у список порівняння" [ref=e900] [cursor=pointer]:
+                      - img [ref=e901]
+                  - generic [ref=e903]: −20%
+                  - link "Портативна зарядна станція EcoFlow DELTA Pro 3 CH (CN версія), 4000 Вт, 4096 Вт·год, + перехiдники на эвро розетку в подарунок" [ref=e904] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/587854543/p587854543/
+                    - img "Портативна зарядна станція EcoFlow DELTA Pro 3 CH (CN версія), 4000 Вт, 4096 Вт·год, + перехiдники на эвро розетку в подарунок" [ref=e905]
+                  - link "Портативна зарядна станція EcoFlow DELTA Pro 3 CH (CN версія), 4000 Вт, 4096 Вт·год, + перехiдники на эвро розетку в подарунок" [ref=e907] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/587854543/p587854543/
+                  - generic [ref=e910] [cursor=pointer]:
+                    - img [ref=e911]
+                    - text: Залишити відгук
+                  - generic [ref=e913]:
+                    - generic [ref=e914]:
+                      - generic [ref=e915]: 172 000₴
+                      - generic [ref=e916]: 138 000₴
+                    - button "Купити" [ref=e918] [cursor=pointer]:
+                      - img [ref=e919]
+                  - generic [ref=e921]:
+                    - text: Безкоштовна доставка
+                    - button "Що таке Smart" [ref=e922] [cursor=pointer]:
+                      - img [ref=e923]
+                - article [ref=e927]:
+                  - generic [ref=e929]:
+                    - button "Перемістити в список бажань" [ref=e931] [cursor=pointer]:
+                      - img [ref=e932]
+                    - button "Перемістити у список порівняння" [ref=e935] [cursor=pointer]:
+                      - img [ref=e936]
+                  - generic [ref=e938]: −9%
+                  - link "Зарядна станція EcoFlow DELTA Pro / 3600 Вт / 3600 Вт⋅год / LiFePO4 (DELTAPro-EU)" [ref=e939] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/448654772/p448654772/
+                    - img "Зарядна станція EcoFlow DELTA Pro / 3600 Вт / 3600 Вт⋅год / LiFePO4 (DELTAPro-EU)" [ref=e940]
+                  - link "Зарядна станція EcoFlow DELTA Pro / 3600 Вт / 3600 Вт⋅год / LiFePO4 (DELTAPro-EU)" [ref=e942] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/448654772/p448654772/
+                  - generic [ref=e944] [cursor=pointer]:
+                    - img [ref=e949]
+                    - generic [ref=e951]:
+                      - img [ref=e952]
+                      - text: "3"
+                  - generic [ref=e954]:
+                    - generic [ref=e955]:
+                      - generic [ref=e956]: 150 000₴
+                      - generic [ref=e957]: 137 000₴
+                    - button "Купити" [ref=e959] [cursor=pointer]:
+                      - img [ref=e960]
+                  - generic [ref=e963]:
+                    - text: від
+                    - generic [ref=e964]: 98 653₴
+                    - text: у
+                    - button "Переглянути у інших продавців" [ref=e965] [cursor=pointer]: інших продавців
+                  - generic [ref=e966]: Є в наявності
+                - article [ref=e969]:
+                  - generic [ref=e971]:
+                    - button "Перемістити в список бажань" [ref=e973] [cursor=pointer]:
+                      - img [ref=e974]
+                    - button "Перемістити у список порівняння" [ref=e977] [cursor=pointer]:
+                      - img [ref=e978]
+                  - link "Зарядна станція EcoFlow DELTA Pro 3 (4000 Вт, 4096 Вт·год, LiFePO4)" [ref=e980] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/603769129/p603769129/
+                    - img "Зарядна станція EcoFlow DELTA Pro 3 (4000 Вт, 4096 Вт·год, LiFePO4)" [ref=e981]
+                  - link "Зарядна станція EcoFlow DELTA Pro 3 (4000 Вт, 4096 Вт·год, LiFePO4)" [ref=e983] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/603769129/p603769129/
+                  - generic [ref=e986] [cursor=pointer]:
+                    - img [ref=e987]
+                    - text: Залишити відгук
+                  - generic [ref=e989]:
+                    - generic [ref=e991]: 136 590₴
+                    - button "Купити" [ref=e993] [cursor=pointer]:
+                      - img [ref=e994]
+                  - generic [ref=e996]:
+                    - text: Безкоштовна доставка
+                    - button "Що таке Smart" [ref=e997] [cursor=pointer]:
+                      - img [ref=e998]
+                - article [ref=e1002]:
+                  - generic [ref=e1004]:
+                    - button "Перемістити в список бажань" [ref=e1006] [cursor=pointer]:
+                      - img [ref=e1007]
+                    - button "Перемістити у список порівняння" [ref=e1010] [cursor=pointer]:
+                      - img [ref=e1011]
+                  - link "Автономна солнечна електростанція EcoFlow Power Get Set Kit без батарей (ZMM100-Combo1-EU)" [ref=e1013] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/592493506/p592493506/
+                    - img "Автономна солнечна електростанція EcoFlow Power Get Set Kit без батарей (ZMM100-Combo1-EU)" [ref=e1014]
+                  - link "Автономна солнечна електростанція EcoFlow Power Get Set Kit без батарей (ZMM100-Combo1-EU)" [ref=e1016] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/592493506/p592493506/
+                  - generic [ref=e1019] [cursor=pointer]:
+                    - img [ref=e1020]
+                    - text: Залишити відгук
+                  - generic [ref=e1022]:
+                    - generic [ref=e1024]: 136 391₴
+                    - button "Купити" [ref=e1026] [cursor=pointer]:
+                      - img [ref=e1027]
+                  - generic [ref=e1029]: Є в наявності
+                - article [ref=e1032]:
+                  - generic [ref=e1034]:
+                    - button "Перемістити в список бажань" [ref=e1036] [cursor=pointer]:
+                      - img [ref=e1037]
+                    - button "Перемістити у список порівняння" [ref=e1040] [cursor=pointer]:
+                      - img [ref=e1041]
+                  - generic [ref=e1043]: −7%
+                  - link "Зарядна станція EcoFlow DELTA Pro 3 (EFDELTAPRO3-EU)" [ref=e1044] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/600714397/p600714397/
+                    - img "Зарядна станція EcoFlow DELTA Pro 3 (EFDELTAPRO3-EU)" [ref=e1045]
+                  - link "Зарядна станція EcoFlow DELTA Pro 3 (EFDELTAPRO3-EU)" [ref=e1047] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/600714397/p600714397/
+                  - generic [ref=e1050] [cursor=pointer]:
+                    - img [ref=e1051]
+                    - text: Залишити відгук
+                  - generic [ref=e1053]:
+                    - generic [ref=e1054]:
+                      - generic [ref=e1055]: 143 021₴
+                      - generic [ref=e1056]: 133 664₴
+                    - button "Купити" [ref=e1058] [cursor=pointer]:
+                      - img [ref=e1059]
+                  - generic [ref=e1061]: Є в наявності
+                - article [ref=e1064]:
+                  - generic [ref=e1066]:
+                    - button "Перемістити в список бажань" [ref=e1068] [cursor=pointer]:
+                      - img [ref=e1069]
+                    - button "Перемістити у список порівняння" [ref=e1072] [cursor=pointer]:
+                      - img [ref=e1073]
+                  - link "Зарядна станція EcoFlow DELTA Pro 3 (4000W/4096Wh)" [ref=e1075] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/601931797/p601931797/
+                    - img "Зарядна станція EcoFlow DELTA Pro 3 (4000W/4096Wh)" [ref=e1076]
+                  - link "Зарядна станція EcoFlow DELTA Pro 3 (4000W/4096Wh)" [ref=e1078] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/601931797/p601931797/
+                  - generic [ref=e1081] [cursor=pointer]:
+                    - img [ref=e1082]
+                    - text: Залишити відгук
+                  - generic [ref=e1084]:
+                    - generic [ref=e1085]:
+                      - generic [ref=e1086]: 133 999₴
+                      - generic [ref=e1087]: 133 299₴
+                    - button "Купити" [ref=e1089] [cursor=pointer]:
+                      - img [ref=e1090]
+                  - generic [ref=e1092]:
+                    - text: Безкоштовна доставка
+                    - button "Що таке Smart" [ref=e1093] [cursor=pointer]:
+                      - img [ref=e1094]
+                - article [ref=e1098]:
+                  - generic [ref=e1100]:
+                    - button "Перемістити в список бажань" [ref=e1102] [cursor=pointer]:
+                      - img [ref=e1103]
+                    - button "Перемістити у список порівняння" [ref=e1106] [cursor=pointer]:
+                      - img [ref=e1107]
+                  - generic [ref=e1109]: −15%
+                  - link "Зарядна станція EcoFlow DELTA Pro 3, 4096 Вт·год, 4000 Вт (електростанція для дому, UPS, ДБЖ) міжнародна версія +перехідник" [ref=e1110] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/zaryadnie-stantsii-4674585-ecoflow-153156986/p552445794/
+                    - img "Зарядна станція EcoFlow DELTA Pro 3, 4096 Вт·год, 4000 Вт (електростанція для дому, UPS, ДБЖ) міжнародна версія +перехідник" [ref=e1111]
+                  - link "Зарядна станція EcoFlow DELTA Pro 3, 4096 Вт·год, 4000 Вт (електростанція для дому, UPS, ДБЖ) міжнародна версія +перехідник" [ref=e1113] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/zaryadnie-stantsii-4674585-ecoflow-153156986/p552445794/
+                  - generic [ref=e1116] [cursor=pointer]:
+                    - img [ref=e1117]
+                    - text: Залишити відгук
+                  - generic [ref=e1119]:
+                    - generic [ref=e1120]:
+                      - generic [ref=e1121]: 155 000₴
+                      - generic [ref=e1122]: 131 500₴
+                    - button "Купити" [ref=e1124] [cursor=pointer]:
+                      - img [ref=e1125]
+                  - generic [ref=e1127]: Передзамовлення
+                - article [ref=e1130]:
+                  - generic [ref=e1132]:
+                    - button "Перемістити в список бажань" [ref=e1134] [cursor=pointer]:
+                      - img [ref=e1135]
+                    - button "Перемістити у список порівняння" [ref=e1138] [cursor=pointer]:
+                      - img [ref=e1139]
+                  - link "Додаткова акумулятор для зарядної станції EcoFlow DELTA Pro Ultra Extra Battery" [ref=e1141] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/585611422/p585611422/
+                    - img "Додаткова акумулятор для зарядної станції EcoFlow DELTA Pro Ultra Extra Battery" [ref=e1142]
+                  - link "Додаткова акумулятор для зарядної станції EcoFlow DELTA Pro Ultra Extra Battery" [ref=e1144] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/585611422/p585611422/
+                  - generic [ref=e1147] [cursor=pointer]:
+                    - img [ref=e1148]
+                    - text: Залишити відгук
+                  - generic [ref=e1150]:
+                    - generic [ref=e1152]: 127 898₴
+                    - button "Купити" [ref=e1154] [cursor=pointer]:
+                      - img [ref=e1155]
+                  - generic [ref=e1157]: Є в наявності
+                - article [ref=e1160]:
+                  - generic [ref=e1162]:
+                    - button "Перемістити в список бажань" [ref=e1164] [cursor=pointer]:
+                      - img [ref=e1165]
+                    - button "Перемістити у список порівняння" [ref=e1168] [cursor=pointer]:
+                      - img [ref=e1169]
+                  - link "Акумуляторна батарея EcoFlow Power Ocean 5 kWh" [ref=e1171] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/587831092/p587831092/
+                    - img "Акумуляторна батарея EcoFlow Power Ocean 5 kWh" [ref=e1172]
+                  - link "Акумуляторна батарея EcoFlow Power Ocean 5 kWh" [ref=e1174] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/587831092/p587831092/
+                  - generic [ref=e1177] [cursor=pointer]:
+                    - img [ref=e1178]
+                    - text: Залишити відгук
+                  - generic [ref=e1180]:
+                    - generic [ref=e1182]: 127 499₴
+                    - button "Купити" [ref=e1184] [cursor=pointer]:
+                      - img [ref=e1185]
+                  - generic [ref=e1187]: Є в наявності
+                - article [ref=e1190]:
+                  - generic [ref=e1192]:
+                    - button "Перемістити в список бажань" [ref=e1194] [cursor=pointer]:
+                      - img [ref=e1195]
+                    - button "Перемістити у список порівняння" [ref=e1198] [cursor=pointer]:
+                      - img [ref=e1199]
+                  - link "Автономна система резервного живлення EcoFlow EF-3.68K/5.1 кВт·год інвертор + акумулятор + підставка для акумулятора EF-BatteryBase (EF-3.68K/5.1kWh) ОЧманіти!" [ref=e1201] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/ecoflow-ef-3-68k-5-1kwh/p585920518/
+                    - img "Автономна система резервного живлення EcoFlow EF-3.68K/5.1 кВт·год інвертор + акумулятор + підставка для акумулятора EF-BatteryBase (EF-3.68K/5.1kWh)" [ref=e1202]
+                    - img "ОЧманіти!" [ref=e1205]
+                  - link "Автономна система резервного живлення EcoFlow EF-3.68K/5.1 кВт·год інвертор + акумулятор + підставка для акумулятора EF-BatteryBase (EF-3.68K/5.1kWh)" [ref=e1207] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/ecoflow-ef-3-68k-5-1kwh/p585920518/
+                  - generic [ref=e1210] [cursor=pointer]:
+                    - img [ref=e1211]
+                    - text: Залишити відгук
+                  - generic [ref=e1213]:
+                    - generic [ref=e1214]:
+                      - generic [ref=e1216]: 119 999₴
+                      - button "113 999₴" [ref=e1217] [cursor=pointer]:
+                        - generic [ref=e1218]: 113 999₴
+                        - img [ref=e1219]
+                    - button "Купити" [ref=e1221] [cursor=pointer]:
+                      - img [ref=e1222]
+                  - generic [ref=e1224]: Є в наявності
+                - article [ref=e1227]:
+                  - generic [ref=e1229]:
+                    - button "Перемістити в список бажань" [ref=e1231] [cursor=pointer]:
+                      - img [ref=e1232]
+                    - button "Перемістити у список порівняння" [ref=e1235] [cursor=pointer]:
+                      - img [ref=e1236]
+                  - link "Ecoflow Зарядна станція EcoFlow DELTA 3 Ultra Plus (EF-DL-H02-3UP)" [ref=e1238] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/605673829/p605673829/
+                    - img "Ecoflow Зарядна станція EcoFlow DELTA 3 Ultra Plus (EF-DL-H02-3UP)" [ref=e1239]
+                  - link "Ecoflow Зарядна станція EcoFlow DELTA 3 Ultra Plus (EF-DL-H02-3UP)" [ref=e1241] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/605673829/p605673829/
+                  - generic [ref=e1244] [cursor=pointer]:
+                    - img [ref=e1245]
+                    - text: Залишити відгук
+                  - generic [ref=e1247]:
+                    - generic [ref=e1249]: 118 649₴
+                    - button "Купити" [ref=e1251] [cursor=pointer]:
+                      - img [ref=e1252]
+                  - generic [ref=e1254]: Є в наявності
+                - article [ref=e1257]:
+                  - generic [ref=e1259]:
+                    - button "Перемістити в список бажань" [ref=e1261] [cursor=pointer]:
+                      - img [ref=e1262]
+                    - button "Перемістити у список порівняння" [ref=e1265] [cursor=pointer]:
+                      - img [ref=e1266]
+                  - link "Панель керування EcoFlow Smart Home 2 (EFSMARTHOMEPANEL2-EU) [116808]" [ref=e1268] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/470542224/p470542224/
+                    - img "Панель керування EcoFlow Smart Home 2 (EFSMARTHOMEPANEL2-EU) [116808]" [ref=e1269]
+                  - link "Панель керування EcoFlow Smart Home 2 (EFSMARTHOMEPANEL2-EU) [116808]" [ref=e1271] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/470542224/p470542224/
+                  - generic [ref=e1274] [cursor=pointer]:
+                    - img [ref=e1275]
+                    - text: Залишити відгук
+                  - generic [ref=e1277]:
+                    - generic [ref=e1279]: 118 049₴
+                    - button "Купити" [ref=e1281] [cursor=pointer]:
+                      - img [ref=e1282]
+                  - generic [ref=e1284]:
+                    - text: Безкоштовна доставка
+                    - button "Що таке Smart" [ref=e1285] [cursor=pointer]:
+                      - img [ref=e1286]
+                - article [ref=e1290]:
+                  - generic [ref=e1292]:
+                    - button "Перемістити в список бажань" [ref=e1294] [cursor=pointer]:
+                      - img [ref=e1295]
+                    - button "Перемістити у список порівняння" [ref=e1298] [cursor=pointer]:
+                      - img [ref=e1299]
+                  - generic [ref=e1301]: −36%
+                  - link "Зарядна станція EcoFlow DELTA PRO 3600W 3600Wh 3.6" [ref=e1302] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/402160986/p402160986/
+                    - img "Зарядна станція EcoFlow DELTA PRO 3600W 3600Wh 3.6" [ref=e1303]
+                  - link "Зарядна станція EcoFlow DELTA PRO 3600W 3600Wh 3.6" [ref=e1305] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/402160986/p402160986/
+                  - generic [ref=e1307] [cursor=pointer]:
+                    - img [ref=e1312]
+                    - generic [ref=e1314]:
+                      - img [ref=e1315]
+                      - text: "305"
+                  - generic [ref=e1317]:
+                    - generic [ref=e1318]:
+                      - generic [ref=e1319]: 183 000₴
+                      - generic [ref=e1320]: 117 999₴
+                    - button "Купити" [ref=e1322] [cursor=pointer]:
+                      - img [ref=e1323]
+                  - generic [ref=e1326]:
+                    - text: від
+                    - generic [ref=e1327]: 99 699₴
+                    - text: у
+                    - button "Переглянути у інших продавців" [ref=e1328] [cursor=pointer]: інших продавців
+                  - generic [ref=e1329]: Є в наявності
+                - article [ref=e1332]:
+                  - generic [ref=e1334]:
+                    - button "Перемістити в список бажань" [ref=e1336] [cursor=pointer]:
+                      - img [ref=e1337]
+                    - button "Перемістити у список порівняння" [ref=e1340] [cursor=pointer]:
+                      - img [ref=e1341]
+                  - generic [ref=e1343]: НОВИНКА
+                  - link "Зарядна станція Ecoflow Delta 3 Ultra Plus / 3600 Вт / 3072 Вт⋅год / LiFePO4 (EFDELTA3UPLUS-EU) ОЧманіти!" [ref=e1344] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/ecoflow-efdelta3uplus-eu/p605215090/
+                    - img "Зарядна станція Ecoflow Delta 3 Ultra Plus / 3600 Вт / 3072 Вт⋅год / LiFePO4 (EFDELTA3UPLUS-EU)" [ref=e1345]
+                    - img "ОЧманіти!" [ref=e1348]
+                  - link "Зарядна станція Ecoflow Delta 3 Ultra Plus / 3600 Вт / 3072 Вт⋅год / LiFePO4 (EFDELTA3UPLUS-EU)" [ref=e1350] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/ecoflow-efdelta3uplus-eu/p605215090/
+                  - generic [ref=e1353] [cursor=pointer]:
+                    - img [ref=e1354]
+                    - text: Залишити відгук
+                  - generic [ref=e1356]:
+                    - generic [ref=e1357]:
+                      - generic [ref=e1359]: 116 999₴
+                      - button "111 149₴" [ref=e1360] [cursor=pointer]:
+                        - generic [ref=e1361]: 111 149₴
+                        - img [ref=e1362]
+                    - button "Купити" [ref=e1364] [cursor=pointer]:
+                      - img [ref=e1365]
+                  - generic [ref=e1367]: Готово до відправки
+                - article [ref=e1370]:
+                  - generic [ref=e1372]:
+                    - button "Перемістити в список бажань" [ref=e1374] [cursor=pointer]:
+                      - img [ref=e1375]
+                    - button "Перемістити у список порівняння" [ref=e1378] [cursor=pointer]:
+                      - img [ref=e1379]
+                  - generic [ref=e1381]: −9%
+                  - link "Зарядна станція EcoFlow DELTA 3 Ultra Plus 3072 Вт·год 3600 Вт резервне живлення для дому (EFDELTA3UPLUS-EU)" [ref=e1382] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/608148497/p608148497/
+                    - img "Зарядна станція EcoFlow DELTA 3 Ultra Plus 3072 Вт·год 3600 Вт резервне живлення для дому (EFDELTA3UPLUS-EU)" [ref=e1383]
+                  - link "Зарядна станція EcoFlow DELTA 3 Ultra Plus 3072 Вт·год 3600 Вт резервне живлення для дому (EFDELTA3UPLUS-EU)" [ref=e1385] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/608148497/p608148497/
+                  - generic [ref=e1388] [cursor=pointer]:
+                    - img [ref=e1389]
+                    - text: Залишити відгук
+                  - generic [ref=e1391]:
+                    - generic [ref=e1392]:
+                      - generic [ref=e1393]: 128 403₴
+                      - generic [ref=e1394]: 116 730₴
+                    - button "Купити" [ref=e1396] [cursor=pointer]:
+                      - img [ref=e1397]
+                  - generic [ref=e1399]: Є в наявності
+                - article [ref=e1402]:
+                  - generic [ref=e1404]:
+                    - button "Перемістити в список бажань" [ref=e1406] [cursor=pointer]:
+                      - img [ref=e1407]
+                    - button "Перемістити у список порівняння" [ref=e1410] [cursor=pointer]:
+                      - img [ref=e1411]
+                  - generic [ref=e1413]: −10%
+                  - link "Зарядна станція EcoFlow DELTA Pro / 3600 Вт / LiFePO4 / Теплоремікс" [ref=e1414] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/zaryadnie-stantsii-4674585-ecoflow-155211780/p557323014/
+                    - img "Зарядна станція EcoFlow DELTA Pro / 3600 Вт / LiFePO4 / Теплоремікс" [ref=e1415]
+                  - link "Зарядна станція EcoFlow DELTA Pro / 3600 Вт / LiFePO4 / Теплоремікс" [ref=e1417] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/zaryadnie-stantsii-4674585-ecoflow-155211780/p557323014/
+                  - generic [ref=e1420] [cursor=pointer]:
+                    - img [ref=e1421]
+                    - text: Залишити відгук
+                  - generic [ref=e1423]:
+                    - generic [ref=e1424]:
+                      - generic [ref=e1425]: 129 999₴
+                      - generic [ref=e1426]: 116 700₴
+                    - button "Купити" [ref=e1428] [cursor=pointer]:
+                      - img [ref=e1429]
+                  - generic [ref=e1431]: Є в наявності
+                - article [ref=e1434]:
+                  - generic [ref=e1436]:
+                    - button "Перемістити в список бажань" [ref=e1438] [cursor=pointer]:
+                      - img [ref=e1439]
+                    - button "Перемістити у список порівняння" [ref=e1442] [cursor=pointer]:
+                      - img [ref=e1443]
+                  - link "Високовольтна акумуляторна батарея EcoFLow Power Ocean 5 kWh для 3-х фазного гібридного інвертора (PowerOcean-Battery-5kWh-DE)" [ref=e1445] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/447299321/p447299321/
+                    - img "Високовольтна акумуляторна батарея EcoFLow Power Ocean 5 kWh для 3-х фазного гібридного інвертора (PowerOcean-Battery-5kWh-DE)" [ref=e1446]
+                  - link "Високовольтна акумуляторна батарея EcoFLow Power Ocean 5 kWh для 3-х фазного гібридного інвертора (PowerOcean-Battery-5kWh-DE)" [ref=e1448] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/447299321/p447299321/
+                  - generic [ref=e1451] [cursor=pointer]:
+                    - img [ref=e1452]
+                    - text: Залишити відгук
+                  - generic [ref=e1454]:
+                    - generic [ref=e1455]:
+                      - generic [ref=e1456]: 116 944₴
+                      - generic [ref=e1457]: 114 651₴
+                    - button "Купити" [ref=e1459] [cursor=pointer]:
+                      - img [ref=e1460]
+                  - generic [ref=e1462]:
+                    - text: Безкоштовна доставка
+                    - button "Що таке Smart" [ref=e1463] [cursor=pointer]:
+                      - img [ref=e1464]
+                - article [ref=e1468]:
+                  - generic [ref=e1470]:
+                    - button "Перемістити в список бажань" [ref=e1472] [cursor=pointer]:
+                      - img [ref=e1473]
+                    - button "Перемістити у список порівняння" [ref=e1476] [cursor=pointer]:
+                      - img [ref=e1477]
+                  - link "Високовольтна акумуляторна батарея EcoFLow Power Ocean 5 kWh для 3-х фазного гібридного інвертора (PowerOcean-Battery-5kWh-DE)" [ref=e1479] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/439096787/p439096787/
+                    - img "Високовольтна акумуляторна батарея EcoFLow Power Ocean 5 kWh для 3-х фазного гібридного інвертора (PowerOcean-Battery-5kWh-DE)" [ref=e1480]
+                  - link "Високовольтна акумуляторна батарея EcoFLow Power Ocean 5 kWh для 3-х фазного гібридного інвертора (PowerOcean-Battery-5kWh-DE)" [ref=e1482] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/439096787/p439096787/
+                  - generic [ref=e1485] [cursor=pointer]:
+                    - img [ref=e1486]
+                    - text: Залишити відгук
+                  - generic [ref=e1488]:
+                    - generic [ref=e1489]:
+                      - generic [ref=e1490]: 112 893₴
+                      - generic [ref=e1491]: 109 730₴
+                    - button "Купити" [ref=e1493] [cursor=pointer]:
+                      - img [ref=e1494]
+                  - generic [ref=e1496]:
+                    - text: Безкоштовна доставка
+                    - button "Що таке Smart" [ref=e1497] [cursor=pointer]:
+                      - img [ref=e1498]
+                - article [ref=e1502]:
+                  - generic [ref=e1504]:
+                    - button "Перемістити в список бажань" [ref=e1506] [cursor=pointer]:
+                      - img [ref=e1507]
+                    - button "Перемістити у список порівняння" [ref=e1510] [cursor=pointer]:
+                      - img [ref=e1511]
+                  - generic [ref=e1513]: −9%
+                  - link "Зарядна станція EcoFlow DELTA Pro DELTAPro-IN" [ref=e1514] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/zaryadnie-stantsii-4674585-ecoflow-156417628/p561091437/
+                    - img "Зарядна станція EcoFlow DELTA Pro DELTAPro-IN" [ref=e1515]
+                  - link "Зарядна станція EcoFlow DELTA Pro DELTAPro-IN" [ref=e1517] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/zaryadnie-stantsii-4674585-ecoflow-156417628/p561091437/
+                  - generic [ref=e1520] [cursor=pointer]:
+                    - img [ref=e1521]
+                    - text: Залишити відгук
+                  - generic [ref=e1523]:
+                    - generic [ref=e1524]:
+                      - generic [ref=e1525]: 111 750₴
+                      - generic [ref=e1526]: 101 450₴
+                    - button "Купити" [ref=e1528] [cursor=pointer]:
+                      - img [ref=e1529]
+                  - generic [ref=e1531]: Є в наявності
+                - article [ref=e1534]:
+                  - generic [ref=e1536]:
+                    - button "Перемістити в список бажань" [ref=e1538] [cursor=pointer]:
+                      - img [ref=e1539]
+                    - button "Перемістити у список порівняння" [ref=e1542] [cursor=pointer]:
+                      - img [ref=e1543]
+                  - link "Сонячний трекер EcoFlow (SolarTS-EU)" [ref=e1545] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/603921532/p603921532/
+                    - img "Сонячний трекер EcoFlow (SolarTS-EU)" [ref=e1546]
+                  - link "Сонячний трекер EcoFlow (SolarTS-EU)" [ref=e1548] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/603921532/p603921532/
+                  - generic [ref=e1551] [cursor=pointer]:
+                    - img [ref=e1552]
+                    - text: Залишити відгук
+                  - generic [ref=e1554]:
+                    - generic [ref=e1556]: 101 389₴
+                    - button "Купити" [ref=e1558] [cursor=pointer]:
+                      - img [ref=e1559]
+                  - generic [ref=e1561]: Є в наявності
+                - article [ref=e1564]:
+                  - generic [ref=e1566]:
+                    - button "Перемістити в список бажань" [ref=e1568] [cursor=pointer]:
+                      - img [ref=e1569]
+                    - button "Перемістити у список порівняння" [ref=e1572] [cursor=pointer]:
+                      - img [ref=e1573]
+                  - link "Зарядна станція EcoFlow Delta 3 Ultra / 3072 Вт·год / 3600 Вт / EFDELTA3U-EU" [ref=e1575] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/595595110/p595595110/
+                    - img "Зарядна станція EcoFlow Delta 3 Ultra / 3072 Вт·год / 3600 Вт / EFDELTA3U-EU" [ref=e1576]
+                  - link "Зарядна станція EcoFlow Delta 3 Ultra / 3072 Вт·год / 3600 Вт / EFDELTA3U-EU" [ref=e1578] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/595595110/p595595110/
+                  - generic [ref=e1581] [cursor=pointer]:
+                    - img [ref=e1582]
+                    - text: Залишити відгук
+                  - generic [ref=e1584]:
+                    - generic [ref=e1586]: 100 000₴
+                    - button "Купити" [ref=e1588] [cursor=pointer]:
+                      - img [ref=e1589]
+                  - generic [ref=e1591]: Є в наявності
+                - article [ref=e1594]:
+                  - generic [ref=e1596]:
+                    - button "Перемістити в список бажань" [ref=e1598] [cursor=pointer]:
+                      - img [ref=e1599]
+                    - button "Перемістити у список порівняння" [ref=e1602] [cursor=pointer]:
+                      - img [ref=e1603]
+                  - generic [ref=e1605]: −18%
+                  - link "Додаткова батарея для станції EcoFlow DELTA Pro Extra Battery 3600 Вт·год LiFePO4" [ref=e1606] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/578501548/p578501548/
+                    - img "Додаткова батарея для станції EcoFlow DELTA Pro Extra Battery 3600 Вт·год LiFePO4" [ref=e1607]
+                  - link "Додаткова батарея для станції EcoFlow DELTA Pro Extra Battery 3600 Вт·год LiFePO4" [ref=e1609] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/578501548/p578501548/
+                  - generic [ref=e1612] [cursor=pointer]:
+                    - img [ref=e1613]
+                    - text: Залишити відгук
+                  - generic [ref=e1615]:
+                    - generic [ref=e1616]:
+                      - generic [ref=e1617]: 120 000₴
+                      - generic [ref=e1618]: 99 000₴
+                    - button "Купити" [ref=e1620] [cursor=pointer]:
+                      - img [ref=e1621]
+                  - generic [ref=e1623]: Є в наявності
+                - article [ref=e1626]:
+                  - generic [ref=e1628]:
+                    - button "Перемістити в список бажань" [ref=e1630] [cursor=pointer]:
+                      - img [ref=e1631]
+                    - button "Перемістити у список порівняння" [ref=e1634] [cursor=pointer]:
+                      - img [ref=e1635]
+                  - link "Зарядна станція EcoFlow DELTA Pro (3600W/3600Wh)" [ref=e1637] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/601931785/p601931785/
+                    - img "Зарядна станція EcoFlow DELTA Pro (3600W/3600Wh)" [ref=e1638]
+                  - link "Зарядна станція EcoFlow DELTA Pro (3600W/3600Wh)" [ref=e1640] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/601931785/p601931785/
+                  - generic [ref=e1643] [cursor=pointer]:
+                    - img [ref=e1644]
+                    - text: Залишити відгук
+                  - generic [ref=e1646]:
+                    - generic [ref=e1648]: 94 095₴
+                    - button "Купити" [ref=e1650] [cursor=pointer]:
+                      - img [ref=e1651]
+                  - generic [ref=e1653]:
+                    - text: Безкоштовна доставка
+                    - button "Що таке Smart" [ref=e1654] [cursor=pointer]:
+                      - img [ref=e1655]
+                - article [ref=e1659]:
+                  - generic [ref=e1661]:
+                    - button "Перемістити в список бажань" [ref=e1663] [cursor=pointer]:
+                      - img [ref=e1664]
+                    - button "Перемістити у список порівняння" [ref=e1667] [cursor=pointer]:
+                      - img [ref=e1668]
+                  - generic [ref=e1670]: −28%
+                  - link "Зарядна станція EcoFlow Delta 3 Ultra (3600W/3072Wh)" [ref=e1671] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/596815099/p596815099/
+                    - img "Зарядна станція EcoFlow Delta 3 Ultra (3600W/3072Wh)" [ref=e1672]
+                  - link "Зарядна станція EcoFlow Delta 3 Ultra (3600W/3072Wh)" [ref=e1674] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/596815099/p596815099/
+                  - generic [ref=e1677] [cursor=pointer]:
+                    - img [ref=e1678]
+                    - text: Залишити відгук
+                  - generic [ref=e1680]:
+                    - generic [ref=e1681]:
+                      - generic [ref=e1682]: 127 000₴
+                      - generic [ref=e1683]: 91 975₴
+                    - button "Купити" [ref=e1685] [cursor=pointer]:
+                      - img [ref=e1686]
+                  - generic [ref=e1688]: Готово до відправки
+                - article [ref=e1691]:
+                  - generic [ref=e1693]:
+                    - button "Перемістити в список бажань" [ref=e1695] [cursor=pointer]:
+                      - img [ref=e1696]
+                    - button "Перемістити у список порівняння" [ref=e1699] [cursor=pointer]:
+                      - img [ref=e1700]
+                  - link "Зарядна станція EcoFlow DELTA 3 Max Plus (європейська версія)" [ref=e1702] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/zaryadnie-stantsii-4674585-ecoflow-155323021/p557802318/
+                    - img "Зарядна станція EcoFlow DELTA 3 Max Plus (європейська версія)" [ref=e1703]
+                  - link "Зарядна станція EcoFlow DELTA 3 Max Plus (європейська версія)" [ref=e1705] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/zaryadnie-stantsii-4674585-ecoflow-155323021/p557802318/
+                  - generic [ref=e1707] [cursor=pointer]:
+                    - img [ref=e1712]
+                    - generic [ref=e1714]:
+                      - img [ref=e1715]
+                      - text: "1"
+                  - generic [ref=e1717]:
+                    - generic [ref=e1718]:
+                      - generic [ref=e1719]: 95 890₴
+                      - generic [ref=e1720]: 91 890₴
+                    - button "Купити" [ref=e1722] [cursor=pointer]:
+                      - img [ref=e1723]
+                  - generic [ref=e1725]:
+                    - text: Безкоштовна доставка
+                    - button "Що таке Smart" [ref=e1726] [cursor=pointer]:
+                      - img [ref=e1727]
+                - article [ref=e1731]:
+                  - generic [ref=e1733]:
+                    - button "Перемістити в список бажань" [ref=e1735] [cursor=pointer]:
+                      - img [ref=e1736]
+                    - button "Перемістити у список порівняння" [ref=e1739] [cursor=pointer]:
+                      - img [ref=e1740]
+                  - generic [ref=e1742]: −18%
+                  - link "Зарядна станція EcoFlow DELTA 3 1536Wh | 1800W (EFDELTA1500-EU) Артикул 100575" [ref=e1743] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/594881653/p594881653/
+                    - img "Зарядна станція EcoFlow DELTA 3 1536Wh | 1800W (EFDELTA1500-EU) Артикул 100575" [ref=e1744]
+                  - link "Зарядна станція EcoFlow DELTA 3 1536Wh | 1800W (EFDELTA1500-EU) Артикул 100575" [ref=e1746] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/594881653/p594881653/
+                  - generic [ref=e1749] [cursor=pointer]:
+                    - img [ref=e1750]
+                    - text: Залишити відгук
+                  - generic [ref=e1752]:
+                    - generic [ref=e1753]:
+                      - generic [ref=e1754]: 111 480₴
+                      - generic [ref=e1755]: 91 427₴
+                    - button "Купити" [ref=e1757] [cursor=pointer]:
+                      - img [ref=e1758]
+                  - generic [ref=e1760]: Є в наявності
+                  - generic [ref=e1762]:
+                    - img [ref=e1763]
+                    - generic [ref=e1765]:
+                      - text: +
+                      - generic [ref=e1766]: 199 бонусних
+                      - text: ₴
+                - article [ref=e1769]:
+                  - generic [ref=e1771]:
+                    - button "Перемістити в список бажань" [ref=e1773] [cursor=pointer]:
+                      - img [ref=e1774]
+                    - button "Перемістити у список порівняння" [ref=e1777] [cursor=pointer]:
+                      - img [ref=e1778]
+                  - link "Зарядна станція EcoFlow DELTA 2 Max 2400W (EFDELTA2Max-CN) (EFDELTA2Max-AU)" [ref=e1780] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/600714592/p600714592/
+                    - img "Зарядна станція EcoFlow DELTA 2 Max 2400W (EFDELTA2Max-CN) (EFDELTA2Max-AU)" [ref=e1781]
+                  - link "Зарядна станція EcoFlow DELTA 2 Max 2400W (EFDELTA2Max-CN) (EFDELTA2Max-AU)" [ref=e1783] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/600714592/p600714592/
+                  - generic [ref=e1786] [cursor=pointer]:
+                    - img [ref=e1787]
+                    - text: Залишити відгук
+                  - generic [ref=e1789]:
+                    - generic [ref=e1791]: 86 499₴
+                    - button "Купити" [ref=e1793] [cursor=pointer]:
+                      - img [ref=e1794]
+                  - generic [ref=e1796]: Є в наявності
+                - article [ref=e1799]:
+                  - generic [ref=e1801]:
+                    - button "Перемістити в список бажань" [ref=e1803] [cursor=pointer]:
+                      - img [ref=e1804]
+                    - button "Перемістити у список порівняння" [ref=e1807] [cursor=pointer]:
+                      - img [ref=e1808]
+                  - generic [ref=e1810]: −18%
+                  - link "Зарядна станція EcoFlow DELTA 3 Max 2400Вт (Пік 4800 Вт) 2048 Вт·год Нові батареї LiFePO4 Наші Розетки" [ref=e1811] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/569414152/p569414152/
+                    - img "Зарядна станція EcoFlow DELTA 3 Max 2400Вт (Пік 4800 Вт) 2048 Вт·год Нові батареї LiFePO4 Наші Розетки" [ref=e1812]
+                  - link "Зарядна станція EcoFlow DELTA 3 Max 2400Вт (Пік 4800 Вт) 2048 Вт·год Нові батареї LiFePO4 Наші Розетки" [ref=e1814] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/569414152/p569414152/
+                  - generic [ref=e1817] [cursor=pointer]:
+                    - img [ref=e1818]
+                    - text: Залишити відгук
+                  - generic [ref=e1820]:
+                    - generic [ref=e1821]:
+                      - generic [ref=e1822]: 105 015₴
+                      - generic [ref=e1823]: 86 124₴
+                    - button "Купити" [ref=e1825] [cursor=pointer]:
+                      - img [ref=e1826]
+                  - generic [ref=e1828]: Є в наявності
+                  - generic [ref=e1830]:
+                    - img [ref=e1831]
+                    - generic [ref=e1833]:
+                      - text: +
+                      - generic [ref=e1834]: 199 бонусних
+                      - text: ₴
+                - article [ref=e1837]:
+                  - generic [ref=e1839]:
+                    - button "Перемістити в список бажань" [ref=e1841] [cursor=pointer]:
+                      - img [ref=e1842]
+                    - button "Перемістити у список порівняння" [ref=e1845] [cursor=pointer]:
+                      - img [ref=e1846]
+                  - generic [ref=e1848]: −44%
+                  - link "Портативна Зарядна станція EcoFlow DELTA 2 Max (2048 Вт·год) 2400W пікова 3100W LiFePO4 Літній марафон!" [ref=e1849] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/436741457/p436741457/
+                    - img "Портативна Зарядна станція EcoFlow DELTA 2 Max (2048 Вт·год) 2400W пікова 3100W LiFePO4" [ref=e1850]
+                    - img "Літній марафон!" [ref=e1853]
+                  - link "Портативна Зарядна станція EcoFlow DELTA 2 Max (2048 Вт·год) 2400W пікова 3100W LiFePO4" [ref=e1855] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/436741457/p436741457/
+                  - generic [ref=e1857] [cursor=pointer]:
+                    - img [ref=e1862]
+                    - generic [ref=e1864]:
+                      - img [ref=e1865]
+                      - text: "58"
+                  - generic [ref=e1867]:
+                    - generic [ref=e1868]:
+                      - generic [ref=e1869]: 130 000₴
+                      - generic [ref=e1870]: 72 500₴
+                    - button "Купити" [ref=e1872] [cursor=pointer]:
+                      - img [ref=e1873]
+                  - generic [ref=e1876]:
+                    - text: від
+                    - generic [ref=e1877]: 59 849₴
+                    - text: у
+                    - button "Переглянути у інших продавців" [ref=e1878] [cursor=pointer]: інших продавців
+                  - generic [ref=e1879]:
+                    - text: Безкоштовна доставка
+                    - button "Що таке Smart" [ref=e1880] [cursor=pointer]:
+                      - img [ref=e1881]
+                - article [ref=e1885]:
+                  - generic [ref=e1887]:
+                    - button "Перемістити в список бажань" [ref=e1889] [cursor=pointer]:
+                      - img [ref=e1890]
+                    - button "Перемістити у список порівняння" [ref=e1893] [cursor=pointer]:
+                      - img [ref=e1894]
+                  - link "Додаткова батарея EcoFLow DELTA Max Extra Battery" [ref=e1896] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/445086203/p445086203/
+                    - img "Додаткова батарея EcoFLow DELTA Max Extra Battery" [ref=e1897]
+                  - link "Додаткова батарея EcoFLow DELTA Max Extra Battery" [ref=e1899] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/445086203/p445086203/
+                  - generic [ref=e1902] [cursor=pointer]:
+                    - img [ref=e1903]
+                    - text: Залишити відгук
+                  - generic [ref=e1905]:
+                    - generic [ref=e1907]: 82 999₴
+                    - button "Купити" [ref=e1909] [cursor=pointer]:
+                      - img [ref=e1910]
+                  - generic [ref=e1912]:
+                    - text: Безкоштовна доставка
+                    - button "Що таке Smart" [ref=e1913] [cursor=pointer]:
+                      - img [ref=e1914]
+                - article [ref=e1918]:
+                  - generic [ref=e1920]:
+                    - button "Перемістити в список бажань" [ref=e1922] [cursor=pointer]:
+                      - img [ref=e1923]
+                    - button "Перемістити у список порівняння" [ref=e1926] [cursor=pointer]:
+                      - img [ref=e1927]
+                  - generic [ref=e1929]: −37%
+                  - link "Портативна Зарядна станція EcoFlow DELTA Max 2000 (2016 Вт·год) 2400W пікова 3000W" [ref=e1930] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/zaryadnie-stantsii-4674585-ecoflow-153469144/p553249122/
+                    - img "Портативна Зарядна станція EcoFlow DELTA Max 2000 (2016 Вт·год) 2400W пікова 3000W" [ref=e1931]
+                  - link "Портативна Зарядна станція EcoFlow DELTA Max 2000 (2016 Вт·год) 2400W пікова 3000W" [ref=e1933] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/zaryadnie-stantsii-4674585-ecoflow-153469144/p553249122/
+                  - generic [ref=e1936] [cursor=pointer]:
+                    - img [ref=e1937]
+                    - text: Залишити відгук
+                  - generic [ref=e1939]:
+                    - generic [ref=e1940]:
+                      - generic [ref=e1941]: 130 000₴
+                      - generic [ref=e1942]: 81 999₴
+                    - button "Купити" [ref=e1944] [cursor=pointer]:
+                      - img [ref=e1945]
+                  - generic [ref=e1947]:
+                    - text: Безкоштовна доставка
+                    - button "Що таке Smart" [ref=e1948] [cursor=pointer]:
+                      - img [ref=e1949]
+                - article [ref=e1953]:
+                  - generic [ref=e1955]:
+                    - button "Перемістити в список бажань" [ref=e1957] [cursor=pointer]:
+                      - img [ref=e1958]
+                    - button "Перемістити у список порівняння" [ref=e1961] [cursor=pointer]:
+                      - img [ref=e1962]
+                  - generic [ref=e1964]: −10%
+                  - link "Зарядна станція EcoFlow DELTA 3 Max Plus (EF-DL3-MP, EFD3MP-EU-CBOX)" [ref=e1965] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/566765284/p566765284/
+                    - img "Зарядна станція EcoFlow DELTA 3 Max Plus (EF-DL3-MP, EFD3MP-EU-CBOX)" [ref=e1966]
+                  - link "Зарядна станція EcoFlow DELTA 3 Max Plus (EF-DL3-MP, EFD3MP-EU-CBOX)" [ref=e1968] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/566765284/p566765284/
+                  - generic [ref=e1971] [cursor=pointer]:
+                    - img [ref=e1972]
+                    - text: Залишити відгук
+                  - generic [ref=e1974]:
+                    - generic [ref=e1975]:
+                      - generic [ref=e1976]: 87 969₴
+                      - generic [ref=e1977]: 79 169₴
+                    - button "Купити" [ref=e1979] [cursor=pointer]:
+                      - img [ref=e1980]
+                  - generic [ref=e1982]:
+                    - text: Безкоштовна доставка
+                    - button "Що таке Smart" [ref=e1983] [cursor=pointer]:
+                      - img [ref=e1984]
+                - article [ref=e1988]:
+                  - generic [ref=e1990]:
+                    - button "Перемістити в список бажань" [ref=e1992] [cursor=pointer]:
+                      - img [ref=e1993]
+                    - button "Перемістити у список порівняння" [ref=e1996] [cursor=pointer]:
+                      - img [ref=e1997]
+                  - generic [ref=e1999]: −28%
+                  - link "Комплект Delta Max Lite (Stream Pro)" [ref=e2000] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/589536157/p589536157/
+                    - img "Комплект Delta Max Lite (Stream Pro)" [ref=e2001]
+                  - link "Комплект Delta Max Lite (Stream Pro)" [ref=e2003] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/589536157/p589536157/
+                  - generic [ref=e2006] [cursor=pointer]:
+                    - img [ref=e2007]
+                    - text: Залишити відгук
+                  - generic [ref=e2009]:
+                    - generic [ref=e2010]:
+                      - generic [ref=e2011]: 109 865₴
+                      - generic [ref=e2012]: 78 999₴
+                    - button "Купити" [ref=e2014] [cursor=pointer]:
+                      - img [ref=e2015]
+                  - generic [ref=e2017]: Є в наявності
+                - article [ref=e2020]:
+                  - generic [ref=e2022]:
+                    - button "Перемістити в список бажань" [ref=e2024] [cursor=pointer]:
+                      - img [ref=e2025]
+                    - button "Перемістити у список порівняння" [ref=e2028] [cursor=pointer]:
+                      - img [ref=e2029]
+                  - generic [ref=e2031]: −15%
+                  - link "Зарядна станція EcoFlow DELTA 3 Max (європейська версія)" [ref=e2032] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/zaryadnie-stantsii-4674585-ecoflow-156907982/p562271391/
+                    - img "Зарядна станція EcoFlow DELTA 3 Max (європейська версія)" [ref=e2033]
+                  - link "Зарядна станція EcoFlow DELTA 3 Max (європейська версія)" [ref=e2035] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/zaryadnie-stantsii-4674585-ecoflow-156907982/p562271391/
+                  - generic [ref=e2038] [cursor=pointer]:
+                    - img [ref=e2039]
+                    - text: Залишити відгук
+                  - generic [ref=e2041]:
+                    - generic [ref=e2042]:
+                      - generic [ref=e2043]: 89 500₴
+                      - generic [ref=e2044]: 75 890₴
+                    - button "Купити" [ref=e2046] [cursor=pointer]:
+                      - img [ref=e2047]
+                  - generic [ref=e2049]:
+                    - text: Безкоштовна доставка
+                    - button "Що таке Smart" [ref=e2050] [cursor=pointer]:
+                      - img [ref=e2051]
+                - article [ref=e2055]:
+                  - generic [ref=e2057]:
+                    - button "Перемістити в список бажань" [ref=e2059] [cursor=pointer]:
+                      - img [ref=e2060]
+                    - button "Перемістити у список порівняння" [ref=e2063] [cursor=pointer]:
+                      - img [ref=e2064]
+                  - generic [ref=e2066]: −14%
+                  - link "Зарядна станція EcoFlow DELTA 3 Max Plus / 3000 Вт / 2048 Вт⋅год / LiFePO4 (EFD3MP-EU-CBOX) / Теплоремікс" [ref=e2067] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/zaryadnie-stantsii-4674585-ecoflow-155389463/p557764887/
+                    - img "Зарядна станція EcoFlow DELTA 3 Max Plus / 3000 Вт / 2048 Вт⋅год / LiFePO4 (EFD3MP-EU-CBOX) / Теплоремікс" [ref=e2068]
+                  - link "Зарядна станція EcoFlow DELTA 3 Max Plus / 3000 Вт / 2048 Вт⋅год / LiFePO4 (EFD3MP-EU-CBOX) / Теплоремікс" [ref=e2070] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/zaryadnie-stantsii-4674585-ecoflow-155389463/p557764887/
+                  - generic [ref=e2073] [cursor=pointer]:
+                    - img [ref=e2074]
+                    - text: Залишити відгук
+                  - generic [ref=e2076]:
+                    - generic [ref=e2077]:
+                      - generic [ref=e2078]: 87 999₴
+                      - generic [ref=e2079]: 75 400₴
+                    - button "Купити" [ref=e2081] [cursor=pointer]:
+                      - img [ref=e2082]
+                  - generic [ref=e2084]:
+                    - text: Безкоштовна доставка
+                    - button "Що таке Smart" [ref=e2085] [cursor=pointer]:
+                      - img [ref=e2086]
+                - article [ref=e2090]:
+                  - generic [ref=e2092]:
+                    - button "Перемістити в список бажань" [ref=e2094] [cursor=pointer]:
+                      - img [ref=e2095]
+                    - button "Перемістити у список порівняння" [ref=e2098] [cursor=pointer]:
+                      - img [ref=e2099]
+                  - link "Зарядна станція EcoFlow Delta 3 MAX EU 2048 Вт LiFePo4" [ref=e2101] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/578501551/p578501551/
+                    - img "Зарядна станція EcoFlow Delta 3 MAX EU 2048 Вт LiFePo4" [ref=e2102]
+                  - link "Зарядна станція EcoFlow Delta 3 MAX EU 2048 Вт LiFePo4" [ref=e2104] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/578501551/p578501551/
+                  - generic [ref=e2107] [cursor=pointer]:
+                    - img [ref=e2108]
+                    - text: Залишити відгук
+                  - generic [ref=e2110]:
+                    - generic [ref=e2111]:
+                      - generic [ref=e2112]: 79 000₴
+                      - generic [ref=e2113]: 75 000₴
+                    - button "Купити" [ref=e2115] [cursor=pointer]:
+                      - img [ref=e2116]
+                  - generic [ref=e2118]: Є в наявності
+                - article [ref=e2121]:
+                  - generic [ref=e2123]:
+                    - button "Перемістити в список бажань" [ref=e2125] [cursor=pointer]:
+                      - img [ref=e2126]
+                    - button "Перемістити у список порівняння" [ref=e2129] [cursor=pointer]:
+                      - img [ref=e2130]
+                  - link "Портативна зарядна станція EcoFlow DELTA 3 MAX Plus 2048 Вт/год європейська розетка" [ref=e2132] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/591808726/p591808726/
+                    - img "Портативна зарядна станція EcoFlow DELTA 3 MAX Plus 2048 Вт/год європейська розетка" [ref=e2133]
+                  - link "Портативна зарядна станція EcoFlow DELTA 3 MAX Plus 2048 Вт/год європейська розетка" [ref=e2135] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/591808726/p591808726/
+                  - generic [ref=e2138] [cursor=pointer]:
+                    - img [ref=e2139]
+                    - text: Залишити відгук
+                  - generic [ref=e2141]:
+                    - generic [ref=e2143]: 73 300₴
+                    - button "Купити" [ref=e2145] [cursor=pointer]:
+                      - img [ref=e2146]
+                  - generic [ref=e2148]:
+                    - text: Безкоштовна доставка
+                    - button "Що таке Smart" [ref=e2149] [cursor=pointer]:
+                      - img [ref=e2150]
+                - article [ref=e2154]:
+                  - generic [ref=e2156]:
+                    - button "Перемістити в список бажань" [ref=e2158] [cursor=pointer]:
+                      - img [ref=e2159]
+                    - button "Перемістити у список порівняння" [ref=e2162] [cursor=pointer]:
+                      - img [ref=e2163]
+                  - generic [ref=e2165]: −46%
+                  - link "Портативна Зарядна станція EcoFlow DELTA 3 Max (2048 Вт·год) 2400W пікова 4800W LFP електростанція для дому, UPS, ДБЖ Літній марафон!" [ref=e2166] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/565038920/p565038920/
+                    - img "Портативна Зарядна станція EcoFlow DELTA 3 Max (2048 Вт·год) 2400W пікова 4800W LFP електростанція для дому, UPS, ДБЖ" [ref=e2167]
+                    - img "Літній марафон!" [ref=e2170]
+                  - link "Портативна Зарядна станція EcoFlow DELTA 3 Max (2048 Вт·год) 2400W пікова 4800W LFP електростанція для дому, UPS, ДБЖ" [ref=e2172] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/565038920/p565038920/
+                  - generic [ref=e2175] [cursor=pointer]:
+                    - img [ref=e2176]
+                    - text: Залишити відгук
+                  - generic [ref=e2178]:
+                    - generic [ref=e2179]:
+                      - generic [ref=e2180]: 130 000₴
+                      - generic [ref=e2181]: 69 999₴
+                    - button "Купити" [ref=e2183] [cursor=pointer]:
+                      - img [ref=e2184]
+                  - generic [ref=e2186]:
+                    - text: Безкоштовна доставка
+                    - button "Що таке Smart" [ref=e2187] [cursor=pointer]:
+                      - img [ref=e2188]
+                - article [ref=e2192]:
+                  - generic [ref=e2194]:
+                    - button "Перемістити в список бажань" [ref=e2196] [cursor=pointer]:
+                      - img [ref=e2197]
+                    - button "Перемістити у список порівняння" [ref=e2200] [cursor=pointer]:
+                      - img [ref=e2201]
+                  - generic [ref=e2203]: −20%
+                  - link "Портативна зарядна станція ECOFLOW Delta 3 MAX PLUS, потужність 3000 Вт, ємність 2048 Вт·год" [ref=e2204] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/578189758/p578189758/
+                    - img "Портативна зарядна станція ECOFLOW Delta 3 MAX PLUS, потужність 3000 Вт, ємність 2048 Вт·год" [ref=e2205]
+                  - link "Портативна зарядна станція ECOFLOW Delta 3 MAX PLUS, потужність 3000 Вт, ємність 2048 Вт·год" [ref=e2207] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/578189758/p578189758/
+                  - generic [ref=e2210] [cursor=pointer]:
+                    - img [ref=e2211]
+                    - text: Залишити відгук
+                  - generic [ref=e2213]:
+                    - generic [ref=e2214]:
+                      - generic [ref=e2215]: 90 900₴
+                      - generic [ref=e2216]: 72 700₴
+                    - button "Купити" [ref=e2218] [cursor=pointer]:
+                      - img [ref=e2219]
+                  - generic [ref=e2221]:
+                    - text: Безкоштовна доставка
+                    - button "Що таке Smart" [ref=e2222] [cursor=pointer]:
+                      - img [ref=e2223]
+                - article [ref=e2227]:
+                  - generic [ref=e2229]:
+                    - button "Перемістити в список бажань" [ref=e2231] [cursor=pointer]:
+                      - img [ref=e2232]
+                    - button "Перемістити у список порівняння" [ref=e2235] [cursor=pointer]:
+                      - img [ref=e2236]
+                  - link "Портативна зарядна станція EcoFlow DELTA 3 1500 LiFePO4 1536Wh 1800Вт, UPS, Wi-Fi, сонячна зарядка" [ref=e2238] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/zaryadnie-stantsii-4674585-ecoflow-151177218/p546476061/
+                    - img "Портативна зарядна станція EcoFlow DELTA 3 1500 LiFePO4 1536Wh 1800Вт, UPS, Wi-Fi, сонячна зарядка" [ref=e2239]
+                  - link "Портативна зарядна станція EcoFlow DELTA 3 1500 LiFePO4 1536Wh 1800Вт, UPS, Wi-Fi, сонячна зарядка" [ref=e2241] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/zaryadnie-stantsii-4674585-ecoflow-151177218/p546476061/
+                  - generic [ref=e2244] [cursor=pointer]:
+                    - img [ref=e2245]
+                    - text: Залишити відгук
+                  - generic [ref=e2247]:
+                    - generic [ref=e2248]:
+                      - generic [ref=e2249]: 73 284₴
+                      - generic [ref=e2250]: 71 848₴
+                    - button "Купити" [ref=e2252] [cursor=pointer]:
+                      - img [ref=e2253]
+                  - generic [ref=e2255]:
+                    - text: Безкоштовна доставка
+                    - button "Що таке Smart" [ref=e2256] [cursor=pointer]:
+                      - img [ref=e2257]
+                - article [ref=e2261]:
+                  - generic [ref=e2263]:
+                    - button "Перемістити в список бажань" [ref=e2265] [cursor=pointer]:
+                      - img [ref=e2266]
+                    - button "Перемістити у список порівняння" [ref=e2269] [cursor=pointer]:
+                      - img [ref=e2270]
+                  - link "Зарядна станція EcoFlow DELTA 3 Max Plus (3000 Вт, 2048 Вт·год, LiFePO4)" [ref=e2272] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/603769189/p603769189/
+                    - img "Зарядна станція EcoFlow DELTA 3 Max Plus (3000 Вт, 2048 Вт·год, LiFePO4)" [ref=e2273]
+                  - link "Зарядна станція EcoFlow DELTA 3 Max Plus (3000 Вт, 2048 Вт·год, LiFePO4)" [ref=e2275] [cursor=pointer]:
+                    - /url: https://rozetka.com.ua/ua/603769189/p603769189/
+                  - generic [ref=e2278] [cursor=pointer]:
+                    - img [ref=e2279]
+                    - text: Залишити відгук
+                  - generic [ref=e2281]:
+                    - generic [ref=e2283]: 71 790₴
+                    - button "Купити" [ref=e2285] [cursor=pointer]:
+                      - img [ref=e2286]
+                  - generic [ref=e2288]:
+                    - text: Безкоштовна доставка
+                    - button "Що таке Smart" [ref=e2289] [cursor=pointer]:
+                      - img [ref=e2290]
+              - generic [ref=e2292]:
+                - button "Показати ще" [ref=e2294] [cursor=pointer]:
+                  - generic [ref=e2295]: Показати ще
+                - navigation [ref=e2296]:
+                  - button "Попередня сторінка":
+                    - img
+                  - generic [ref=e2297]:
+                    - generic [ref=e2298]: "1"
+                    - link "2" [ref=e2299] [cursor=pointer]:
+                      - /url: /ua/search/?page=2&producer=ecoflow&redirected=1&sort=expensive&text=ecoflow
+                    - link "3" [ref=e2300] [cursor=pointer]:
+                      - /url: /ua/search/?page=3&producer=ecoflow&redirected=1&sort=expensive&text=ecoflow
+                    - link "4" [ref=e2301] [cursor=pointer]:
+                      - /url: /ua/search/?page=4&producer=ecoflow&redirected=1&sort=expensive&text=ecoflow
+                    - generic [ref=e2302]: ...
+                    - link "17" [ref=e2303] [cursor=pointer]:
+                      - /url: /ua/search/?page=17&producer=ecoflow&redirected=1&sort=expensive&text=ecoflow
+                  - button "Наступна сторінка" [ref=e2304] [cursor=pointer]:
+                    - img [ref=e2305]
+  - contentinfo [ref=e2308]:
+    - generic [ref=e2310]:
+      - generic [ref=e2311]:
+        - generic [ref=e2312]:
+          - generic [ref=e2313]:
+            - generic [ref=e2314]: Ми в соціальних мережах
+            - generic [ref=e2316]:
+              - list [ref=e2317]:
+                - listitem [ref=e2318]:
+                  - link "TikTok" [ref=e2319] [cursor=pointer]:
+                    - /url: https://www.tiktok.com/@rozetkaua
+                    - img [ref=e2320]
+                - listitem [ref=e2322]:
+                  - link "Telegram" [ref=e2323] [cursor=pointer]:
+                    - /url: https://t.me/rrozetka
+                    - img [ref=e2324]
+                - listitem [ref=e2326]:
+                  - link "Facebook" [ref=e2327] [cursor=pointer]:
+                    - /url: https://www.facebook.com/rozetka.ua
+                    - img [ref=e2328]
+                - listitem [ref=e2330]:
+                  - link "YouTube" [ref=e2331] [cursor=pointer]:
+                    - /url: https://bit.ly/RZTK_UA
+                    - img [ref=e2332]
+              - list [ref=e2334]:
+                - listitem [ref=e2335]:
+                  - link "Instagram" [ref=e2336] [cursor=pointer]:
+                    - /url: https://instagram.com/rozetkaua
+                    - img [ref=e2337]
+                - listitem [ref=e2339]:
+                  - link "X" [ref=e2340] [cursor=pointer]:
+                    - /url: https://x.com/rozetka_ua
+                    - img [ref=e2341]
+                - listitem [ref=e2343]:
+                  - link "Viber" [ref=e2344] [cursor=pointer]:
+                    - /url: https://invite.viber.com/?g2=AQB9mwM%2F5f%2FxJUlMxP4V9flr2%2BvXTC1MpxdGFZ0P6d%2Fs6Ws%2FFe%2FQtLiZwA4E28sj
+                    - img [ref=e2345]
+          - generic [ref=e2347]:
+            - generic [ref=e2348]: Скануйте QR-код та встановлюйте застосунок
+            - generic [ref=e2349]:
+              - img "QR-code" [ref=e2351]
+              - list [ref=e2352]:
+                - listitem [ref=e2353]:
+                  - link "Додаток для iOS" [ref=e2354] [cursor=pointer]:
+                    - /url: https://rozetka.onelink.me/LWXa/futtersite
+                    - img "AppStore" [ref=e2355]
+                - listitem [ref=e2356]:
+                  - link "Додаток для Android" [ref=e2357] [cursor=pointer]:
+                    - /url: https://rozetka.onelink.me/LWXa/futtersite
+                    - img "Google Play" [ref=e2358]
+        - generic [ref=e2359]:
+          - generic [ref=e2360]:
+            - generic [ref=e2362]: Інформація про компанію
+            - list [ref=e2363]:
+              - listitem [ref=e2364]:
+                - link "Про нас" [ref=e2365] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/pages/about/
+              - listitem [ref=e2366]:
+                - link "Умови використання сайту" [ref=e2367] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/pages/legal_terms/
+              - listitem [ref=e2368]:
+                - link "Вакансії" [ref=e2369] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/careers/
+              - listitem [ref=e2370]:
+                - link "Контакти" [ref=e2371] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/contacts/
+              - listitem [ref=e2372]:
+                - link "Всі категорії" [ref=e2373] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/all-categories-goods/
+          - generic [ref=e2374]:
+            - generic [ref=e2376]: Допомога
+            - list [ref=e2377]:
+              - listitem [ref=e2378]:
+                - link "Доставка та оплата" [ref=e2379] [cursor=pointer]:
+                  - /url: https://help.rozetka.com.ua/p/97-dostavka/
+              - listitem [ref=e2380]:
+                - link "Кредит" [ref=e2381] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/pages/credit/
+              - listitem [ref=e2382]:
+                - link "Гарантія" [ref=e2383] [cursor=pointer]:
+                  - /url: https://help.rozetka.com.ua/p/111-harantiya-i-povernennya-tovaru/
+              - listitem [ref=e2384]:
+                - link "Повернення товару" [ref=e2385] [cursor=pointer]:
+                  - /url: https://help.rozetka.com.ua/p/102-povernennya-tovaru/
+              - listitem [ref=e2386]:
+                - link "Сервісні центри" [ref=e2387] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/service-centers/
+          - generic [ref=e2388]:
+            - generic [ref=e2390]: Сервіси
+            - list [ref=e2391]:
+              - listitem [ref=e2392]:
+                - link "Бонусний рахунок" [ref=e2393] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/pages/loyalty/
+              - listitem [ref=e2394]:
+                - link "Картка Rozetka" [ref=e2395] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/rozetka-card/
+              - listitem [ref=e2396]:
+                - link "Подарункові сертифікати" [ref=e2397] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/pages/certificates/
+              - listitem [ref=e2398]:
+                - link "Rozetka Обмін" [ref=e2399] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/pages/obmin/
+              - listitem [ref=e2400]:
+                - link "Корпоративним клієнтам" [ref=e2401] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/pages/b2b/
+          - generic [ref=e2402]:
+            - generic [ref=e2404]: Партнерам
+            - list [ref=e2405]:
+              - listitem [ref=e2406]:
+                - link "Продавати на Розетці" [ref=e2407] [cursor=pointer]:
+                  - /url: https://seller.rozetka.com.ua/newseller
+              - listitem [ref=e2408]:
+                - link "Реклама на Розетці" [ref=e2409] [cursor=pointer]:
+                  - /url: https://advertising.rozetka.ua/
+              - listitem [ref=e2410]:
+                - link "Співпраця з нами" [ref=e2411] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/pages/partnership/
+              - listitem [ref=e2412]:
+                - link "Франчайзинг" [ref=e2413] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/pages/franchise/
+              - listitem [ref=e2414]:
+                - link "Оренда приміщень" [ref=e2415] [cursor=pointer]:
+                  - /url: https://rozetka.com.ua/ua/news-articles-promotions/promotions/store_search/
+      - generic [ref=e2416]:
+        - generic [ref=e2417]:
+          - button "MasterCard Secure" [ref=e2418] [cursor=pointer]:
+            - img "MasterCard Secure" [ref=e2419]
+          - button "Visa Verified" [ref=e2420] [cursor=pointer]:
+            - img "Visa Verified" [ref=e2421]
+        - paragraph [ref=e2422]: © 2001–2026 Інтернет-магазин «Розетка™» — Щоразу що треба ТМ використовується на підставі ліцензії правовласника RozetkaLTD
+```
+
+# Test source
+
+```ts
+  1  | import { test, expect } from './fixtures';
+  2  | 
+  3  | test.describe('Rozetka main page', () => {
+  4  | 
+  5  |    test('should display the logo', async ({ rozetkaMainPage }) => {
+  6  |       await expect(rozetkaMainPage.rozetkaLogo).toBeVisible();
+  7  |    });
+  8  | 
+  9  |    test('should open search field and check popular queries exist', async ({ rozetkaMainPage }) => {
+  10 |       await rozetkaMainPage.openSearch();
+  11 |       await expect(rozetkaMainPage.popularQueriesHeader).toBeVisible();
+  12 |    });
+  13 | 
+  14 |    test('should search for a product and check result names includ search query', async ({ rozetkaMainPage }) => {
+  15 |       const searchQuery = 'ecoflow';
+  16 |       await rozetkaMainPage.openSearch();
+  17 |       await rozetkaMainPage.searchForProduct(searchQuery);
+  18 |       const resultTitles = await rozetkaMainPage.getSearchResultsTitles();
+  19 |       for (const title of resultTitles) {
+  20 |         expect(title.toLowerCase()).toContain(searchQuery);
+  21 |       }
+  22 |    });
+  23 | 
+  24 |    test('should sort search results by lowest price and check prices are in ascending order', async ({ rozetkaMainPage }) => {
+  25 |       const searchQuery = 'ecoflow';
+  26 |       await rozetkaMainPage.openSearch();
+  27 |       await rozetkaMainPage.searchForProduct(searchQuery);
+  28 |       await rozetkaMainPage.sortByLowestPrice();
+  29 |       const prices = await rozetkaMainPage.getProductPrices();
+  30 |       for (let i = 0; i < prices.length - 1; i++) {
+  31 |          expect(prices[i]).toBeLessThanOrEqual(prices[i + 1]);
+  32 |       }
+  33 |    });
+  34 | 
+  35 |    test('should sort search results by highest price and check prices are in descending order', async ({ rozetkaMainPage }) => {
+  36 |       const searchQuery = 'ecoflow';
+  37 |       await rozetkaMainPage.openSearch();
+  38 |       await rozetkaMainPage.searchForProduct(searchQuery);
+  39 |       await rozetkaMainPage.sortByHighestPrice();
+  40 |       const prices = await rozetkaMainPage.getProductPrices();
+  41 |       for (let i = 0; i < prices.length - 1; i++) {
+> 42 |          expect(prices[i]).toBeGreaterThanOrEqual(prices[i + 1]);
+     |                            ^ Error: expect(received).toBeGreaterThanOrEqual(expected)
+  43 |       }
+  44 |    });
+  45 | });
+  46 | 
+```
