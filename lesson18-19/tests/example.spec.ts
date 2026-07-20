@@ -47,7 +47,8 @@ test.describe('Rozetka main page', () => {
       await rozetkaMainPage.searchForProduct(searchQuery);
       await rozetkaMainPage.sortByHighestPrice();
       const prices = await rozetkaMainPage.getProductPrices();
-      const validPrices = prices.filter(price => !isNaN(price) && price > 0);
+
+      const validPrices = prices.filter((price) => !isNaN(price) && price > 0);
 
       let sortedCorrectly = 0;
       for (let i = 0; i < validPrices.length - 1; i++) {
