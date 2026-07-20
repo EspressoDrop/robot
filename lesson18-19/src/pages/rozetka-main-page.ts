@@ -55,6 +55,7 @@ export class RozetkaMainPage {
     public async searchForProduct(productName: string) {
         await this.searchInput.fill(productName);
         await this.searchButton.click();
+        await this.page.waitForLoadState('networkidle');
         await this.waitForSearchResults();
     }
 
@@ -64,11 +65,13 @@ export class RozetkaMainPage {
 
     public async sortByLowestPrice() {
         await this.sortByDropdown.selectOption('cheap');
+        await this.page.waitForLoadState('networkidle');
         await this.page.waitForTimeout(2000);
     }
 
     public async sortByHighestPrice() {
         await this.sortByDropdown.selectOption('expensive');
+        await this.page.waitForLoadState('networkidle');
         await this.page.waitForTimeout(2000);
     }
 
