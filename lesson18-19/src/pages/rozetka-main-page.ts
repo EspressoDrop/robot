@@ -42,10 +42,9 @@ export class RozetkaMainPage {
 
     public async open() {
         await this.page.goto('https://rozetka.com.ua/', {
-            waitUntil: 'domcontentloaded',
-            timeout: 60000
+            waitUntil: 'commit'
         });
-        await this.rozetkaLogo.waitFor({state: 'visible', timeout: 30000});
+        await this.rozetkaLogo.waitFor({state: 'visible'});
     }
 
     public async openSearch() {
