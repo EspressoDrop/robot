@@ -3,8 +3,8 @@ import { Locator } from '@playwright/test';
 
 export class RozetkaMainPage {
 
-    public get rozetkaLogo(): Locator {
-        return this.page.locator('[alt="Rozetka Logo"]');
+    public get rozetkaTopBar(): Locator {
+        return this.page.locator('div[class="relative d-flex items-center py-2 lg:py-3"]');
     }
 
     public get searchInput(): Locator {
@@ -45,7 +45,7 @@ export class RozetkaMainPage {
             waitUntil: 'commit',
             timeout: 60000
         });
-        await this.rozetkaLogo.waitFor({state: 'visible', timeout: 45000});
+        await this.rozetkaTopBar.waitFor({state: 'visible', timeout: 45000});
     }
 
     public async openSearch() {

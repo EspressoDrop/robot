@@ -2,8 +2,8 @@ import { test, expect } from './fixtures';
 
 test.describe('Rozetka main page', () => {
 
-   test('should display the logo', async ({ rozetkaMainPage }) => {
-      await expect(rozetkaMainPage.rozetkaLogo).toBeVisible();
+   test('should display the top bar', async ({ rozetkaMainPage }) => {
+      await expect(rozetkaMainPage.rozetkaTopBar).toBeVisible();
    });
 
    test('should open search field and check popular queries exist', async ({ rozetkaMainPage }) => {
