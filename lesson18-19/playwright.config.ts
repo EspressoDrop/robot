@@ -1,4 +1,5 @@
 /// <reference types="node" />
+/// <reference types="node" />
 import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
@@ -8,7 +9,6 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
   workers: 1,
   reporter: 'html',
->>>>>>> a2f19b7 (Lesson22)
   timeout: 120000,
   use: {
     trace: 'on-first-retry',
@@ -41,5 +41,6 @@ export default defineConfig({
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
     },
+  ],
   ],
 });

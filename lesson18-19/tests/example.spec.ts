@@ -4,6 +4,8 @@ test.describe('Rozetka main page', () => {
 
    test('should display the top bar', async ({ rozetkaMainPage }) => {
       await expect(rozetkaMainPage.rozetkaTopBar).toBeVisible();
+   test('should display the top bar', async ({ rozetkaMainPage }) => {
+      await expect(rozetkaMainPage.rozetkaTopBar).toBeVisible();
    });
 
    test('should open search field and check popular queries exist', async ({ rozetkaMainPage }) => {
@@ -27,6 +29,18 @@ test.describe('Rozetka main page', () => {
       await rozetkaMainPage.searchForProduct(searchQuery);
       await rozetkaMainPage.sortByLowestPrice();
       const prices = await rozetkaMainPage.getProductPrices();
+
+      const validPrices = prices.filter(price => !isNaN(price) && price > 0);
+
+      let sortedCorrectly = 0;
+      for (let i = 0; i < validPrices.length - 1; i++) {
+         if (validPrices[i] <= validPrices[i + 1]) {
+            sortedCorrectly++;
+         }
+      }
+
+      const percentCorrect = sortedCorrectly / (validPrices.length - 1);
+      expect(percentCorrect).toBeGreaterThan(0.8);
 
       const validPrices = prices.filter(price => !isNaN(price) && price > 0);
 
