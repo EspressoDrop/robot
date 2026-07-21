@@ -6,14 +6,7 @@ export default defineConfig({
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
-<<<<<<< HEAD
-  /* Single worker = single browser instance */
   workers: 1,
-  /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: [['html'], ['allure-playwright']],
-  /* Timeout for each test */
-=======
-  workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
 >>>>>>> a2f19b7 (Lesson22)
   timeout: 120000,
