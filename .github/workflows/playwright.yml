@@ -1,0 +1,63 @@
+name: Playwright Tests
+on:
+  push:
+    branches: [ master, lesson18-19 ]
+  pull_request:
+    branches: [ master, lesson18-19 ]
+
+env:
+  CI: true
+  BUILD_FOLDER: ./lesson18-19
+
+jobs:
+  test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - uses: actions/setup-node@v4
+      with:
+        node-version: lts/*
+    
+    - name: Install dependencies
+      run: npm ci
+      working-directory: ${{ env.BUILD_FOLDER }}
+    
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps chromium
+      working-directory: ${{ env.BUILD_FOLDER }}
+    
+    - name: Run Playwright tests
+      continue-on-error: true
+      run: xvfb-run --auto-servernum --server-args="-screen 0 1280x720x24" npx playwright test --project=chromium
+      working-directory: ${{ env.BUILD_FOLDER }}
+    
+    - name: Generate Allure Report
+      if: always()
+      run: npx allure generate allure-results --single-file --clean -o allure-report
+      working-directory: ${{ env.BUILD_FOLDER }}
+    
+    - name: Upload Playwright HTML Report
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: playwright-html-report
+        path: ${{ env.BUILD_FOLDER }}/playwright-report/
+        retention-days: 30
+    
+    - name: Upload Allure Report
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: allure-report
+        path: ${{ env.BUILD_FOLDER }}/allure-report/
+        retention-days: 30
+    
+    - name: Upload Allure Results
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: allure-results
+        path: ${{ env.BUILD_FOLDER }}/allure-results/
+        retention-days: 30
