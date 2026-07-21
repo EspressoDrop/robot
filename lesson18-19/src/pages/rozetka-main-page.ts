@@ -41,12 +41,17 @@ export class RozetkaMainPage {
     public constructor(public page: Page) {}
 
     public async open() {
-        await this.page.goto('https://rozetka.com.ua/', {
-            waitUntil: 'commit',
-            timeout: 60000
-        });
-        await this.rozetkaTopBar.waitFor({state: 'visible', timeout: 45000});
+    await this.page.goto('https://rozetka.com.ua/', {
+        waitUntil: 'commit'
+    });
+    
+    const popup = this.page.locator('text=Вхід через Google').first();
+    if (await popup.isVisible({ timeout: 2000 }).catch(() => false)) {
+        await this.page.keyboard.press('Escape');
     }
+    
+    await this.rozetkaTopBar.waitFor({state: 'visible', timeout: 45000});
+}
 
     public async openSearch() {
         await this.searchInput.click();
