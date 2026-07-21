@@ -4,7 +4,7 @@ import { Locator } from '@playwright/test';
 export class RozetkaMainPage {
 
     public get rozetkaTopBar(): Locator {
-        return this.page.locator('div[class="relative d-flex items-center py-2 lg:py-3"]');
+        return this.page.locator('header').first();
     }
 
     public get searchInput(): Locator {
