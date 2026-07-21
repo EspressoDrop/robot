@@ -41,10 +41,28 @@ export class RozetkaMainPage {
     public constructor(public page: Page) {}
 
     public async open() {
+        await this.page.context().addCookies([
+            {
+                name: 'visited',
+                value: 'true',
+                domain: '.rozetka.com.ua',
+                path: '/'
+            }
+        ]);
+
         await this.page.goto('https://rozetka.com.ua/', {
             waitUntil: 'commit'
         });
-        await this.rozetkaLogo.waitFor({state: 'visible'});
+
+        const captchaFrame = this.page.frameLocator('iframe[title*="human"]').first();
+        const hasCaptcha = await captchaFrame.locator('body').count().catch(() => 0);
+
+        if (hasCaptcha > 0) {
+            console.log('⚠️ CAPTCHA detected - waiting 60 seconds for manual solve...');
+            await this.page.pause();
+        }
+
+        await this.rozetkaLogo.waitFor({state: 'visible', timeout: 60000});
     }
 
     public async openSearch() {
