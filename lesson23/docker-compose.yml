@@ -1,0 +1,42 @@
+services:
+  webapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: expense-tracker:latest
+    ports:
+      - "3000:3000"
+    networks:
+      - test-network
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:3000"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 30s
+
+  tests:
+    image: mcr.microsoft.com/playwright:v1.61.1-jammy
+    depends_on:
+      webapp:
+        condition: service_healthy
+    networks:
+      - test-network
+    working_dir: /tests
+    volumes:
+      - ./tests:/tests/tests
+      - ./playwright.config.ts:/tests/playwright.config.ts
+      - ./package.json:/tests/package.json
+      - ./package-lock.json:/tests/package-lock.json
+    command:
+      - sh
+      - -c
+      - |
+        echo "Testing connectivity to webapp..."
+        curl -v http://webapp:3000 || echo "Curl failed"
+        npm install
+        npx playwright test
+
+networks:
+  test-network:
+    driver: bridge
